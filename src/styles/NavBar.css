@@ -3,10 +3,12 @@
     text-decoration: none;
     height: 100px;
     margin: auto ;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    width: 90%;
     
 }
 .logoNavbar{

@@ -6,7 +6,7 @@ function NavBar() {
     return (
         <header className="headerContainer">
           <ul>
-            <li className="navlinks"><img src={require('../resources/logofood_transparente.png')} className='logoNavbar'/></li>
+            <li className="navlinks"><img src={require('../resources/logofood_transparente.png')} alt="logo comida  " className='logoNavbar'/></li>
           </ul>
           <ul className="ulContainer">
             <li className="navlinks"><button className="buttonLinks"><NavLink to="/"> Menu </NavLink></button></li>
