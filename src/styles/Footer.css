@@ -1,17 +1,21 @@
 .footerContainer{
     background-color: #E1CF98;
     text-decoration: none;
-    height: 100px;
+    height: 50px;
     margin: auto ;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-}
-.liFooter{
-    text-decoration: none;
-    list-style: none;
+    width: 90%;
 }
 .ulFooter{
     display: flex;
+    margin:  auto;
+}
+
+.liFooter{
+    text-decoration: none;
+    list-style: none;
+    margin: 10px;
 }
