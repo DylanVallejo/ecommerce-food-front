@@ -1,9 +1,9 @@
 import React from 'react'
-import Home from '../components/Home'
+import Carrusel from '../components/Carrusel'
 
 function HomePage() {
     return (
-        <Home/>
+        <Carrusel/>
     )
 }
 
