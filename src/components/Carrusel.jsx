@@ -24,12 +24,6 @@ function Carrusel() {
           <img src='../img/banner/3.jpg'  alt="photo 3"/>
         </a>
       </li>
-      <li class="slide">
-        <a href="#">
-        <img src='../img/banner/1.jpg' alt="photo 1"/>
-          <img src="photo1.jpg" alt="photo 1"/>
-        </a>
-      </li>
     </ul>
   {/*   <ul class="slider-controler">
       <li><a href="#slide1">&bullet;</a></li>
