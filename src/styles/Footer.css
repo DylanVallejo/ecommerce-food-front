@@ -1,0 +1,17 @@
+.footerContainer{
+    background-color: #E1CF98;
+    text-decoration: none;
+    height: 100px;
+    margin: auto ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.liFooter{
+    text-decoration: none;
+    list-style: none;
+}
+.ulFooter{
+    display: flex;
+}

@@ -1,17 +1,19 @@
 
 import { NavLink } from "react-router-dom";
+import '../styles/NavBar.css'
 
 function NavBar() {
     return (
-        <header class= 'container-lg'>
-            <h1>navbar</h1>
-                <NavLink to="/"> Menu </NavLink>
-                  <NavLink to="/ofertas">Ofertas</NavLink>
-                <NavLink to="/about" >About us </NavLink>
-                <NavLink to="/contact" >Contac Us </NavLink>
-                {/* <NavLink  to="/birth">
-              Busca tu imagen
-            </NavLink> */}
+        <header className="headerContainer">
+          <ul>
+            <li className="navlinks"><img src={require('../resources/logofood_transparente.png')} className='logoNavbar'/></li>
+          </ul>
+          <ul className="ulContainer">
+            <li className="navlinks"><button className="buttonLinks"><NavLink to="/"> Menu </NavLink></button></li>
+            <li className="navlinks"><button className="buttonLinks"><NavLink to="/ofertas">Ofertas</NavLink></button></li>
+            <li className="navlinks"><button className="buttonLinks"><NavLink to="/about" >About us </NavLink></button></li>
+            <li className="navlinks"><button className="buttonLinks"><NavLink to="/contact" >Contact Us </NavLink></button></li>
+          </ul>
         </header>
     )
 }

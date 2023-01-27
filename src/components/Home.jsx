@@ -1,3 +1,4 @@
+import Carrusel from "./Carrusel"
 
 function Home () {
     
@@ -56,6 +57,7 @@ function Home () {
     return (
         <div>
             <h1>Hola desde home</h1>
+            <Carrusel/>
             {/* {
                 objetoMapeado.map((item,key)=>{
                     <>
