@@ -1,31 +1,37 @@
 import React from 'react'
+import '../styles/Carrusel.css'
 
 function Carrusel() {
     return (
-        <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-inner">
-                <div className="carousel-item active" data-bs-interval="1000">
-                <img src={require("../resources/logofood_transparente.png")} className="d-block w-100 " alt="..."/>
-                <p>imagen 1</p>
-                </div>
-                <div className="carousel-item" data-bs-interval="2000">
-                <img src={require("../resources/logofood_transparente.png")} className="d-block w-100" alt="..."/>
-                <p>imagen 2</p>
-                </div>
-                <div className="carousel-item">
-                <img src={require("../resources/logofood_transparente.png")} className="d-block w-100" alt="..."/>
-                <p>imagen 3</p>
-                </div>
-            </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Previous</span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
-            </button>
-        </div>
+        <div class="wrapper">
+  <div class="slider" id="slider">
+    <ul class="slides">
+      <li class="slide" id="slide1">
+        <a href="#">
+         
+          <img src='../img/banner/1.jpg' alt="photo 1"/>
+        </a>
+      </li>
+      <li class="slide" id="slide2">
+        <a href="#">
+         
+          <img src='../img/banner/2.jpg' alt="photo 2"/>
+        </a>
+      </li>
+      <li class="slide" id="slide3">
+        <a href="#">
+          
+          <img src='../img/banner/3.jpg'  alt="photo 3"/>
+        </a>
+      </li>
+    </ul>
+  {/*   <ul class="slider-controler">
+      <li><a href="#slide1">&bullet;</a></li>
+      <li><a href="#slide2">&bullet;</a></li>
+      <li><a href="#slide3">&bullet;</a></li>
+    </ul> */}
+  </div>
+</div>
     )
 }
 
