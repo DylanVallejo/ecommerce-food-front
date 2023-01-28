@@ -1,75 +1,58 @@
 import Carrusel from "./Carrusel"
+import axios from 'axios';
+import { useState,useEffect } from "react";
+import '../styles/Home.css'
 
 function Home () {
     
-    // const url = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=63410bba6451483dbca3143c716f3566'
-    // const [recetas, setRecetas] = useState([])
+    const [api, setApi] = useState()
+    
+    const url  = 'https://rickandmortyapi.com/api/character?10'
     
     
-    
-    const objeto = {
-        
-        
-        "results":[
-            
-        {
-            "title": "Receta 1",
-           "img": "esto es una imagen",
-            "descripcion": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
-            
-        },
-        {
-           "title": "Receta 3",
-           "img": "esto es una imagen",
-           "descripcion": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
-            
-        },
-        {
-            "title": "Receta 2",
-            "img": "esto es una imagen",
-            "descripcion ": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
-            
-        },
-        {
-            "title": "Receta 4",
-            "img": "esto es una imagen",
-            "descripcion": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
-            
-        }]
-    }
-    
-    const objetoMapeado = [{...objeto.results }]
-
-    
-    console.log(objetoMapeado)
-    
-    // axios.get(url)
-    // .then(res =>{
-    //     console.log(res)
-    //     setRecetas(res.data.result)
-    // })
-    // .catch(err =>{
-    //     console.log(err)
-    // })
+    useEffect(() => {
+        axios.get(url)
+        .then( res =>{
+            console.log(res)
+            console.log(url)
+            setApi(res.data.results)
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }, [url])
     
 
     
+
     return (
         <div>
-           <Carrusel/>
-            {/* {
-                objetoMapeado.map((item,key)=>{
-                    <>
-                    <h2>{item.title}</h2>
-                    <p>{item.descripcion}</p>
-                    </>
-                })
-            } */}
+            <Carrusel/>
+            <div className="cardsContainer">
+                {
+                    api?.map((item)=>{
+                        return(
+                            <div className="mapContainer">
+                                <div className="mapImgContainer">
+                                    <h2>{item.name}</h2>
+                                    <img  src={item.image} />
+                                </div>
+                                <div className="mapInfoContainer">
+                                    <p>{item.episode[0]}</p>
+                                    <p>{item.origin.name}</p>
+                                    <p>{item.species}</p>
+                                    <p>{item.gender}</p>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+            </div>
             
             
             
         </div>
     )
 }
- 
- export default Home
+
+export default Home

@@ -1,0 +1,20 @@
+.cardsContainer{
+    display: flex;
+    overflow-x: scroll;
+    /* width: 100%; */
+}
+.mapContainer{
+    display: flex;
+    border: solid 1px black;
+    /* width: 600px; */
+    /* margin: 0 auto; */
+    /* flex-direction: row ; */
+}
+.mapImgContainer{
+    margin: auto;
+    background-color: aquamarine;
+}
+.mapInfoContainer{
+    margin: auto;
+    background-color: rgb(223, 234, 126);
+}
