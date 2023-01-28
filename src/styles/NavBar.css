@@ -1,14 +1,17 @@
 .headerContainer{
-    background-color: #E1CF98;
+    background-color: #FFE5AC;
     text-decoration: none;
     height: 100px;
     margin: auto ;
-    margin-top: 15px;
+    /* margin-top: 15px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    width: 90%;
+    border-radius: 0px 0px 15px 15px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    box-shadow: rgba(1, 1, 1, 0.30) 2px 3px 8px;
+    margin-bottom: 1em;
     
 }
 .logoNavbar{
