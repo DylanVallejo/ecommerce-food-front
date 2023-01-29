@@ -1,0 +1,35 @@
+
+.globalOfersContainer{
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.ofertasContainer{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    margin: 2em auto;
+}
+.imgOfertasContainer{
+    position: relative;
+}
+
+.etiquetaOfertas{
+    position: relative;
+    left: 325px;
+    top: -300px;
+}
+.titleOfertas{
+    position: relative;
+    left: 20px;
+    top: -60px;
+}
+.etiquetaOfertas{
+    background-color: red;
+    height: 4em;
+    width: 4em;
+    border-radius: 100%;
+    border: none;
+}
