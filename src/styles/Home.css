@@ -1,12 +1,24 @@
 .cardsContainer{
-    display: flex;
+    /* display: block;
     overflow-x: scroll;
-    /* width: 100%; */
+    width: 1000px;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: flex-start; */
+    
+    
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    margin: 10px auto;
 }
 .mapContainer{
-    display: flex;
+    /* display: flex; */
     border: solid 1px black;
-    /* width: 600px; */
+    width: 300px;
+    margin: 5px;
     /* margin: 0 auto; */
     /* flex-direction: row ; */
 }
