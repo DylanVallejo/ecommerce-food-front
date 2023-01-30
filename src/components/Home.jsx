@@ -39,9 +39,12 @@ function Home () {
                     api ? (api.map((item)=>{
                         return(
                             <div className="mapContainer">
-                                <div className="mapImgContainer">
-                                    <h2>{item.name}</h2>
-                                    <img  src={item.image} alt='....'/>
+                                <div className="mapImgContainer" style={{ 
+                                    backgroundImage: `url(${item.image})` 
+                                }}>
+                                    <h2 className="homeTitle">{item.name}</h2>
+                                    {/* <img  src={item.image} alt='....' className="homeImg"/> */}
+                                    <button className="btnDetailsHome" onClick={( e ) => handleNavigation(e,item.id)}>Details</button>
                                 </div>
                                 <div className="mapInfoContainer">
                                     <p>{item.episode[0]}</p>
@@ -49,7 +52,6 @@ function Home () {
                                     <p>{item.species}</p>
                                     <p>{item.gender}</p>
                                 </div>
-                                <button onClick={( e ) => handleNavigation(e,item.id)}>Details</button>
                             </div>
                         )
                     }))
