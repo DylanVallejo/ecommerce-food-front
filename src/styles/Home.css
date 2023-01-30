@@ -1,0 +1,57 @@
+.cardsContainer{
+    /* display: block;
+    overflow-x: scroll;
+    width: 1000px;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: flex-start; */
+    
+    
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    margin: 10px auto;
+}
+.mapContainer{
+    display: flex;
+    border: solid 1px black;
+    width: 35em;
+    margin: 5px;
+    box-sizing: content-box;
+    /* margin: 0 auto; */
+    /* flex-direction: row ; */
+}
+.homeImg{
+    height: 200px;
+}
+.homeTitle{
+    margin: 1px auto 1px auto;
+}
+.mapImgContainer{
+    /* margin: auto; */
+    background-color: aquamarine;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background-size:cover ;
+    height: 17em;
+    width: 17em;
+    position: relative;
+    
+    
+}
+.mapInfoContainer{
+    margin: auto;
+    background-color: rgb(223, 234, 126);
+    box-sizing: content-box;
+    height: 17em;
+}
+
+.btnDetailsHome{
+    height: 4em;
+    position: absolute;
+    top: 16em;
+    left: 14em;
+    margin: auto;
+}

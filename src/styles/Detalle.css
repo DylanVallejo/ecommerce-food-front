@@ -1,0 +1,46 @@
+.detailContainer{
+    border: solid 1px black;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.1fr 1fr;
+    grid-column-gap: px;
+    grid-row-gap: 2px;
+    /* width: 100%; */
+    margin: auto;
+    /* box-sizing: content-box; */
+    margin: 10px;
+    /* text-align: left; */
+}
+.detaileTitle{
+    text-align: right;
+    grid-area: 1 / 1 / 2 / 2;
+}
+.detailInfoContainer{
+    grid-area: 2 / 1 / 3 / 2;
+}
+.listDetailContainer{
+    /* text-decoration: none; */
+    list-style: none;
+    text-align: left;
+}
+.detailImgContainer{
+    grid-area: 2 / 2 / 3 / 3;
+}
+.detailPriceContainer{
+    margin-left: 16px 0px;
+    padding: 0px  0px  0px  40px;
+    text-align: left;
+}
+
+/* .parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.1fr 1fr;
+    grid-column-gap: px;
+    grid-row-gap: 2px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 2 / 2; }
+    .div2 { grid-area: 2 / 1 / 3 / 2; }
+    .div3 { grid-area: 2 / 2 / 3 / 3; } */
