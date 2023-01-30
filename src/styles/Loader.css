@@ -9,6 +9,7 @@
     transform-origin: 170px 0;
     z-index: 10;
     perspective: 300px;
+    margin-top: 150px;
 
 }
 .loader::before {
