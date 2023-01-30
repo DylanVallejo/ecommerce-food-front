@@ -55,13 +55,14 @@ function Detalle() {
               </ol>
           </div>
           <div className='detailImgContainer'>
-            
             <div>
               <img src={detail?.image} className='detailImg'  alt='referencia'/>
+              <button className='btnDetalleMejorar'>Mejorar Combo</button>
+              
             </div>
             <div>
-              <button>Agregar al pedido</button>
-              <button onClick={handleNavigate}>Regresar</button>
+              <button className='btnDetalleAgregar'>Agregar al pedido</button>
+              <button className='btnDetalleRegresar' onClick={handleNavigate}>Regresar</button>
             </div>
           </div>
         </div>

@@ -12,11 +12,18 @@
     border-bottom: 1px solid black;
     box-shadow: rgba(1, 1, 1, 0.30) 2px 3px 8px;
     margin-bottom: 1em;
+    justify-content: space-evenly;
     
 }
+.logoNavbarContainer{
+    /* justify-items: start; */
+    align-items: left;
+}
 .logoNavbar{
-    height: 60px;
-    margin: 0px;
+    height: 7em;
+    /* margin: 0px; */
+    margin: auto;
+    filter: drop-shadow(0 2mm 1mm rgb(4, 4, 4));
 }
 .ulContainer{
     display: flex;
@@ -34,17 +41,18 @@
     text-decoration: none;
     list-style: none;
     color: azure;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 .buttonLinks{
     box-shadow: -3px 3px  rgb(255, 60, 0);
     border-radius: 5px;
-    border-style: none;
+    /* border-style: none; */
     margin: 10px;
     font-size: auto;
     box-sizing: content-box;
-    width: 75px;
+    width: 6em;
     background-color: #EDA919;
+    height: 3em;
 }
 /* .buttonLinks , .navlinks>.buttonLinks>a:active{
     background-color: rgb(255, 60, 0);

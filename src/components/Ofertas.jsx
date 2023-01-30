@@ -44,7 +44,7 @@ function Ofertas() {
           })
         }
       </div>
-        <button onClick={e=>handleNavigation(e)} className="ofertasCircle">Regresar</button>
+        <button onClick={e=>handleNavigation(e)} className="btnOfertasRegresar" >Regresar</button>
       
     </div>
   )
