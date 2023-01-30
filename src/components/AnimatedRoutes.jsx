@@ -17,13 +17,13 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/category" element={<CategoryFormPage />} />
-        <Route path="/product" element={<ProductFormPage />} />
-        
         <Route path="/detalle/:id" element={<DetallePage />} />
         <Route path="/ofertas" element={<OfertasPage />} />
+        <Route path="/category" element={<CategoryFormPage />} />
+        <Route path="/product" element={<ProductFormPage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
+        
         
 
         {/* <Route path="/agregar" element={<Agregarpage />} /> */}
