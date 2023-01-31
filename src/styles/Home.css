@@ -21,9 +21,10 @@
 }
 .mapContainer{
     /* display: flex; */
-    border: solid 1px black;
+    /* border: solid 1px black; */
     /* width: 35em; */
     width: 17em;
+    border-radius: 20px;
     
     margin: 5px;
     margin-bottom: 20px;
@@ -34,6 +35,13 @@
     
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
+.mapContainer:hover{
+    -webkit-transform:scale(1.02);
+    -moz-transform:scale(1.02);
+    -ms-transform:scale(1.02);
+    -o-transform:scale(1.02);
+    transform:scale(1.02);
+}
 .homeImg{
     height: 200px;
 }
@@ -41,19 +49,33 @@
     margin: 1px auto 1px auto;
 }
 .mapImgContainer{
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     background-size: 100% 100%;
     background-repeat:no-repeat;
     background-size:cover ;
     height: 17em;
     width: 17em;
     position: relative;
+    
+    /* display: flex; */
+    /* margin: 0 8px 24px; */
+    max-width: 312px;
+    /* flex-direction: column; */
 }
+
+/* .mapImgContainer:hover{
+    width: calc(50% - 16px);
+    transform: scale(1);
+    transition: transform .3s ease-in-out; 
+} */
 .mapInfoContainer{
     margin: auto;
-    background-color: rgb(223, 234, 126);
-    box-sizing: content-box;
+    /* background-color: rgb(223, 234, 126); */
+    box-sizing: border-box;
     height: 6em;
+    text-align: left;
+    padding: 10px;
+    /* overflow: hidden; */
 }
 .mapInfoContainer>p{
     margin: 0px auto;
@@ -88,3 +110,23 @@
     color: #fff;
     transform: translateY(-7px);
 }
+
+
+/* 
+    contenedor tarjeta con imagen que se agrande en hover
+    display: flex;
+    margin: 0 8px 24px;
+    max-width: 312px;
+    flex-direction: column;
+    width: calc(50% - 16px);
+    transform: scale(1);
+    transition: transform .3s ease-in-out; 
+    
+    */
+    
+    
+    /* .mapImg{
+        width: calc(50% - 16px);
+        transform: scale(1);
+        transition: transform .3s ease-in-out; 
+    } */

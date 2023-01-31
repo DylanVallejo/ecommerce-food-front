@@ -7,9 +7,18 @@ function CategoryForm() {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     
-    const createCategory = ( category ) => {
+    const createCategory = ( e ) => {
+        
+        
+        e.preventDefault();
+        const category = {
+            "name": name,
+            "description": description
+        }
+        
         axios.post("http://localhost:8082/api/category",category )
         .then(res =>{
+            console.log(res)
             alert(res.data)
         })
         .catch(error=>{
@@ -18,10 +27,12 @@ function CategoryForm() {
     }
     
     
+    
+    
     ///traer las categorias para mostrarlas
     
     return (
-        <form onSubmit={createCategory({name,description})}>
+        <form onSubmit={createCategory}>
             <lable for="name" />
             <input type="text" name="name"  className='nameInput' onChange={e => setName(e.target.value)} />
             
