@@ -5,19 +5,13 @@
     flex-wrap: wrap;
     margin: auto;
     justify-content: flex-start; */
-    
-    
+
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     width: auto;
     height: auto;
     margin: 10px auto;
-    
-    
-  
-    
-    
 }
 .mapContainer{
     /* display: flex; */
@@ -31,16 +25,20 @@
     box-sizing: content-box;
     /* margin: 0 auto; */
     /* flex-direction: row ; */
+    /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
     
     
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
+
 .mapContainer:hover{
     -webkit-transform:scale(1.02);
     -moz-transform:scale(1.02);
     -ms-transform:scale(1.02);
     -o-transform:scale(1.02);
     transform:scale(1.02);
+    transition: 0.2s;
+    
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 .homeImg{
     height: 200px;
@@ -60,6 +58,8 @@
     /* display: flex; */
     /* margin: 0 8px 24px; */
     max-width: 312px;
+    background-color: rgb(244, 255, 252);
+    border-radius: 1em 1em 0em 0em ;
     /* flex-direction: column; */
 }
 
@@ -70,7 +70,8 @@
 } */
 .mapInfoContainer{
     margin: auto;
-    /* background-color: rgb(223, 234, 126); */
+    background-color: rgb(244, 255, 252);
+
     box-sizing: border-box;
     height: 6em;
     text-align: left;
@@ -80,6 +81,7 @@
 .mapInfoContainer>p{
     margin: 0px auto;
     word-break: break-all;
+    
 }
 
 .btnDetailsHome{
