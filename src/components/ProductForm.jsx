@@ -15,26 +15,44 @@ function ProductForm() {
   const [categoryId, setCategoryId] = useState(null);
   
   
-  const createProduct = ( ) => {
+  const createProduct = ( e ) => {
+    
+    e.preventDefault();
+    
     
     const newProduct = {
-      productName,
-      description,
-      price,
-      heigth,
-      weigth,
-      itsInOffers,
-      discount,
-      stock,
-      categoryId
+      
+      // description,
+      // price,
+      // heigth,
+      // weigth,
+      // itsInOffers,
+      // discount,
+      // stock,
+      // categoryId
+      
+      "productName":productName,
+      "description":description,
+      "price": price,
+      "height": heigth,
+      "width":weigth,
+      "bestSelling":0,
+      "itsInOffers":itsInOffers,
+      "discount":discount,
+      "stock":stock,
+      "category":{
+        "id":1
+      }
     }
     
     axios.post('http://localhost:8082/api/product', newProduct )
     .then(res=>{
+      console.log(newProduct)
       console.log(res)
     })
     .catch(error=>{
       console.log(error)
+      alert(error)
     })
   }
   
