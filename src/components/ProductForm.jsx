@@ -13,6 +13,7 @@ function ProductForm() {
   const [discount, setDiscount] = useState(0);
   const [stock, setStock] = useState(0);
   const [categoryId, setCategoryId] = useState(null);
+  const [image, setImage] = useState(null);
   
   
   const createProduct = ( e ) => {
@@ -39,6 +40,7 @@ function ProductForm() {
       "bestSelling":0,
       "itsInOffers":itsInOffers,
       "discount":discount,
+      "image":image,
       "stock":stock,
       "category":{
         "id":1
@@ -55,7 +57,24 @@ function ProductForm() {
       alert(error)
     })
   }
+
   
+  function handleFile(e) {
+    const element = e.target;
+    const file = element.files[0];
+    
+    console.log(file);
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+
+    reader.onloadend = function () {
+        setImage(reader.result.toString())
+        console.log(reader.result.toString());
+    }
+    
+
+  }
   
   return (
     
@@ -84,6 +103,11 @@ function ProductForm() {
         <label for='productWeigth'>Weigth</label>
         <input type="number" name="productWeigth" value={weigth} onChange={e=> setWeigth(e.target.value)} />
       </section>
+      <section >
+         <div>Image</div>
+         <input  type='file' name='image' onChange={handleFile} />
+         <div>{!!image ? <img src={image} width='200' alt='preview' /> : ''}</div>
+       </section>
       
       
       {/* bestselling 

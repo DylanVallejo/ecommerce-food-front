@@ -1,4 +1,5 @@
 import Carrusel from "./Carrusel"
+import Carrusel2 from "./Carrusel2"
 import axios from 'axios';
 import { useState,useEffect } from "react";
 import '../styles/Home.css'
@@ -7,7 +8,11 @@ import Loader from "./Loader";
 
 
 function Home () {
-    
+    const slides = [
+        {url:'../img/banner/1.jpg', title : 'Hamburguesa'},    
+        {url:'../img/banner/2.jpg', title : 'papas'},
+        {url:'../img/banner/3.jpg', title : 'Helados'},      
+    ]
     const [api, setApi] = useState(null)
     const navigate = useNavigate();
     
@@ -48,6 +53,7 @@ function Home () {
     return (
         <div>
             <Carrusel/>
+            <Carrusel2 slides={slides}/>
             <div className="cardsContainer">
                 {
                     api ? (api.map((item,key)=>{
@@ -57,7 +63,7 @@ function Home () {
                                 <h2 className="homeTitle">{item.productName}</h2> */}
                                 <div className="mapImgContainer">
                                     <h2 className="homeTitle">{item.productName}</h2>
-                                    <img src={item.image} width='300px' margin='5px' className="mapImg"/>
+                                    <img src={item.image} width='80%' margin='5px' className="mapImg"/>
                                     <button className="btnDetailsHome" onClick={( e ) => handleNavigation(e,item.id)}>Details</button>
                                 </div>
                                 <div className="mapInfoContainer">
