@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import styles from "../styles/Login.module.css";
 import logo from "../resources/logofood_transparente.png";
 import axios from "axios";
@@ -73,7 +73,13 @@ const LogIn = () => {
           />
         </div>
         <button className={styles.btn}>{state}</button>
-        {message}
+        {!message ? (
+          <p>
+            ¿No tienes cuenta? Regístrate <Link to="/singin">aquí</Link>
+          </p>
+        ) : (
+          message
+        )}
       </form>
     </main>
   );

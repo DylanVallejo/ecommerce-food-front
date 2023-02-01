@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../styles/Singin.module.css";
 import logo from "../resources/logofood_transparente.png";
 import axios from "axios";
@@ -76,7 +76,13 @@ const SingIn = () => {
           />
         </div>
         <button className={styles.btn}>{state}</button>
-        {message}
+        {!message ? (
+          <p>
+            Si ya tienes cuenta, accede <Link to="/login">aquí</Link>
+          </p>
+        ) : (
+          message
+        )}
       </form>
     </main>
   );

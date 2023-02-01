@@ -8,6 +8,7 @@
 .card {
     background-color: white;
     max-width: 30%;
+    max-height: 43rem;
     border-radius: 12px;
     padding: 3rem;
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
@@ -53,7 +54,7 @@
 
 .btn {
     width: 100%;
-    margin: 2rem 0;
+    margin: 2rem 0 1rem 0;
     color: white;
     padding: 1rem 0;
     background-color: #EDA919;
