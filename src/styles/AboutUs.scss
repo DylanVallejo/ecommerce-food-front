@@ -1,0 +1,125 @@
+.slidesAbout {
+  display: grid;
+  > .slideAbout {
+    grid-area: 1 / -1;
+    color: aliceblue;
+  }
+
+  > button {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: white;
+    position: absolute;
+    font-size: 5rem;
+    width: 5rem;
+    height: 5rem;
+    top: 30%;
+    transition: opacity 0.5s;
+    opacity: 0.7;
+    z-index: 5;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:first-child {
+      left: 5%;
+    }
+    &:last-child {
+      right: 5%;
+    }
+  }
+}
+
+.slideAboutContent {
+  width: 20vw;
+  height: 30vw;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: transform 0.6s ease-in-out;
+  opacity: 0.7;
+
+  display: grid;
+  // align-content: center;
+
+  transform-style: preserve-3d;
+  transform: perspective(1000px) translateX(calc(100% * var(--offset)))
+    rotateY(calc(-50deg * var(--dir)));
+}
+
+.slideAboutContentInner {
+  transform-style: preserve-3d;
+  transform: translateZ(2rem);
+  transition: opacity 0.3s linear;
+  text-shadow: 0 0.1rem 1rem rgb(0, 0, 0);
+  opacity: 0;
+  margin-bottom: 0.8em;
+
+  .slideAboutSubtitle,
+  .slideAboutTitle {
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: 0.2ch;
+    text-transform: uppercase;
+    
+  }
+
+  .slideAboutSubtitle::before {
+    content: "— ";
+  }
+
+  .slideDescription {
+    font-size: 0.8rem;
+    letter-spacing: 0.2ch;
+  }
+}
+
+.slideAboutBackground {
+  position: fixed;
+  top: 0;
+  left: -10%;
+  right: -10%;
+  bottom: 0;
+  background-size: cover;
+  background-position: center center;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s linear, transform 0.3s ease-in-out;
+  pointer-events: none;
+
+  transform: translateX(calc(10% * var(--dir)));
+}
+
+.slideAbout[data-active] {
+  z-index: 2;
+  pointer-events: auto;
+
+  .slideAboutBackground {
+    opacity: 0.2;
+    transform: none;
+  }
+
+  .slideAboutContentInner {
+    opacity: 1;
+  }
+
+  .slideAboutContent {
+    --x: calc(var(--px) - 0.5);
+    --y: calc(var(--py) - 0.5);
+    opacity: 1;
+
+    transform: perspective(1000px);
+
+    &:hover {
+      transition: none;
+      transform: perspective(1000px) rotateY(calc(var(--x) * 45deg))
+        rotateX(calc(var(--y) * -45deg));
+    }
+  }
+}
