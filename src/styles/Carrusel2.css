@@ -1,0 +1,49 @@
+.divslider {
+    width: 100vw;
+    height: 25em;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    flex-flow: column;
+}
+
+.sliderimage {
+    width:100%;
+    height: 100%;
+    border-radius:10px;
+    background-position: center;
+    background-size:cover;
+}
+
+.leftArrowStyles {
+    position: absolute;
+    top: 50%;
+    transform: translate (0, -50%);
+    left: 0.5em;
+    font-size: 75px;
+    z-index: 1;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.rightArrowStyles {
+    position: absolute;
+    top: 50%;
+    transform: translate (0, -50%);
+    right: 0.5em;
+    font-size: 75px;
+    z-index: 1;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.dotsContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.dotStyle {
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 2em;
+}
