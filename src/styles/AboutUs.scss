@@ -1,15 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Press+Start+2P&display=swap');
+.slideAboutContainer
+ {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .slidesAbout {
   display: grid;
   > .slideAbout {
     grid-area: 1 / -1;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
   }
 
   > button {
     appearance: none;
     background: transparent;
     border: none;
-    color: white;
+    color: rgb(255, 136, 0);
     position: absolute;
     font-size: 5rem;
     width: 5rem;
@@ -28,10 +41,10 @@
     }
 
     &:first-child {
-      left: 5%;
+      left: 30%;
     }
     &:last-child {
-      right: 5%;
+      right: 30%;
     }
   }
 }
@@ -46,7 +59,7 @@
   opacity: 0.7;
 
   display: grid;
-  // align-content: center;
+  align-content: flex-end;
 
   transform-style: preserve-3d;
   transform: perspective(1000px) translateX(calc(100% * var(--offset)))
@@ -55,45 +68,32 @@
 
 .slideAboutContentInner {
   transform-style: preserve-3d;
-  transform: translateZ(2rem);
+  transform: translateZ(9rem);
+ 
   transition: opacity 0.3s linear;
   text-shadow: 0 0.1rem 1rem rgb(0, 0, 0);
   opacity: 0;
   margin-bottom: 0.8em;
 
   .slideAboutSubtitle,
-  .slideAboutTitle {
-    font-size: 2rem;
+  .slideAboutTitle, a {
+    font-family: 'Aclonica', sans-serif;
+   
+    //font-family: 'Press Start 2P', cursive;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
     font-weight: normal;
     letter-spacing: 0.2ch;
     text-transform: uppercase;
     
   }
 
-  .slideAboutSubtitle::before {
-    content: "— ";
-  }
+
 
   .slideDescription {
     font-size: 0.8rem;
     letter-spacing: 0.2ch;
   }
-}
-
-.slideAboutBackground {
-  position: fixed;
-  top: 0;
-  left: -10%;
-  right: -10%;
-  bottom: 0;
-  background-size: cover;
-  background-position: center center;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s linear, transform 0.3s ease-in-out;
-  pointer-events: none;
-
-  transform: translateX(calc(10% * var(--dir)));
 }
 
 .slideAbout[data-active] {
@@ -106,8 +106,8 @@
   }
 
   .slideAboutContentInner {
-    opacity: 1;
-  }
+    opacity: 3;
+   }
 
   .slideAboutContent {
     --x: calc(var(--px) - 0.5);

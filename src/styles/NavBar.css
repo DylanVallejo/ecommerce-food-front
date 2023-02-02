@@ -37,7 +37,7 @@
     list-style: none;
     
 }
-.navlinks>.buttonLinks>a{
+.navlinks>a>.buttonLinks{
     text-decoration: none;
     list-style: none;
     color: azure;
