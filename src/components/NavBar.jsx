@@ -15,8 +15,8 @@ function NavBar() {
             <li className="navlinks"><NavLink to="/contact" ><button className="buttonLinks">Contact Us </button></NavLink></li>
           </ul>
           <ul className="ulContainer">
-            <li className="navlinks"><NavLink to="/"> <button className="buttonLinks">Cuenta </button></NavLink></li>
-            <li className="navlinks"><NavLink to="/"> <button className="buttonLinks">Carrito</button> </NavLink></li>
+            <li className="navlinks"><NavLink to="/"><i class="fa-solid fa-cart-shopping"></i></NavLink></li>
+            <li className="navlinks"><NavLink to="/"> <i class="fa-solid fa-user"></i></NavLink></li>
           </ul>
         </header>
     )
