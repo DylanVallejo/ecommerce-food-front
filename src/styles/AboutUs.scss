@@ -1,6 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Press+Start+2P&display=swap');
+.aboutusContainer{
+  width: 100%;
+  overflow: hidden;
+  padding: 2.2em;
+}
+
 .slideAboutContainer
  {
   height: 100%;
@@ -10,6 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .slidesAbout {
   display: grid;
@@ -113,7 +120,6 @@
     --x: calc(var(--px) - 0.5);
     --y: calc(var(--py) - 0.5);
     opacity: 1;
-
     transform: perspective(1000px);
 
     &:hover {

@@ -96,6 +96,7 @@ function Slide({ slide, offset }) {
   const ref = useTilt(active);
 
   return (
+    
     <div
       ref={ref}
       className="slideAbout"
@@ -124,6 +125,7 @@ function Slide({ slide, offset }) {
         </div>
        </div>
     </div>
+    
   );
 }
 
@@ -136,7 +138,7 @@ function AboutUs() {
     <div className="slideAboutContainer">
       <div className="slidesAbout">
         <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
-        {[...slides, ...slides, ...slides, , ...slides].map((slide, i) => {
+        {[...slides, ...slides, ...slides].map((slide, i) => {
           let offset = slides.length + (state.slideIndex - i);
           return <Slide slide={slide} offset={offset} key={i} />;
         })}
