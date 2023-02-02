@@ -29,20 +29,22 @@
     display: flex;
     justify-content: space-between;
     text-decoration: none;
-    margin: autos;
+    margin: auto;
     
 }
 .navlinks{
     text-decoration: none;
     list-style: none;
-    
+     
 }
-.navlinks>.buttonLinks>a{
+.navlinks>a>.buttonLinks{
     text-decoration: none;
     list-style: none;
     color: azure;
-    font-size: 1rem;
+    font-size: .8rem;
 }
+
+
 .buttonLinks{
     box-shadow: -3px 3px  rgb(255, 60, 0);
     border-radius: 5px;
@@ -54,7 +56,11 @@
     background-color: #EDA919;
     height: 3em;
 }
-/* .buttonLinks , .navlinks>.buttonLinks>a:active{
-    background-color: rgb(255, 60, 0);
-    color: white;
-} */
+
+
+.fa-solid {
+    color: #EDA919;
+    font-size: 1.5rem;
+    padding: 1rem;
+
+}  

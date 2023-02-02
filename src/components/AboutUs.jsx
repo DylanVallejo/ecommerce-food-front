@@ -1,37 +1,33 @@
-import React from 'react'
-import '../styles/AboutUs.scss'
-
+import React from "react";
+import "../styles/AboutUs.scss";
 
 const slides = [
   {
-    title: "Machu Picchu",
-    subtitle: "Peru",
-    description: "Adventure is never far away",
+    title: "Edwin Pinchao",
+    link1:"https://www.linkedin.com/in/alexander-c-00a2967b/",
+    link2: "https://github.com/xander06",
     image:
-      "https://i.blogs.es/08fb59/piratas-del-caribe-disney-sin-jack-sparrow-johnny-depp/1366_2000.jpg"
+      "https://i.blogs.es/08fb59/piratas-del-caribe-disney-sin-jack-sparrow-johnny-depp/1366_2000.jpg",
   },
   {
-    title: "Chamonix",
-    subtitle: "France",
-    description: "Let your dreams come true",
-    image:
-      "https://i.blogs.es/99f45a/johnny-depp-jack-sparrow/1366_2000.jpeg"
+    title: "Edwin Cacuango",
+    link1:"https://www.linkedin.com/in/alexander-c-00a2967b/",
+    link2: "https://github.com/xander06",
+    image: "https://i.blogs.es/99f45a/johnny-depp-jack-sparrow/1366_2000.jpeg",
   },
   {
-    title: "Mimisa Rocks",
-    subtitle: "Australia",
-    description: "A piece of heaven",
-    image:
-      "https://i.blogs.es/7436a5/piratas-del-caribe/1366_2000.jpeg"
+    title: "Dylan Vallejo",
+    link1:"https://www.linkedin.com/in/alexander-c-00a2967b/",
+    link2: "https://github.com/xander06",
+    image: "https://i.blogs.es/7436a5/piratas-del-caribe/1366_2000.jpeg",
   },
   {
-    title: "Four",
-    subtitle: "Australia",
-    description: "A piece of heaven",
-    image:
-      "https://i.blogs.es/7f0586/johnny-depp-jack-sparrow/1366_2000.jpeg"
+    title: "Alexander Cangas",
+    link1:"https://www.linkedin.com/in/alexander-c-00a2967b/",
+    link2: "https://github.com/xander06",
+    image: "https://i.blogs.es/7f0586/johnny-depp-jack-sparrow/1366_2000.jpeg",
   },
- 
+
 ];
 
 function useTilt(active) {
@@ -45,7 +41,7 @@ function useTilt(active) {
     const state = {
       rect: undefined,
       mouseX: undefined,
-      mouseY: undefined
+      mouseY: undefined,
     };
 
     let el = ref.current;
@@ -77,57 +73,59 @@ function useTilt(active) {
 }
 
 const initialState = {
-  slideIndex: 0
+  slideIndex: 0,
 };
 
 const slidesReducer = (state, event) => {
   if (event.type === "NEXT") {
     return {
       ...state,
-      slideIndex: (state.slideIndex + 1) % slides.length
+      slideIndex: (state.slideIndex + 1) % slides.length,
     };
   }
   if (event.type === "PREV") {
     return {
       ...state,
       slideIndex:
-        state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1
+        state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1,
     };
   }
-}; 
+};
 function Slide({ slide, offset }) {
   const active = offset === 0 ? true : null;
   const ref = useTilt(active);
 
   return (
+    
     <div
       ref={ref}
       className="slideAbout"
       data-active={active}
       style={{
         "--offset": offset,
-        "--dir": offset === 0 ? 0 : offset > 0 ? 1 : -1
+        "--dir": offset === 0 ? 0 : offset > 0 ? 1 : -1,
       }}
     >
-     {/*  <div
-        className="slideAboutBackground"
-        style={{
-          backgroundImage: `url('${slide.image}')`
-        }}
-      /> */}
+      
       <div
         className="slideAboutContent"
         style={{
-          backgroundImage: `url('${slide.image}')`
+          backgroundImage: `url('${slide.image}')`,
         }}
       >
         <div className="slideAboutContentInner">
-          <h2 className="slideAboutTitle">{slide.title}</h2>
-          <h3 className="slideAboutSubtitle">{slide.subtitle}</h3>
-          <p className="slideAboutDescription">{slide.description}</p>
+          <h3 className="slideAboutTitle">{slide.title}</h3>
+          <h3 ><a href={slide.link1} target="_blank">
+                <i className="fa-brands fa-github"></i>
+          </a>
+          <a href={slide.link2} target="_blank">
+                <i className="fa-brands fa-linkedin"></i>
+          </a> </h3>
+          
         </div>
-      </div>
+       </div>
     </div>
+    
   );
 }
 
@@ -136,19 +134,18 @@ function AboutUs() {
 
   const [state, dispatch] = React.useReducer(slidesReducer, initialState);
 
- 
-  
-return (
-<div className="slidesAbout">
-      <button onClick={() => dispatch({ type: "PREV" })}>‹anterior</button>
-
-      {[...slides, ...slides, ...slides, , ...slides].map((slide, i) => {
-        let offset = slides.length + (state.slideIndex - i);
-        return <Slide slide={slide} offset={offset}  key={i} />;
-      })}
-      <button onClick={() => dispatch({ type: "NEXT" })}>siguiente›</button>
+  return (
+    <div className="slideAboutContainer">
+      <div className="slidesAbout">
+        <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
+        {[...slides, ...slides, ...slides].map((slide, i) => {
+          let offset = slides.length + (state.slideIndex - i);
+          return <Slide slide={slide} offset={offset} key={i} />;
+        })}
+        <button onClick={() => dispatch({ type: "NEXT" })}>›</button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default AboutUs
+export default AboutUs;
