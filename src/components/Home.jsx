@@ -47,12 +47,12 @@ function Home () {
                         return(
                             <div className="mapContainer" key={key}>
                                 <div className="mapImgContainer">
-                                    <h2 className="homeTitle">{item.productName}</h2>
-                                    <img src={item.image} width='80%' margin='5px' className="mapImg" alt="ref-home"/>
+                                    <img src={item.image} width='80%' height='170em' margin='5px' className="mapImg" alt="ref-home"/>
                                     <button className="btnDetailsHome" onClick={( e ) => handleNavigation(e,item.id)}>Details</button>
                                 </div>
                                 <div className="mapInfoContainer">
-                                    <p>{item.description}</p>
+                                    <h2 className="homeTitle">{item.productName}</h2>
+                                    {/* <p>{item.description.slice(0,30)} ...</p> */}
                                     <p>{item.price}$</p>
                                     {/* <p>categorias:{item.category.name}</p> */}
                                 </div>
