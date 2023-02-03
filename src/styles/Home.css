@@ -1,11 +1,4 @@
 .cardsContainer{
-    /* display: block;
-    overflow-x: scroll;
-    width: 1000px;
-    flex-wrap: wrap;
-    margin: auto;
-    justify-content: flex-start; */
-
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -14,12 +7,13 @@
     margin: 10px auto;
 }
 .mapContainer{
-  display: flex;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  box-sizing: content-box;
-  background-color: rgb(244, 255, 252);
-  flex-flow: column;
+    display: flex;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-sizing: content-box;
+    background-color: rgb(244, 255, 252);
+    flex-flow: column;
+    width: 17em;
 }
 
 .mapContainer:hover{
@@ -41,7 +35,6 @@
 }
 
 .mapImgContainer{
-
     background-size: 100% 100%;
     background-repeat:no-repeat;
     background-size:cover ;
@@ -51,22 +44,28 @@
     max-width: 312px;
     background-color: rgb(244, 255, 252);
     border-radius: 1em 1em 0em 0em ;
-
 }
 
 .mapInfoContainer{
-  margin: auto;
-  background-color: rgb(244, 255, 252);
-  box-sizing: border-box;
-  text-align: left;
-  padding: 10px;
+    /* margin: auto; */
+    background-color: rgb(244, 255, 252);
+    box-sizing: border-box;
+    text-align: left;
+    padding: 10px;
     
 }
 
 .mapInfoContainer>p{
-    margin: 0px auto;
-    word-break: break-all;
+    margin: 0px ;
+    /* word-break: break-all; */
+    margin-left: 0.5em;
     
+    
+}
+.mapInfoContainer>p:nth-child(2){
+    text-align: right;
+    margin-right: 0.2em;
+    font-size: 1.3em;
 }
 
 .btnDetailsHome{

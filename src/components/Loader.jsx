@@ -1,7 +1,7 @@
 import "../styles/Loader.css"
 const  Loader = () => {
     return(
-        <span className="loader"></span>
+        <span className="loader">Mundo</span>
     )
 }
 
