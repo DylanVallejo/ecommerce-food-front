@@ -22,16 +22,6 @@ function ProductForm() {
     
     
     const newProduct = {
-      
-      // description,
-      // price,
-      // heigth,
-      // weigth,
-      // itsInOffers,
-      // discount,
-      // stock,
-      // categoryId
-      
       "productName":productName,
       "description":description,
       "price": price,
@@ -104,10 +94,10 @@ function ProductForm() {
         <input type="number" name="productWeigth" value={weigth} onChange={e=> setWeigth(e.target.value)} />
       </section>
       <section >
-         <div>Image</div>
-         <input  type='file' name='image' onChange={handleFile} />
-         <div>{!!image ? <img src={image} width='200' alt='preview' /> : ''}</div>
-       </section>
+        <div>Image</div>
+        <input  type='file' name='image' onChange={handleFile} />
+        <div>{!!image ? <img src={image} width='200' alt='preview' /> : ''}</div>
+      </section>
       
       
       {/* bestselling 

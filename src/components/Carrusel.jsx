@@ -3,25 +3,23 @@ import '../styles/Carrusel.css'
 
 function Carrusel() {
     return (
-        <div class="wrapper">
-  <div class="slider" id="slider">
-    <ul class="slides">
-      <li class="slide" id="slide1">
-        <a href="#">
-         
-          <img src='../img/banner/1.jpg' alt="photo 1"/>
+        <div className="wrapper">
+  <div className="slider" id="slider">
+    <ul className="slides">
+      <li className="slide" id="slide1">
+        <a>  {/*  agreagar los href a las etiquetas a   href="#"*/}
+          <img src='../img/banner/1.jpg' alt="ofertas 1"/>
         </a>
       </li>
-      <li class="slide" id="slide2">
-        <a href="#">
-         
-          <img src='../img/banner/2.jpg' alt="photo 2"/>
+      <li className="slide" id="slide2">
+        <a >
+          <img src='../img/banner/2.jpg' alt="ofertas 2"/>
         </a>
       </li>
-      <li class="slide" id="slide3">
-        <a href="#">
+      <li className="slide" id="slide3">
+        <a>
           
-          <img src='../img/banner/3.jpg'  alt="photo 3"/>
+          <img src='../img/banner/3.jpg'  alt="ofertas 3"/>
         </a>
       </li>
     </ul>
@@ -34,5 +32,5 @@ function Carrusel() {
 </div>
     )
 }
-
+// eslint-disable-next-line
 export default Carrusel

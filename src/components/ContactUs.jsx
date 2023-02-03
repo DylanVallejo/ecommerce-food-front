@@ -21,7 +21,7 @@ function ContactUs() {
             
             <button>Get in Touch</button>
           </div>
-          <img src={require("../resources/logofood_k_queso.png")}  className="contactUsImg"/>
+          <img src={require("../resources/logofood_k_queso.png")}  className="contactUsImg" alt='kruger-img'/>
         </form>
     </div>
 )
