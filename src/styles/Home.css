@@ -14,7 +14,7 @@
     box-sizing: content-box;
     background-color: rgb(244, 255, 252);
     flex-flow: column;
-    width: 17em;
+    width: 19em;
 }
 
 .mapContainer:hover{
@@ -48,14 +48,14 @@
     max-width: 312px;
     background-color: rgb(244, 255, 252);
     border-radius: 1em 1em 0em 0em ;
-    padding: 1em;
+    padding: 2.5em 1em 0 1em;
 }
 
 .mapInfoContainer{
     /* margin: auto; */
     background-color: rgb(244, 255, 252);
     box-sizing: border-box;
-    text-align: left;
+    text-align: center;
     padding: 10px;
     
 }
@@ -68,7 +68,7 @@
     
 }
 .mapInfoContainer>p:nth-child(2){
-    text-align: right;
+    text-align: center;
     margin-right: 0.2em;
     font-size: 1.3em;
 }
