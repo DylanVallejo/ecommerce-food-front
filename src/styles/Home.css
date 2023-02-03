@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 .cardsContainer{
     display: flex;
     justify-content: space-evenly;
@@ -31,7 +34,10 @@
 }
 
 .homeTitle{
-    margin: .5em auto .5em auto;
+    font-family: 'Kaushan Script', cursive;
+    margin: 0.6em auto -1.2em auto;
+    padding: 1em;
+    align-items: center;
 }
 
 .mapImgContainer{
@@ -44,6 +50,7 @@
     max-width: 312px;
     background-color: rgb(244, 255, 252);
     border-radius: 1em 1em 0em 0em ;
+    padding: 1em;
 }
 
 .mapInfoContainer{
@@ -59,7 +66,7 @@
     margin: 0px ;
     /* word-break: break-all; */
     margin-left: 0.5em;
-    
+    font-family: 'Lobster', cursive;
     
 }
 .mapInfoContainer>p:nth-child(2){
