@@ -6,11 +6,15 @@
     box-sizing: content-box;
     border: 3px solid black;
     box-sizing: border-box;
+    
+    /* overflow: auto; */
     /* opacity: 90%; */
 }
 .filterNavigationBarContainer{
     list-style: none;
     display: flex;
+    /* flex-flow: column wrap; */
+    
     justify-content: space-evenly;
     margin: auto;
     position: absolute;
@@ -40,6 +44,7 @@
     background-color:  rgb(255, 60, 0);
     cursor: pointer;
     box-shadow: -5px 5px  #EDA919;
+    color: white;
     
     -webkit-transition: background-color 0.6s ease-out;
     -moz-transition: background-color 0.6s ease-out;
