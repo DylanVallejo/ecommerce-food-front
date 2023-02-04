@@ -4,28 +4,28 @@ import "../styles/AboutUs.scss";
 const slides = [
   {
     title: "Edwin Pinchao",
-    link1:"https://www.linkedin.com/in/alexander-c-00a2967b/",
-    link2: "https://github.com/xander06",
-    image:
-      "https://i.blogs.es/08fb59/piratas-del-caribe-disney-sin-jack-sparrow-johnny-depp/1366_2000.jpg",
+    link1:"https://www.linkedin.com/in/edwin-pinchao-mueses-951130175/",
+    link2: "https://github.com/Edwin9226",
+    image:"./img/team/EdwinP.jpg",
+      
   },
   {
     title: "Edwin Cacuango",
-    link1:"https://www.linkedin.com/in/alexander-c-00a2967b/",
-    link2: "https://github.com/xander06",
-    image: "https://i.blogs.es/99f45a/johnny-depp-jack-sparrow/1366_2000.jpeg",
+    link1:"https://www.linkedin.com/in/edwin-cacuango-cahuenas/",
+    link2: "https://github.com/EdwinCacuango",
+    image: "./img/team/EdwinC.jpg",
   },
   {
     title: "Dylan Vallejo",
-    link1:"https://www.linkedin.com/in/alexander-c-00a2967b/",
-    link2: "https://github.com/xander06",
-    image: "https://i.blogs.es/7436a5/piratas-del-caribe/1366_2000.jpeg",
+    link1:"https://www.linkedin.com/in/dylan-vallejo/",
+    link2: "https://github.com/DylanVallejo",
+    image: "./img/team/DylanV.jpg",
   },
   {
     title: "Alexander Cangas",
     link1:"https://www.linkedin.com/in/alexander-c-00a2967b/",
     link2: "https://github.com/xander06",
-    image: "https://i.blogs.es/7f0586/johnny-depp-jack-sparrow/1366_2000.jpeg",
+    image: "./img/team/XavierC.jpg",
   },
 
 ];
@@ -137,12 +137,13 @@ function AboutUs() {
   return (
     <div className="slideAboutContainer">
       <div className="slidesAbout">
-        <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
+        <button onClick={() => dispatch({ type: "PREV" })}><i class="fa-solid fa-circle-chevron-left"></i>
+</button>
         {[...slides, ...slides, ...slides].map((slide, i) => {
           let offset = slides.length + (state.slideIndex - i);
           return <Slide slide={slide} offset={offset} key={i} />;
         })}
-        <button onClick={() => dispatch({ type: "NEXT" })}>›</button>
+        <button onClick={() => dispatch({ type: "NEXT" })}><i class="fa-solid fa-circle-chevron-right"></i></button>
       </div>
     </div>
   );
