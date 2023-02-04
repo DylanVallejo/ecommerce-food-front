@@ -65,7 +65,7 @@
   background-repeat: no-repeat;
   transition: transform 0.6s ease-in-out;
   opacity: 0.7;
-
+  border-radius: 2em;
   display: grid;
   align-content: flex-end;
 
@@ -107,6 +107,7 @@
 .slideAbout[data-active] {
   z-index: 2;
   pointer-events: auto;
+  
 
   .slideAboutBackground {
     opacity: 0.2;
