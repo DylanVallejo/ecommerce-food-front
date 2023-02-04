@@ -6,6 +6,8 @@ import {useNavigate} from 'react-router-dom';
 import Loader from "./Loader";
 import { useSelector, useDispatch } from 'react-redux'
 import { holaReducer , getData } from '../features/data/dataSlice'
+import { motion } from "framer-motion"
+import { LayoutGroup } from "framer-motion"
 
 function Home () {
 
@@ -45,6 +47,8 @@ function Home () {
         console.log(filterValue)
     }
     
+    console.log(entities)
+    
     return (
         <div>
             {/* <Carrusel/> */}
@@ -54,11 +58,15 @@ function Home () {
                 <ul className="filterNavigationBarContainer">
                     <li>
                         {/* <i className="fa-solid fa-burger"></i> */}
+                        <button onClick={ e => handleFilter("",e)} className="listButtonFilterBar">TODOS</button>
+                    </li>
+                    <li>
+                        {/* <i className="fa-solid fa-burger"></i> */}
                         <button onClick={ e => handleFilter("combos",e)} className="listButtonFilterBar">COMBOS</button>
                     </li>
                     <li>
                         {/* <i className="fa-solid fa-burger"></i> */}
-                        <button onClick={ e => handleFilter("hamburguersas",e)} className="listButtonFilterBar">HAMBURGUESAS</button>
+                        <button onClick={ e => handleFilter("hamburguesas",e)} className="listButtonFilterBar">HAMBURGUESAS</button>
                     </li>
                     <li>
                         {/* <i class="fa-solid fa-drumstick"></i> */}
@@ -78,37 +86,46 @@ function Home () {
                 </ul>
             </div>
             
+            {/* animate={{ y: 1 }} transition={{ ease: "easeOut", duration: 1 }}    
+            animate={{ y: 3 }} transition={{ ease: "easeOut", duration: 2 }}
+            */}
+                <motion.div   
+                    animate={{ y: 2, x: 2 }}
+                    transition={{
+                    duration:2 
+                    
+                }}  className="cardsContainer">
+                    {
+                        !loading ? entities.filter((val)=>{
+                            if(barFilter === " "){
+                                return val;
+                            }else if(val.category.name.toLowerCase().includes(barFilter.toLowerCase())){
+                                console.log(val.category.name)
+                                return val
+                            }
+                        }).map((item, key)=>{
+                                return(
+                                    <motion.div   transition={{
+                                        opacity: { ease: "linear" },
+                                        layout: { duration: 1 }
+                                    }} className="mapContainer" key={key}>
+                                        <div className="mapImgContainer">
+                                            <img src={item.image} width='80%' height='170em' margin='5px' className="mapImg" alt="ref-home"/>
+                                            <button className="btnDetailsHome" onClick={( e ) => handleNavigation(e,item.id)}>Details</button>
+                                        </div>
+                                        <div className="mapInfoContainer">
+                                            <h2 className="homeTitle">{item.productName}</h2>
+                                            {/* <p>{item.description.slice(0,30)} ...</p> */}
+                                            <p>{item.price}$</p>
+                                            {/* <p>categorias:{item.category.name}</p> */}
+                                        </div>
+                                    </motion.div>
+                                )
+                            })
+                        : (<Loader/>)
+                    }
+                </motion.div>
 
-            <div className="cardsContainer">
-                {
-                    !loading ? entities.filter((val)=>{
-                        if(barFilter === " "){
-                            return val;
-                        }else if(val.category.name.toLowerCase().includes(barFilter.toLowerCase())){
-                            console.log(val.category.name)
-                            return val
-                        }
-                    }).map((item, key)=>{
-                            return(
-                                <div className="mapContainer" key={key}>
-                                    <div className="mapImgContainer">
-                                        <img src={item.image} width='80%' height='170em' margin='5px' className="mapImg" alt="ref-home"/>
-                                        <button className="btnDetailsHome" onClick={( e ) => handleNavigation(e,item.id)}>Details</button>
-                                    </div>
-                                    <div className="mapInfoContainer">
-                                        <h2 className="homeTitle">{item.productName}</h2>
-                                        {/* <p>{item.description.slice(0,30)} ...</p> */}
-                                        <p>{item.price}$</p>
-                                        {/* <p>categorias:{item.category.name}</p> */}
-                                    </div>
-                                </div>
-                            )
-                        })
-                    : (<Loader/>)
-                }
-            </div>
-            
-            
         </div>
     )
 }
