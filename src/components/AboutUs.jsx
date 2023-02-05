@@ -118,13 +118,13 @@ function Slide({ slide, offset }) {
         }}
       >
         <div className="slideAboutContentInner">
+
           <h3 className="slideAboutTitle">{slide.nombre}
           <br/> {slide.apellido}
           </h3>
-          <h3 ><a href={slide.link1} target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-github"></i>
           </a>
-          <a href={slide.link2} target="_blank" rel="noreferrer">
+          <a href={slide.link1} target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-linkedin"></i>
           </a> </h3>
           
