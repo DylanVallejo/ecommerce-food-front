@@ -8,7 +8,7 @@ import ContactUsPage from "../pages/ContactUsPage";
 import DetallePage from "../pages/DetallePage";
 import Login from "../pages/LogIn";
 import CategoryFormPage from "../pages/CategoryFormPage";
-import ProductFormPage from "../pages/ProductFormPage";
+import ProductForm from "../pages/ProductForm";
 import SingIn from "../pages/SingIn";
 
 function AnimatedRoutes() {
@@ -22,11 +22,9 @@ function AnimatedRoutes() {
         <Route path="/detalle/:id" element={<DetallePage />} />
         <Route path="/ofertas" element={<OfertasPage />} />
         <Route path="/category" element={<CategoryFormPage />} />
-        <Route path="/product" element={<ProductFormPage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
-
-        {/* <Route path="/agregar" element={<Agregarpage />} /> */}
+        <Route path="/agregar" element={<ProductForm />} />
       </Routes>
     </AnimatePresence>
   );
