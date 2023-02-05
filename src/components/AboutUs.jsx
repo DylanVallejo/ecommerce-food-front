@@ -3,26 +3,30 @@ import "../styles/AboutUs.scss";
 
 const slides = [
   {
-    title: "Edwin Pinchao",
+    nombre: "Edwin",
+    apellido:"Pinchao",
     link1:"https://www.linkedin.com/in/edwin-pinchao-mueses-951130175/",
     link2: "https://github.com/Edwin9226",
     image:"./img/team/EdwinP.jpg",
       
   },
   {
-    title: "Edwin Cacuango",
+    nombre: "Edwin",
+    apellido:" Cacuango",
     link1:"https://www.linkedin.com/in/edwin-cacuango-cahuenas/",
     link2: "https://github.com/EdwinCacuango",
     image: "./img/team/EdwinC.jpg",
   },
   {
-    title: "Dylan Vallejo",
+    nombre: "Dylan",
+    apellido:" Vallejo",
     link1:"https://www.linkedin.com/in/dylan-vallejo/",
     link2: "https://github.com/DylanVallejo",
     image: "./img/team/DylanV.jpg",
   },
   {
-    title: "Alexander Cangas",
+    nombre: "Alexander",
+    apellido:"Cangás",
     link1:"https://www.linkedin.com/in/alexander-c-00a2967b/",
     link2: "https://github.com/xander06",
     image: "./img/team/XavierC.jpg",
@@ -114,8 +118,10 @@ function Slide({ slide, offset }) {
         }}
       >
         <div className="slideAboutContentInner">
-          <h3 className="slideAboutTitle">{slide.title}</h3>
-          <h3 ><a href={slide.link2} target="_blank" rel="noreferrer">
+
+          <h3 className="slideAboutTitle">{slide.nombre}
+          <br/> {slide.apellido}
+          </h3>
                 <i className="fa-brands fa-github"></i>
           </a>
           <a href={slide.link1} target="_blank" rel="noreferrer">
