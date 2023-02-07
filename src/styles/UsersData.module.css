@@ -1,0 +1,4 @@
+.formContainerUserInfo{
+    display: flex;
+    flex-direction: column;
+}
