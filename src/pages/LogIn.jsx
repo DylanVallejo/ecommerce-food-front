@@ -1,16 +1,29 @@
-import React, { useState } from "react";
+import React, { useState ,useContext} from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styles from "../styles/Login.module.css";
 import logo from "../resources/logofood_transparente.png";
 import axios from "axios";
+import MyContext from '../context/MyContext';
 
-const LogIn = () => {
+
+
+const LogIn = ( props ) => {
+  
+  const context = useContext(MyContext);
+  
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [state, setState] = useState("Ingresar");
   const [message, setMessage] = useState();
+  
+  
+  // const [userRoleContext, setUserRoleContext] = useState({
+  //   role: "",
+  //   token:"",
+  // })
+  // usr,setUsr,login,setLogin
 
   const emailHandler = (e) => {
     setEmail(e.target.value);
@@ -35,8 +48,17 @@ const LogIn = () => {
       axios
         .post("http://localhost:8082/api/v1/auth/authenticate", login)
         .then((res) => {
+          console.log(res)
           setState("Acceso correcto. Redirigiendo...");
+          context.setUserContext({
+            role:res.data.role,
+            token:res.data.role
+          })
+          // console.log(userRoleContext)
+          
+          
           navigate("/");
+          
         })
         .catch((error) => {
           setState("Ingresar");
@@ -67,6 +89,7 @@ const LogIn = () => {
         <div className={styles.password}>
           <label>Contraseña</label>
           <input
+          type="password"
             value={password}
             onChange={passwordHandler}
             placeholder="Ingresa tu contraseña"

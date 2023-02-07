@@ -1,12 +1,14 @@
 .filterNavigationContainer {
-   
+    
     display: flex;
-    background-color: #EDA9193D;
+    background-color: rgba(203, 87, 87, 0.239);
     justify-content: space-between;
     justify-items: content-box;
     border: 3px solid black;
     box-sizing: border-box;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    padding: 5px;
+    /* color: #000; */
     /* overflow: auto; */
     /* opacity: 90%; */
 }
@@ -76,6 +78,26 @@
     -moz-transition: width 0.4s ease-out;
     -o-transition: width 0.4s ease-out;
     transition: width 0.4s ease-out;
+
+}
+.searchByTextBar{
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    height: 3em;
+    color: black;
+    /* text-align: center; */
+    /* text-align: margin-right(10px); */
+}
+.searchByTextBar:focus{
+    
+    background-color: #edaa19bf;
+    color: white;
+    -webkit-transition: background-color 0.6s ease-out;
+    -moz-transition: background-color 0.6s ease-out;
+    -o-transition: background-color 0.6s ease-out;
+    transition: background-color 0.6s ease-out;
 
 }
 
