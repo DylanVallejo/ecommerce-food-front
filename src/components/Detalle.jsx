@@ -56,7 +56,7 @@ function Detalle() {
           </div>
           <div className='detailImgContainer'>
             <div>
-              <img src={detail2.image} className='detailPageImg'  alt='referencia'/>
+              <img src={detail2.image} className='detailPageImg slide-right'  alt='referencia'/>
               <button className='btnDetalleMejorar'>Mejorar Combo</button>
               
             </div>

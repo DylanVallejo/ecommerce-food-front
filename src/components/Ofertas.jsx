@@ -9,6 +9,9 @@ function Ofertas() {
 
   const { entities, loading } = useSelector((state) => state.data);
   
+  
+  const itemsInOffers = entities.filter(item => item.itsInOffers === true);
+  
   const handleNavigation = (e) =>{
     e.preventDefault();
     navigate("/")
@@ -17,9 +20,21 @@ function Ofertas() {
   return (
     <div className='globalOfersContainer'>
       <div className="ofertasContainer">
-        {
+        {/* {
           
           !loading && entities.slice(0,3).map((item,key)=>{
+            return(
+              <div className='imgOfertasContainer' key={key}>
+                <button className='etiquetaOfertas' >20%</button>
+                <img src={item.image} alt="...." className='imgPageOfertas'></img>
+                <h3 className='titleOfertas'>{item.productName}</h3>
+              </div>
+            )
+          })
+        } */}
+        
+        {
+          !loading  && itemsInOffers.map((item,key)=>{
             return(
               <div className='imgOfertasContainer' key={key}>
                 <button className='etiquetaOfertas' >20%</button>

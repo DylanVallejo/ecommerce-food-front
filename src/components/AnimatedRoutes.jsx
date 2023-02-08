@@ -10,6 +10,7 @@ import Login from "../pages/LogIn";
 import CategoryFormPage from "../pages/CategoryFormPage";
 import ProductForm from "../pages/ProductForm";
 import SingIn from "../pages/SingIn";
+import UsersData from "./UsersData";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -24,7 +25,13 @@ function AnimatedRoutes() {
         <Route path="/category" element={<CategoryFormPage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
+
         <Route path="/agregar" element={<ProductForm />} />
+
+        <Route path="/account" element={<UsersData />} />
+       
+        {/* <Route path="/agregar" element={<Agregarpage />} /> */}
+
       </Routes>
     </AnimatePresence>
   );

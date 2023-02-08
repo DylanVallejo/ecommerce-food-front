@@ -55,8 +55,6 @@ const LoginForm = ( ) => {
             console.log(error)
         })
         
-        
-        
     }
 
     return (
