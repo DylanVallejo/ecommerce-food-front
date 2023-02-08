@@ -1,0 +1,129 @@
+.main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: white;
+    min-width: 55rem;
+}
+
+.form {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.section {
+    min-width: 22rem;
+    margin-bottom: 1rem;
+}
+
+.section label {
+    display: block;
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.section input,
+.section textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 0.5px solid;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.section textarea {
+    min-height: 6.5rem;
+}
+
+.price {
+
+    background-image: url("../resources/money.svg");
+
+}
+
+.height {
+    background-image: url("../resources/height.svg");
+}
+
+.weight {
+    background-image: url("../resources/weight.svg");
+}
+
+.stock {
+    background-image: url("../resources/open-box.svg");
+}
+
+.category {
+    background-image: url("../resources/category.svg");
+}
+
+.price,
+.height,
+.weight,
+.stock,
+.category {
+    text-align: right;
+    background-size: 1.15rem 1.15rem;
+    background-repeat: no-repeat;
+    background-position: 1rem;
+}
+
+.offerSection {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    text-align: left;
+    margin: 1rem auto;
+    font-size: 1rem;
+}
+
+.addFile {
+    min-width: 22rem;
+}
+
+.addFile label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addFile label div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.addFile label img {
+    max-width: 2rem;
+}
+
+.addFile label button {
+    justify-self: flex-end;
+    background: transparent;
+    border: none;
+}
+
+.addFile input {
+    display: none;
+}
+
+.btn {
+    background-color: rgb(248, 98, 2);
+    padding: 1rem 4rem;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

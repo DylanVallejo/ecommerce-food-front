@@ -124,7 +124,7 @@ function Slide({ slide, offset }) {
             {slide.apellido}
           </h3>
           <h3>
-            <a>
+            <a href={slide.link2} target="_blank" rel="noreferrer">
               <i className="fa-brands fa-github"></i>
             </a>
             <a href={slide.link1} target="_blank" rel="noreferrer">
