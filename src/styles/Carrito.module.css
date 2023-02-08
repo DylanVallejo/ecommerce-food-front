@@ -1,4 +1,4 @@
-.popup-content {
+/* .popup-content {
     margin: auto;
     background: rgb(219, 15, 15);
     width: 50%;
@@ -14,7 +14,7 @@
 }
 
 .popup-overlay {
-    /* background: rgba(0, 0, 0, 0.5); */
+
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
     z-index: 5;
@@ -32,7 +32,6 @@
     padding: 2em;
     border: 1px solid black;
     border-radius: 20px;
-    /* box-shadow: 1px 1px 100px rgba(193, 188, 188, 0.643) */
     box-shadow: -2px 1px 126px 46px rgba(229,200,169,1);
     -webkit-box-shadow: -2px 1px 126px 46px rgba(229,200,169,1);
     -moz-box-shadow: -2px 1px 126px 46px rgba(229,200,169,1);
@@ -54,4 +53,4 @@
         opacity: 1;
         box-shadow: 0 0 500px rgba(241, 241, 241, 0);
     }
-}
+} */

@@ -15,6 +15,8 @@ function App() {
     role:""
     
   })
+  console.log(userContext)
+  console.log("userContext")
   
   // value={{token,role}}
   

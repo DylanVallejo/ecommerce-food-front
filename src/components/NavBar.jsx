@@ -1,7 +1,7 @@
 
 import { NavLink } from "react-router-dom";
 import '../styles/NavBar.css'
-import PopUp from "./PopUp";
+// import PopUp from "./PopUp";
 import MyContext from "../context/MyContext";
 import { useContext } from "react";
 
@@ -28,13 +28,10 @@ function NavBar() {
             context.userContext.role === "ADMIN" &&
             <li className="navlinks"><NavLink to="/stats" ><button className="buttonLinks">Stats</button></NavLink></li>
           }
-        
-        
       </ul>
       <ul className="ulContainer">
-        {/* <li className="navlinks"><NavLink to="/cart"><i className="fa-solid fa-cart-shopping"> <PopUp/> </i></NavLink></li> */}
-         <PopUp/> 
-        
+        <li className="navlinks"><NavLink to="/cart"><i className="fa-solid fa-cart-shopping"> </i></NavLink></li>
+          {/* <PopUp/>  */}
         <li className="navlinks"><NavLink to="/account"><i className="fa-solid fa-user"></i></NavLink></li>
       </ul>
     </header>

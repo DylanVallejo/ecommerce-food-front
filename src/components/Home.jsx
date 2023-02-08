@@ -5,7 +5,7 @@ import "../styles/Home.css";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
 import { useSelector, useDispatch } from "react-redux";
-import { holaReducer, getData } from "../features/data/dataSlice";
+import { holaReducer, getData , createOrder,getOrderStatus} from "../features/data/dataSlice";
 import { motion } from "framer-motion";
 // import { LayoutGroup } from "framer-motion";
 
@@ -24,13 +24,17 @@ function Home() {
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
-    const { entities, loading } = useSelector((state) => state.data);
+    const { entities, loading, order } = useSelector((state) => state.data);
     console.log(entities)
-
+    console.log(order)
+    
+// actualizar los datos de la order con un get 
 
     useEffect(() => {
+        // dispatch(getOrderStatus())
         if (entities.length < 1) {
         dispatch(getData());
+        dispatch(createOrder())
         }
     }, [entities, dispatch]);
 
@@ -119,7 +123,7 @@ function Home() {
                 </ul>
             </div>
             {/* <input type="text" value={searchTextBar} className = "searchByTextBar" onChange={ e => { setSearchTextBar(e.target.value) } } placeholder="Search Product" /> */}
-            <input type="text" name="fruit" list="fruits" autocomplete="off" value={barFilter} className = "searchByTextBar"  onChange={e=>setTextFilter(e.target.value)} placeholder="Search Product" />
+            <input type="text" name="fruit" list="fruits" autocomplete="off" value={textFilter} className = "searchByTextBar"  onChange={e=>setTextFilter(e.target.value)} placeholder="Search Product" />
             <datalist id="fruits">
                 <option>Hamburguesas</option>
                 <option>Alitas</option>
@@ -140,18 +144,26 @@ function Home() {
             {!loading ? (
                 entities
                 .filter((val) => {
-                    if (barFilter === " " && textFilter === " " ) {
+                    if (barFilter === " " || textFilter === " " ) {
                         return val;
                     } else if (
-                        val.category.name
-                        .toLowerCase()
-                        .includes(barFilter.toLowerCase() && val.productName.toLowerCase().includes(textFilter.toLowerCase()))
-                    ) {
+                        val.category.name.toLowerCase().includes(barFilter.toLowerCase())
+                        && val.productName.toLowerCase().includes(textFilter.toLowerCase())){
                         return val;
                     }
                 })
                 .map((item, key) => {
+                    
+                    // si no encuentra debe retornar esto
+                    // else if( val.indexOf(barFilter, textFilter) === -1){
+                    //     return(
+                    //         <div>
+                    //             No existen Elementos
+                    //         </div>
+                    //     )
+                    // }
                     return (
+                        
                         <motion.div
                         transition={{
                             opacity: { ease: "linear" },

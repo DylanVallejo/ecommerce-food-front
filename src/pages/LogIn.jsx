@@ -4,6 +4,7 @@ import styles from "../styles/Login.module.css";
 import logo from "../resources/logofood_transparente.png";
 import axios from "axios";
 import MyContext from '../context/MyContext';
+import jwt_decode from "jwt-decode";
 
 
 
@@ -50,13 +51,16 @@ const LogIn = ( props ) => {
         .then((res) => {
           console.log(res)
           setState("Acceso correcto. Redirigiendo...");
+          let tkn = res.data.token
+          let decoded = jwt_decode(tkn)
+          console.log(decoded)
+          console.log("decoded")
+          
           context.setUserContext({
             role:res.data.role,
-            token:res.data.role
+            token: decoded
           })
           // console.log(userRoleContext)
-          
-          
           navigate("/");
           
         })

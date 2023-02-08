@@ -87,8 +87,8 @@
     margin-bottom: 0.5em;
     height: 3em;
     color: black;
-    /* text-align: center; */
-    /* text-align: margin-right(10px); */
+    outline:none;
+    border-radius: 10px;
 }
 .searchByTextBar:focus{
     
