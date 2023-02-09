@@ -4,7 +4,7 @@ import { useParams ,useNavigate} from 'react-router-dom'
 import '../styles/Detalle.css'
 import Loader from "../components/Loader"
 import { useSelector, useDispatch } from "react-redux";
-import {getOrderStatus} from "../features/data/dataSlice";
+import {setItemsArray} from "../features/data/dataSlice";
 
 
 
@@ -12,7 +12,8 @@ function Detalle() {
   
   const [detail2, setDetail2] = useState(null);
   
-  const { order } = useSelector((state)=> state.data)
+  const { order,orderItems } =  useSelector(  (state)=>  state.data)
+  
   const dispatch = useDispatch();
   
   const{id} = useParams();
@@ -22,8 +23,8 @@ function Detalle() {
   
   
   // el numero final debe ser correspondiente a la orden que queremos modificar es decir dinamico
-  const urlAddProduct = `http://localhost:8082/api/orderproduct/orderproduct/1`
-  const updateOrder = `http://localhost:8082/api/order/1`
+  // const urlAddProduct = `http://localhost:8082/api/orderproduct/orderproduct/1`
+  // const updateOrder = `http://localhost:8082/api/order/1`
   
   useEffect(() => {
     axios.get(urlBack)
@@ -37,46 +38,16 @@ function Detalle() {
     e.preventDefault() ;
     navigate("/")
   }
-  
-  // useEffect(() => {
-  //   axios.get(updateOrder)
-  //   .then(res=>{
-  //     dispatch(getOrderStatus(res.data))
-  //   })
 
-  // }, [])
-  
-  
-  
-  const handleAddProductToOrder = (e) => {
-    // e.preventDefault();
-    console.log(detail2.id)
-    axios.post(urlAddProduct,
-      {
-        "status": true,
-        "productId": detail2.id, 
-        "price": 10,
-        "quantity": 3
-      }
-    ).then(res =>{
-      console.log(res)
-      console.log("creando producto")
-      
-    }).then(
-      axios.get(updateOrder)
-      .then(res=>{
-        dispatch(getOrderStatus(res.data))
-      })
-    )
-    .catch(error=>{
-      console.log(error)
-    })
+  const sendToOrderArray =  async () => {
     
+    dispatch(setItemsArray(detail2));
+    console.log("orderItems desde detalle 2")
+    
+    console.log(orderItems)
+    console.log( order)
+      
   }
-  
-  
-  
-  
 
   return (
     <>
@@ -94,12 +65,6 @@ function Detalle() {
               </div>
               <ol className='listDetailContainer'>
                 <li>{detail2.description}</li>
-                {/* <li>queso americano</li>
-                <li>tomates</li>
-                <li>lechuga</li>
-                <li>mayonesa</li>
-                <li>pickles</li>
-                <li>cebollas en rodajas.</li> */}
               </ol>
               <ol className='listDetailContainer'> 
                 <h3 className='detalleTitlesFonts'>Categoria</h3>
@@ -113,7 +78,7 @@ function Detalle() {
               
             </div>
             <div>
-              <button className='btnDetalleAgregar' onClick={e => {handleAddProductToOrder(e) }}>Agregar al pedido</button>
+              <button className='btnDetalleAgregar' onClick={sendToOrderArray}>Agregar al pedido</button>
               <button className='btnDetalleRegresar' onClick={handleNavigate}>Regresar</button>
             </div>
           </div>

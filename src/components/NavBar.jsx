@@ -22,6 +22,8 @@ function NavBar() {
         <li className="navlinks"><NavLink to="/ofertas"><button className="buttonLinks">Ofertas</button></NavLink></li>
         <li className="navlinks"><NavLink to="/about" ><button className="buttonLinks">About us </button></NavLink></li>
         <li className="navlinks"><NavLink to="/contact" ><button className="buttonLinks">Contact Us </button></NavLink></li>
+        <li className="navlinks"><NavLink to="/cartj" ><button className="buttonLinks">cartj </button></NavLink></li>
+        
         { context.userContext.role === "ADMIN" &&
           <li className="navlinks"><NavLink to="/product" ><button className="buttonLinks">Add Product</button></NavLink></li>}
           {

@@ -12,6 +12,7 @@ import ProductForm from "../pages/ProductForm";
 import SingIn from "../pages/SingIn";
 import UsersData from "./UsersData";
 import Carrito from "./Carrito";
+import Carritoj from "./Carritoj";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -23,12 +24,14 @@ function AnimatedRoutes() {
         <Route path="/singin" element={<SingIn />} />
         <Route path="/detalle/:id" element={<DetallePage />} />
         <Route path="/cart" element={<Carrito />} />
+        <Route path="/cartj" element={<Carritoj  />} />
         <Route path="/ofertas" element={<OfertasPage />} />
         <Route path="/category" element={<CategoryFormPage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
 
         <Route path="/agregar" element={<ProductForm />} />
+        
 
         <Route path="/account" element={<UsersData />} />
 

@@ -5,7 +5,7 @@ import "../styles/Home.css";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
 import { useSelector, useDispatch } from "react-redux";
-import { holaReducer, getData , createOrder,getOrderStatus} from "../features/data/dataSlice";
+import { getData , getOrderStatus} from "../features/data/dataSlice";
 import { motion } from "framer-motion";
 // import { LayoutGroup } from "framer-motion";
 
@@ -34,7 +34,7 @@ function Home() {
         // dispatch(getOrderStatus())
         if (entities.length < 1) {
         dispatch(getData());
-        dispatch(createOrder())
+        // dispatch(createOrder())
         }
     }, [entities, dispatch]);
 
@@ -123,7 +123,7 @@ function Home() {
                 </ul>
             </div>
             {/* <input type="text" value={searchTextBar} className = "searchByTextBar" onChange={ e => { setSearchTextBar(e.target.value) } } placeholder="Search Product" /> */}
-            <input type="text" name="fruit" list="fruits" autocomplete="off" value={textFilter} className = "searchByTextBar"  onChange={e=>setTextFilter(e.target.value)} placeholder="Search Product" />
+            <input type="text" name="fruit" list="fruits" autoComplete="off" value={textFilter} className = "searchByTextBar"  onChange={e=>setTextFilter(e.target.value)} placeholder="Search Product" />
             <datalist id="fruits">
                 <option>Hamburguesas</option>
                 <option>Alitas</option>
