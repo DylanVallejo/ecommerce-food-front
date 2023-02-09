@@ -1,26 +1,14 @@
 import { createAsyncThunk,createSlice, } from "@reduxjs/toolkit";
 import axios from "axios";
+
 const mainUrl = `http://localhost:8082/api/product`;
-const orderUrl = `http://localhost:8082/api/order`;
 
 const initialState = {
     entities: [],
     loading: false,
-    order: null
+    order: [ ],
+    orderItems: [ ],
 }
-
-// const initOrder = {
-    
-//     "shipping" : 1,
-//     "associate":{ 
-//         "id": 1
-//     },
-//     "orderState": {
-//         "id":1
-//     },
-//     "cost": 3
-    
-// };
 
 export const getData = createAsyncThunk(
     "db/getData",
@@ -31,40 +19,24 @@ export const getData = createAsyncThunk(
 )
 
 
-export const createOrder = createAsyncThunk(
-    "db/createOrder",
-    async () => {
-        const order = await axios.post(orderUrl , {
-    
-            "shipping" : 1,
-            "associate":{ 
-                "id": 1
-            },
-            "orderState": {
-                "id":1
-            },
-            "cost": 3
-            
-        })
-        return order.data
-    }
-)
-
 export const dataSlice = createSlice({
     name: 'data',
     initialState,
     reducers: {
-        //
-        holaReducer: (state, {payload}) => {
-            console.log("hola desde redux")
-            console.log("state")
-            
-        },
+
         getOrderStatus: (state, {payload}) => {
             console.log('hola desde payload')
             console.log(payload)
             state.order = payload
-        }
+        },
+        setItemsArray: (state , {payload} ) => {
+            console.log('lelgo al paylaod?');
+            console.log(payload);
+            payload['quantity'] = 1;
+            state.orderItems = [ payload ,  ...state.orderItems ]
+            console.log(state.orderItems);
+            
+        },
         
     },
     extraReducers: {
@@ -78,17 +50,12 @@ export const dataSlice = createSlice({
         [getData.rejected]: (state) => {
             state.loading = false
         },
-        [createOrder.fulfilled]: (state, { payload }) => {
-            console.log(payload)
-            state.order = payload
-        }
+
     }
 })
-//
-
 
 // exportando los reducers
-export const { holaReducer ,getOrderStatus} = dataSlice.actions
+export const { getOrderStatus, setItemsArray} = dataSlice.actions
 
 
 
