@@ -24,9 +24,8 @@ function Home() {
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
-    const { entities, loading, order } = useSelector((state) => state.data);
+    const { entities, loading } = useSelector((state) => state.data);
     console.log(entities)
-    console.log(order)
     
 // actualizar los datos de la order con un get 
 

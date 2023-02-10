@@ -1,56 +1,131 @@
-/* .popup-content {
-    margin: auto;
-    background: rgb(219, 15, 15);
-    width: 50%;
-    padding: 5px;
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* font-family: 'Lobster', cursive; */
+
+
+.carritoContainer{
+    height: 65vh;
+    width: 60%;
+    border: 1px solid rgb(53, 52, 52);
+    margin: 1em auto;
+    border-radius: 30px;
+    background-color: #ffe5acce;
+    position: relative;
+}
+
+.allProductsContainer{
+    width: 90%;
+    box-sizing: content-box;
+    background-color: #F24726;
+    margin: 1em auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    border: 2px solid rgb(53, 52, 52);
     
 }
-    .popup-arrow {
-    color: rgb(255, 255, 255);
-}
-    [role='tooltip'].popup-content {
-    width: 200px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+
+.cartQuantityContainer{
+    display: flex;
+    flex-direction: column;
 }
 
-.popup-overlay {
+.productCar{
+    margin: 5px;
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+    
+}
 
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(3px);
-    z-index: 5;
+.productQuantity{
+    margin: 5px;
+    color: white;
+    font-family: 'Lobster', cursive;
 }
-    [data-popup='tooltip'].popup-overlay {
-    background: transparent;
-}
-.containerPopup{
+
+.removeBtnCart{
     position: absolute;
-    top: 50px;
-    left: -840px;
-    width: 30em;
-    height: 30em;
-    background-color: rgba(211, 165, 65, 0.942);
-    padding: 2em;
+    bottom: 1em;
+    left: 50em;
+    margin: 10px;
+    height: 3em;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bolder;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
     border: 1px solid black;
-    border-radius: 20px;
-    box-shadow: -2px 1px 126px 46px rgba(229,200,169,1);
-    -webkit-box-shadow: -2px 1px 126px 46px rgba(229,200,169,1);
-    -moz-box-shadow: -2px 1px 126px 46px rgba(229,200,169,1);
+    -webkit-box-shadow: -5px 15px 10px -2px rgba(0,0,0,0.31);
+    -moz-box-shadow: -5px 15px 10px -2px rgba(0,0,0,0.31);
+    box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
+}
+.removeBtnCart:hover {
+    background-color: #f13b3b;
+    box-shadow: 0px 7px 10px rgba(239, 239, 209, 0.4) ;
+    color: #fff;
+    transform: translateY(-1px);
 }
 
-@keyframes anvil {
-    0% {
-        transform: scale(1) translateY(0px);
-        opacity: 0;
-        box-shadow: 0 0 0 rgba(241, 241, 241, 0);
-    }
-    1% {
-        transform: scale(0.96) translateY(10px);
-        opacity: 0;
-        box-shadow: 0 0 0 rgba(241, 241, 241, 0);
-    }
-    100% {
-        transform: scale(1) translateY(0px);
-        opacity: 1;
-        box-shadow: 0 0 500px rgba(241, 241, 241, 0);
-    }
-} */
+.quantityBtnsCart{
+    height: 2em;
+    width: 3em;
+    border-radius: 3em;
+    margin: 1em;
+    font-size: 1em  ;
+}
+.quantityBtnsCart:nth-child(1):hover{
+    background-color: #1aff01;
+    box-shadow: 0px 7px 7px rgba(161, 161, 154, 0.4) ;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.quantityBtnsCart:nth-child(2):hover{
+    background-color: #f13b3b;
+    box-shadow: 0px 7px 7px rgba(161, 161, 154, 0.4) ;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btnComprar{
+    position: absolute;
+    bottom: 2em;
+    left: 65em;
+    margin: 10px;
+    height: 4em;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bolder;
+    color: #000;
+    background-color: rgb(220, 210, 14);
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid black;
+    -webkit-box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
+    -moz-box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
+    box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
+}
+
+.btnComprar:hover {
+    background-color: #33f111;
+    box-shadow: 0px 15px 20px rgba(202, 199, 32, 0.4) ;
+    color: #fff;
+    transform: translateY(-7px);
+}
