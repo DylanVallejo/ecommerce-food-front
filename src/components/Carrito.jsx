@@ -5,10 +5,16 @@ import { getOrderStatus } from "../features/data/dataSlice";
 
 import styles from '../styles/Carrito.module.css'
 import axios from 'axios';
+import Swal from 'sweetalert2'
+// import withReactContent from 'sweetalert2-react-content'
+
 
 
 
 function Carrito(  ) {
+    
+    
+    // const MySwal = withReactContent(Swal)
     
     const {orderItems} =  useSelector( (state) =>  state.data);
 
@@ -16,16 +22,12 @@ function Carrito(  ) {
     
     const orderUrl = `http://localhost:8082/api/order`;
     
-    
-    
-    const [contador, setContador] = useState(0)
-
-    
+        
     const [clonOrderItems, setClonOrderItems] = useState( null );
     
     const [idOrder,setIdOrder] = useState( null );
     
-    const urlAddProduct = `http://localhost:8082/api/orderproduct/orderproduct/6`
+    const urlAddProduct = `http://localhost:8082/api/orderproduct/orderproduct/7`
     
     
     
@@ -37,24 +39,15 @@ function Carrito(  ) {
         
         let initalArray = structuredClone(orderItems) ;
         setClonOrderItems(initalArray)
-        // console.log("ejecuta")
         
     }, [orderItems])
     
-    // console.log("clonOrderItems")
 
-    // console.log(clonOrderItems)
     
     const handleCarrito  = (e,clonOrderItems) => {
-        
-        // console.log(" order items dentro de handle carrito")
-        
-        // console.log(clonOrderItems)
-        
-        
+
         e.preventDefault();
-        
-        
+
         axios.post(orderUrl, {
 
             "shipping" : 1,
@@ -69,21 +62,17 @@ function Carrito(  ) {
         }).then( res => {
             dispatch(getOrderStatus(res.data));
             console.log("res 1")
-            // console.log(clonOrderItems)
-
             console.log(res)
             setIdOrder(res.data.id)
             
         }).then(async  () => { 
             if( clonOrderItems !== undefined){
                 for( let i=0 ; i <= clonOrderItems.length ; i++ ){
-                    console.log("ciclo");
-                    console.log(clonOrderItems);
-                    console.log(clonOrderItems[i].id);
-                    console.log(clonOrderItems[i].price);
-                    console.log(clonOrderItems[i].quantity);
-                    
-                    
+                    // console.log("ciclo");
+                    // console.log(clonOrderItems);
+                    // console.log(clonOrderItems[i].id);
+                    // console.log(clonOrderItems[i].price);
+                    // console.log(clonOrderItems[i].quantity);
                     console.log(clonOrderItems)
                     await axios.post( 
                         urlAddProduct,   {
@@ -103,23 +92,56 @@ function Carrito(  ) {
                 console.log("no exsite")
             }
         })
+        
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Compra realizada',
+            showConfirmButton: false,
+            timer: 1500
+        })
 
     }
     
     const setQuantity = (key,e, newQuantity) => {
         e.preventDefault();
         let updateItem = structuredClone(clonOrderItems) ;
-        // console.log(updateItem);
-        // console.log(updateItem[0].quantity)
-        // console.log(newQuantity+"cantidad de map");
         updateItem[key].quantity = newQuantity +1;      
         setClonOrderItems(updateItem)
     }
     
-    const contadorSumar = ( e ) => {
+    const setMinusQuantity = (key,e, newQuantity) => {
         e.preventDefault();
-        setContador( contador + 1 )
+        let updateItem = structuredClone(clonOrderItems) ;
+        
+        if(updateItem[key].quantity > 1 ){
+            updateItem[key].quantity = newQuantity - 1;      
+            setClonOrderItems(updateItem)
+        }else{
+            // MySwal.fire("La cantidad minima es 1")
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'La cantidad minima es 1 !!!',
+                // footer: '<a href="">Why do I have this issue?</a>'
+            })
+        }
+    
     }
+    
+    const eliminarProducto = (key,e) => {
+        e.preventDefault();
+        let updateItem = structuredClone(clonOrderItems);
+        updateItem.filter( key ).slice();
+        setClonOrderItems(updateItem)
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Producto eliminado!!!',
+            // footer: '<a href="">Why do I have this issue?</a>'
+        })
+    }
+
     
     return (
         <div className={styles.containerPopup}>       
@@ -131,18 +153,13 @@ function Carrito(  ) {
                     return(
                         <div key={key}>
                             {key}
-                            <p><span>{item.productName}</span> <span>cantidad: {item.quantity} <button onClick={e=> setQuantity(key,e,item.quantity)}>+</button></span> <button>eliminar</button>  </p>
+                            <p><span>{item.productName}</span> <span>cantidad: {item.quantity} <button onClick={e=> setQuantity(key,e,item.quantity)}>+</button>  <button onClick={e=> setMinusQuantity(key,e,item.quantity)}>-</button></span> <button onClick={(e)=>{eliminarProducto(key,e)}}>eliminar</button>  </p>
                         </div>
                     )
                 })
             }
                 <button type='submit' >submit</button>
             </form>
-
-            <button onClick={e=> contadorSumar(e)}>
-                contador
-            </button>
-            <p>{contador}</p>
             
         </div>
     )

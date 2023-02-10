@@ -3,16 +3,19 @@ import  { useEffect ,useState} from 'react'
 import { useParams ,useNavigate} from 'react-router-dom'
 import '../styles/Detalle.css'
 import Loader from "../components/Loader"
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {setItemsArray} from "../features/data/dataSlice";
+import Swal from 'sweetalert2'
+// import withReactContent from 'sweetalert2-react-content'
 
 
 
 function Detalle() {
   
+    
   const [detail2, setDetail2] = useState(null);
   
-  const { order,orderItems } =  useSelector(  (state)=>  state.data)
+  // const { order,orderItems } =  useSelector(  (state)=>  state.data)
   
   const dispatch = useDispatch();
   
@@ -42,10 +45,13 @@ function Detalle() {
   const sendToOrderArray =  async () => {
     
     dispatch(setItemsArray(detail2));
-    console.log("orderItems desde detalle 2")
-    
-    console.log(orderItems)
-    console.log( order)
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Producto Añadido al carrito',
+      showConfirmButton: false,
+      timer: 1000
+    })
       
   }
 

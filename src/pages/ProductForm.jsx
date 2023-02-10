@@ -14,7 +14,7 @@ function ProductForm() {
   const [itsInOffers, setItsInOffers] = useState(false);
   const [discount, setDiscount] = useState(0);
   const [stock, setStock] = useState(0);
-  // const [categoryId, setCategoryId] = useState(null);
+  const [categoryId, setCategoryId] = useState(0);
   const [image, setImage] = useState(null);
 
   const createProduct = (e) => {
@@ -32,7 +32,7 @@ function ProductForm() {
       image: image,
       stock: stock,
       category: {
-        id: 1,
+        id: categoryId,
       },
     };
 
@@ -98,13 +98,13 @@ function ProductForm() {
                 />
               </section>
               <section className={styles.section}>
-                <label htmlFor="productStock">Set the product category: </label>
+                <label htmlFor="productCategory">Set the product category: </label>
                 <input
                   id="category"
                   type="number"
-                  name="productStock"
+                  name="productCategory"
                   value={stock}
-                  onChange={(e) => setStock(e.target.value)}
+                  onChange={(e) => setCategoryId(e.target.value)}
                   className={styles.category}
                 />
               </section>
