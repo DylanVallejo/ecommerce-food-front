@@ -1,13 +1,19 @@
 .contactContainer{
-    height: 70vh;
-    width: 95%;
+    //height: 70vh;
+    width: 60%;
     margin: 1em auto;
     border-radius: 30px;
     background-color: #ffe5acce;
     position: relative;
     display: flex;
     padding: 1em;
-    flex-direction: column;
+    flex-direction: column; 
+}
+
+.imgfContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .formContainer{
     display: flex;
@@ -32,9 +38,7 @@
     display: flex;
     height: 300px;
     width: 300px;
-    position: absolute;
-    top: 10em;
-    left: 60em;
+
 }
 .contatcInputForm button{
     width: 100%;
