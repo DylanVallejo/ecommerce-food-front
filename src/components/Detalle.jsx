@@ -135,15 +135,15 @@ function Detalle() {
                 <li>{ detail2.category.name }</li>
               </ol>
               
-              <ol className='listDetailContainer'>
+              <ol className={styles.listDetailContainer}>
                 {
-                  commentsArray.length < 1  ? <h3 className='detalleTitlesFonts'>NO EXISTEN COMENTARIOS</h3> :  <h3 className='detalleTitlesFonts'>COMENTARIOS</h3>
+                  commentsArray.length < 1  ? <h3 className={styles.detalleTitlesFonts}>NO EXISTEN COMENTARIOS</h3> :  <h3 className={styles.detalleTitlesFonts}>COMENTARIOS</h3>
                 }
                 
                 {
                   commentsArray !== null ? commentsArray.map((item,key)=>{
                     return(
-                      <div key={key} className="commentContainer">
+                      <div key={key} className={styles.commentContainer}>
                         <p>{item.text}</p>
                         <p>{item.createdBy}</p>
                       </div>
