@@ -13,6 +13,15 @@
 .formContainerUserInfo{
     margin: auto;
 }
+
+.dataSection{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    padding: 1em;
+}
 .sectionUserData{
     display: flex;
     flex-direction: column;
@@ -38,11 +47,7 @@
     font-size: 1rem;
 }
 
-
-
-
 .updateValues{
-    position: absolute;
     top: 11em;
     left: 80em;
     margin: 10px;

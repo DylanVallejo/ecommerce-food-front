@@ -1,11 +1,12 @@
 import axios from 'axios';
 import  { useEffect ,useState} from 'react'
 import { useParams ,useNavigate} from 'react-router-dom'
-import '../styles/Detalle.css'
 import Loader from "../components/Loader"
 import { useDispatch } from "react-redux";
 import {setItemsArray} from "../features/data/dataSlice";
 import Swal from 'sweetalert2'
+import styles from "../styles/Detalle.module.scss";
+// import withReactContent from 'sweetalert2-react-content'
 
 function Detalle() {
       
@@ -116,21 +117,21 @@ function Detalle() {
     <>
       {
         detail2 !== null ? 
-        <div className='detailContainer'>
-          <h2 className='detaileTitle'>
+        <div className={styles.detailContainer}>
+          <h2 className={styles.detaileTitle}>
             {detail2.productName}
           </h2>
-          <div className='detailInfoContainer'>
-              <div className='detailPriceContainer'>
+          <div className={styles.detailInfoContainer}>
+              <div className={styles.detailPriceContainer}>
                 <p>${detail2.price}</p>
                 <p>Disponibilidad: {detail2.stock} unidades en Stock </p>
-                <h3 className='detalleTitlesFonts'>DESCRIPCION</h3>
+                <h3 className={styles.detalleTitlesFonts}>DESCRIPCION</h3>
               </div>
-              <ol className='listDetailContainer'>
+              <ol className={styles.listDetailContainer}>
                 <li>{detail2.description}</li>
               </ol>
-              <ol className='listDetailContainer'> 
-                <h3 className='detalleTitlesFonts'>Categoria</h3>
+              <ol className={styles.listDetailContainer}> 
+                <h3 className={styles.detalleTitlesFonts}>Categoria</h3>
                 <li>{ detail2.category.name }</li>
               </ol>
               
@@ -152,16 +153,18 @@ function Detalle() {
               </ol>
               
           </div>
-          <div className='detailImgContainer'>
+          <div className={styles.detailImgContainer}>
             <div>
-              <img src={detail2.image} className='detailPageImg slide-right'  alt='referencia'/>
-              <button className='btnDetalleMejorar'>Mejorar Combo</button>
+              <img src={detail2.image} className={styles.detailPageImg} slide-right  alt='referencia'/>
+              <button className={styles.btnDetalleMejorar}>Mejorar Combo</button>
               
             </div>
             <div>
-              <button className='btnDetalleAgregar' onClick={e=> createComments(e)}>COMENTARIOS</button>
-              <button className='btnDetalleAgregar' onClick={sendToOrderArray}>Agregar al pedido</button>
-              <button className='btnDetalleRegresar' onClick={handleNavigate}>Regresar</button>
+
+              <button className={styles.btnDetalleAgregar} onClick={e=> createComments(e)}>COMENTARIOS</button>
+              <button className={styles.btnDetalleAgregar} onClick={sendToOrderArray}>Agregar al pedido</button>
+              <button className={styles.btnDetalleRegresar} onClick={handleNavigate}>Regresar</button>
+
             </div>
           </div>
         </div>

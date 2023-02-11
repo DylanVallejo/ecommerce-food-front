@@ -8,18 +8,30 @@ function Carrusel() {
     <ul className="slides">
       <li className="slide" id="slide1">
         <a>  {/*  agreagar los href a las etiquetas a   href="#"*/}
-          <img src='../img/banner/1.jpg' alt="ofertas 1"/>
+          <img src='../img/banner/3.jpg' alt="ofertas 1"/>
         </a>
       </li>
       <li className="slide" id="slide2">
         <a >
-          <img src='../img/banner/2.jpg' alt="ofertas 2"/>
+          <img src='../img/banner/4.jpg' alt="ofertas 2"/>
         </a>
       </li>
       <li className="slide" id="slide3">
         <a>
           
-          <img src='../img/banner/3.jpg'  alt="ofertas 3"/>
+          <img src='../img/banner/5.jpg'  alt="ofertas 3"/>
+        </a>
+      </li>
+      <li className="slide" id="slide3">
+        <a>
+          
+          <img src='../img/banner/6.jpg'  alt="ofertas 3"/>
+        </a>
+      </li>
+      <li className="slide" id="slide3">
+        <a>
+          
+          <img src='../img/banner/7.jpg'  alt="ofertas 3"/>
         </a>
       </li>
     </ul>
