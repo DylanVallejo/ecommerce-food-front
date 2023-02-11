@@ -22,7 +22,7 @@ function NavBar() {
         <li className="navlinks"><NavLink to="/ofertas"><button className="buttonLinks">Ofertas</button></NavLink></li>
         <li className="navlinks"><NavLink to="/about" ><button className="buttonLinks">About us </button></NavLink></li>
         <li className="navlinks"><NavLink to="/contact" ><button className="buttonLinks">Contact Us </button></NavLink></li>
-        <li className="navlinks"><NavLink to="/cartj" ><button className="buttonLinks">cartj </button></NavLink></li>
+        {/* <li className="navlinks"><NavLink to="/cartj" ><button className="buttonLinks">cartj </button></NavLink></li> */}
         
         { context.userContext.role === "ADMIN" &&
           <li className="navlinks"><NavLink to="/product" ><button className="buttonLinks">Add Product</button></NavLink></li>}
@@ -32,7 +32,7 @@ function NavBar() {
           }
       </ul>
       <ul className="ulContainer">
-        <li className="navlinks"><NavLink to="/cart"><i className="fa-solid fa-cart-shopping"> </i></NavLink></li>
+        <li className="navlinks"><NavLink to="/cartj"><i className="fa-solid fa-cart-shopping"> </i></NavLink></li>
           {/* <PopUp/>  */}
         <li className="navlinks"><NavLink to="/account"><i className="fa-solid fa-user"></i></NavLink></li>
       </ul>
