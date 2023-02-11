@@ -26,17 +26,21 @@
 }
 
 .section label {
-    display: block;
-    font-size: 1rem;
-    text-align: left;
-    margin-bottom: 0.5rem;
+   margin-left: 0.5rem;
+   padding: 0 0.25rem;
+   transition: all 0.1s ease;
+   /*
+   background-color: white;
+   border-radius: 1em;
+   border-top: solid #EDA919;
+   border-left: solid #EDA919;*/
 }
 
 .section input,
 .section textarea {
     width: 90%;
     padding: 0.75rem;
-    border: 0.5px solid;
+    border: 1px solid #EDA919;
     border-radius: 5px;
     font-size: 1rem;
 }

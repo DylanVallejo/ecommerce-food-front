@@ -7,10 +7,10 @@
 }
 
 .card {
-    background-color: white;
+    background-color:#ffe5acc4;
     max-width: 40%;
     max-height: 45rem;
-    border-radius: 12px;
+    border-radius: 1em;
     padding: 3rem;
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 }

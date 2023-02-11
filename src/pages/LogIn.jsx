@@ -1,6 +1,6 @@
 import React, { useState ,useContext} from "react";
 import { useNavigate, Link } from "react-router-dom";
-import styles from "../styles/Login.module.css";
+import styles from "../styles/Login.module.scss";
 import logo from "../resources/logofood_transparente.png";
 import axios from "axios";
 import MyContext from '../context/MyContext';
@@ -82,7 +82,7 @@ const LogIn = ( props ) => {
         <h1>Bienvenido</h1>
         <p>Inicia sesión para continuar con tus compras</p>
         <div className={styles.mail}>
-          <label>Correo electrónico</label>
+          <label>E-mail</label>
           <input
             value={email}
             onChange={emailHandler}

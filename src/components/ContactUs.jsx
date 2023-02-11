@@ -1,18 +1,17 @@
 import React from 'react'
-import "../styles/ContactUs.css"
+import styles from '../styles/ContactUs.module.scss'
 
 function ContactUs() {
   return (
-    <div className='contactContainer'>
+    <div className={styles.contactContainer}>
         <h2>Ready to connect whit me?</h2>
-        <form className='formContainer'>
+        <form className={styles.formContainer}>
           <h4 >Let's connect</h4>
-          <div >
-            <input type="text" placeholder="Name" className='contatcInputForm' />
-            <input type="text" placeholder="Last Name" className='contatcInputForm'/>
-            <input type="email" placeholder="Email Adress" className='contatcInputForm'/>
+          <div className={styles.contatcInputForm}>
+            <input type="text" placeholder="Name"  />
+            <input type="text" placeholder="Last Name" />
+            <input type="email" placeholder="Email Adress" />
             <textarea 
-              className='contatcInputForm'
               name="story"
               rows="5" 
               cols="33"
@@ -21,7 +20,7 @@ function ContactUs() {
             
             <button>Get in Touch</button>
           </div>
-          <img src={require("../resources/logofood_k_queso.png")}  className="contactUsImg" alt='kruger-img'/>
+          <img src={require("../resources/logofood_k_queso.png")}  className={styles.contactUsImg} alt='kruger-img'/>
         </form>
     </div>
 )

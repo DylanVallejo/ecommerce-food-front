@@ -1,14 +1,13 @@
 .containerUserForm{
-    height: 65vh;
+   
     width: 95%;
-    border: 1px solid rgb(53, 52, 52);
+    //border: 1px solid rgb(53, 52, 52);
     margin: 1em auto;
     border-radius: 30px;
     background-color: #ffe5acce;
     position: relative;
     display: flex;
-    /* margin: auto; */
-    
+    padding: 1em;
 }
 .formContainerUserInfo{
     margin: auto;
@@ -26,6 +25,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
+    margin: 0.5em;
 }
 
 .sectionUserData:nth-child(0){
@@ -42,37 +42,64 @@
 .inputUserData{
     width: 100%;
     padding: 0.75rem;
+    padding: 1rem 0.25rem 1rem 0.75rem;
     border: 0.5px solid;
-    border-radius: 5px;
-    font-size: 1rem;
+    border: 1px solid #EDA919;
+    border-radius: 1em;
+    font-size: 1rem;   
 }
 
 .updateValues{
-    top: 11em;
-    left: 80em;
-    margin: 10px;
-    height: 3em;
-    font-size: 0.8em;
+    padding: 1em;
     text-transform: uppercase;
     letter-spacing: 2.5px;
     font-weight: bolder;
-    color: #000;
-    background-color: #fff;
+    color: #ffff;    
+    background-color: #EDA919;
     border: none;
-    border-radius: 45px;
+    border-radius: 1em;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
-    border: 1px solid black;
     -webkit-box-shadow: -5px 15px 10px -2px rgba(0,0,0,0.31);
     -moz-box-shadow: -5px 15px 10px -2px rgba(0,0,0,0.31);
     box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
 }
 
+.updateValues:hover{
+    padding: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bolder;
+    color: #ffff;    
+    border: none;
+    cursor: pointer;
+    background-color: #33f111;
+    box-shadow: 0px 15px 20px rgba(202, 199, 32, 0.4) ;
+    transform: translateY(-7px);
+    border-radius: 1em;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    outline: none;
+    -webkit-box-shadow: -5px 15px 10px -2px rgba(0,0,0,0.31);
+    -moz-box-shadow: -5px 15px 10px -2px rgba(0,0,0,0.31);
+    box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
+}
 
-
-
+.sectionUserData label{
+    margin-left: 0.5rem;
+    padding: 0 0.25rem;
+    background-color: white;
+    transition: all 0.1s ease;
+    border-radius: 1em;
+    //border-top: solid #EDA919;
+    //border-left: solid #EDA919;
+    max-width: 60%;
+    position: absolute;
+    margin-top: -8px;
+    display: flex;
+}
 
 /* 
 .container{
