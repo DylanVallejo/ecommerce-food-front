@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../styles/Carrusel2.css'
+import styles from "../styles/Carrusel2.module.scss";
 
 function Carrusel2({slides}) {
     const [currentIndex, setCurrentIndex]= useState(0);
@@ -25,14 +25,14 @@ function Carrusel2({slides}) {
     }
 
   return (
-    <div className='divslider'>
-        <div className='sliderimage' style={sliderimage}>
-            <p className='leftArrowStyles' onClick={goToPrevious}> « </p>
-            <p className='rightArrowStyles' onClick={goToNext}> » </p>
+    <div className={styles.divslider}>
+        <div className={styles.sliderimage} style={sliderimage}>
+            <p className={styles.leftArrowStyles} onClick={goToPrevious}> <i class="fa-solid fa-circle-chevron-left"> </i></p>
+            <p className={styles.rightArrowStyles} onClick={goToNext}> <i class="fa-solid fa-circle-chevron-right"></i> </p>
         </div>
-        <div className='dotsContainer'>
+        <div className={styles.dotsContainer}>
             {slides.map((slide, slideIndex) => (
-                <div className='dotStyle' key= {slideIndex} onClick={() => goToSlide (slideIndex)}>
+                <div className={styles.dotStyle} key= {slideIndex} onClick={() => goToSlide (slideIndex)}>
                         °</div>
             ) )}
         </div>
