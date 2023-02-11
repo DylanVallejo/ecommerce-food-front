@@ -16,9 +16,10 @@ function Home() {
     // const [searchTextBar, setSearchTextBar ] = useState("")
 
     const slides = [
-        { url: "../img/banner/1.jpg", title: "Hamburguesa" },
-        { url: "../img/banner/2.jpg", title: "papas" },
-        { url: "../img/banner/3.jpg", title: "Helados" },
+        { url: "../img/banner/3.jpg", title: "Hamburguesa" },
+        { url: "../img/banner/4.jpg", title: "Papas Fritas" },
+        { url: "../img/banner/6.jpg", title: "Alitas" },
+        { url: "../img/banner/7.jpg", title: "Todo" },
     ];
 
     const navigate = useNavigate();
