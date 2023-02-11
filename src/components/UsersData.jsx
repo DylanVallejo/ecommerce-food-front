@@ -1,7 +1,7 @@
 
 import { Form, ErrorMessage, Field, Formik } from 'formik';
 import axios from 'axios';
-import styles from '../styles/UsersData.module.css'
+import styles from '../styles/UsersData.module.scss'
 function UsersData() {
     
     
