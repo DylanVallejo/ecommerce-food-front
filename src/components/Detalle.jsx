@@ -8,15 +8,12 @@ import Swal from 'sweetalert2'
 import styles from "../styles/Detalle.module.scss";
 // import withReactContent from 'sweetalert2-react-content'
 
-
-
 function Detalle() {
-  
-    
+      
   const [detail2, setDetail2] = useState(null);
-  
-  // const { order,orderItems } =  useSelector(  (state)=>  state.data)
-  
+  const [commentsArray, setCommentsArrays] = useState([]);
+  const [cambio, setCambio] = useState(0)
+    
   const dispatch = useDispatch();
   
   const{id} = useParams();
@@ -25,9 +22,21 @@ function Detalle() {
   const urlBack = `http://localhost:8082/api/product/${id}`
   
   
-  // el numero final debe ser correspondiente a la orden que queremos modificar es decir dinamico
-  // const urlAddProduct = `http://localhost:8082/api/orderproduct/orderproduct/1`
-  // const updateOrder = `http://localhost:8082/api/order/1`
+  const comments = `http://localhost:8082/api/comment/product/${id}`
+  
+  
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
   
   useEffect(() => {
     axios.get(urlBack)
@@ -35,7 +44,15 @@ function Detalle() {
       console.log(res)
       setDetail2(res.data)
     })
-  }, [urlBack])
+    axios.get(comments)
+    .then(res=>{
+      console.log(res)
+      setCommentsArrays(res.data)
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+  }, [urlBack,cambio,comments])
   
   const handleNavigate = (e) =>{
     e.preventDefault() ;
@@ -54,7 +71,48 @@ function Detalle() {
     })
       
   }
+  
+  
+  const createComments = ( e) => { 
 
+    e.preventDefault();
+    console.log(comments)
+    let url = comments;
+
+    Swal.fire({
+      title: 'Agregar un comentario',
+      input: 'text',
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Agregar',
+      showLoaderOnConfirm: true,
+      preConfirm: (newComment) => {
+        console.log("newcomee")
+        console.log(url)
+        return axios.post(url, {
+          "text":newComment
+        })
+          .then(response => {
+            console.log(response)
+            setCambio(cambio+1)
+            Toast.fire({
+              icon: 'success',
+              title: 'Comentario creado'
+            })
+          })
+          .catch(error => {
+            Swal.showValidationMessage(
+              `Request failed: ${error}`
+            )
+          })
+      },
+      // allowOutsideClick: () => !Swal.isLoading()
+    })
+
+  }
+  
   return (
     <>
       {
@@ -76,6 +134,24 @@ function Detalle() {
                 <h3 className={styles.detalleTitlesFonts}>Categoria</h3>
                 <li>{ detail2.category.name }</li>
               </ol>
+              
+              <ol className='listDetailContainer'>
+                {
+                  commentsArray.length < 1  ? <h3 className='detalleTitlesFonts'>NO EXISTEN COMENTARIOS</h3> :  <h3 className='detalleTitlesFonts'>COMENTARIOS</h3>
+                }
+                
+                {
+                  commentsArray !== null ? commentsArray.map((item,key)=>{
+                    return(
+                      <div key={key} className="commentContainer">
+                        <p>{item.text}</p>
+                        <p>{item.createdBy}</p>
+                      </div>
+                    )
+                  }):<p>no existen comentarios</p>
+                }
+              </ol>
+              
           </div>
           <div className={styles.detailImgContainer}>
             <div>
@@ -84,42 +160,19 @@ function Detalle() {
               
             </div>
             <div>
+
+              <button className={styles.btnDetalleAgregar} onClick={e=> createComments(e)}>COMENTARIOS</button>
               <button className={styles.btnDetalleAgregar} onClick={sendToOrderArray}>Agregar al pedido</button>
               <button className={styles.btnDetalleRegresar} onClick={handleNavigate}>Regresar</button>
+
             </div>
           </div>
         </div>
         : <Loader/>
       }
+      
     </>
   )
 }
 
 export default Detalle;
-
-
-
-  // {
-  //   "status": true,
-  //   "productId": 11, 
-  //   "price": 10,
-  //   "quantity": 3
-  // }
-  
-  // [
-    
-  //   {
-  //     "status": true,
-  //     "productId": 11, 
-  //     "price": 10,
-  //     "quantity": 3
-  //   },
-  //   {
-  //     "status": true,
-  //     "productId": 11, 
-  //     "price": 10,
-  //     "quantity": 3
-  //   }
-    
-  // ]
-  
