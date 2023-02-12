@@ -11,8 +11,9 @@ import CategoryFormPage from "../pages/CategoryFormPage";
 import ProductForm from "../pages/ProductForm";
 import SingIn from "../pages/SingIn";
 import UsersData from "./UsersData";
-import Carrito from "./Carrito";
+// import Carrito from "./Carrito";
 import Carritoj from "./Carritoj";
+import HandleStore from "./HandleStore";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -23,7 +24,7 @@ function AnimatedRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/singin" element={<SingIn />} />
         <Route path="/detalle/:id" element={<DetallePage />} />
-        <Route path="/cart" element={<Carrito />} />
+        {/* <Route path="/cart" element={<Carrito />} /> */}
         <Route path="/cartj" element={<Carritoj  />} />
         <Route path="/ofertas" element={<OfertasPage />} />
         <Route path="/category" element={<CategoryFormPage />} />
@@ -31,8 +32,7 @@ function AnimatedRoutes() {
         <Route path="/contact" element={<ContactUsPage />} />
 
         <Route path="/agregar" element={<ProductForm />} />
-        
-
+        <Route path="/store" element={<HandleStore />} />
         <Route path="/account" element={<UsersData />} />
 
         

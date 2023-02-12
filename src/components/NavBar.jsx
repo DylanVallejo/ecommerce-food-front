@@ -25,11 +25,16 @@ function NavBar() {
         {/* <li className="navlinks"><NavLink to="/cartj" ><button className="buttonLinks">cartj </button></NavLink></li> */}
         
         { context.userContext.role === "ADMIN" &&
-          <li className="navlinks"><NavLink to="/product" ><button className="buttonLinks">Add Product</button></NavLink></li>}
-          {
-            context.userContext.role === "ADMIN" &&
-            <li className="navlinks"><NavLink to="/stats" ><button className="buttonLinks">Stats</button></NavLink></li>
-          }
+          <li className="navlinks"><NavLink to="/agregar" ><button className="buttonLinks">Add Product</button></NavLink></li>
+        }
+        {
+          context.userContext.role === "ADMIN" &&
+          <li className="navlinks"><NavLink to="/stats" ><button className="buttonLinks">Stats</button></NavLink></li>
+        }
+        {
+          context.userContext.role === "ADMIN" &&
+          <li className="navlinks"><NavLink to="/store" ><button className="buttonLinks">Handle Store</button></NavLink></li>
+        }
       </ul>
       <ul className="ulContainer">
         <li className="navlinks"><NavLink to="/cartj"><i className="fa-solid fa-cart-shopping"> </i></NavLink></li>

@@ -1,5 +1,6 @@
 import axios from 'axios';
-import  { useEffect ,useState} from 'react'
+import  { useEffect ,useState,useContext} from 'react'
+
 import { useParams ,useNavigate} from 'react-router-dom'
 import Loader from "../components/Loader"
 import { useDispatch } from "react-redux";
@@ -7,8 +8,13 @@ import {setItemsArray} from "../features/data/dataSlice";
 import Swal from 'sweetalert2'
 import styles from "../styles/Detalle.module.scss";
 // import withReactContent from 'sweetalert2-react-content'
+import MyContext from '../context/MyContext';
+
+
 
 function Detalle() {
+  
+  const context = useContext(MyContext);
       
   const [detail2, setDetail2] = useState(null);
   const [commentsArray, setCommentsArrays] = useState([]);
@@ -58,17 +64,33 @@ function Detalle() {
     e.preventDefault() ;
     navigate("/")
   }
+  
+  console.log(context)
 
   const sendToOrderArray =  async () => {
+    // c
+    if(context.userContext.role === "USER" || context.userContext.role === "ADMIN"  ){
+      
+      dispatch(setItemsArray(detail2));
+      Toast.fire({
+        icon: 'success',
+        title: ` ${detail2.productName } Añadida al carrito`
+      })
+      navigate("/")
+      
+    }else{
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Para pdoer comprar debes registrarte',
+        showConfirmButton: false,
+        timer: 1000
+      })
+      navigate("/login")
+    }
     
-    dispatch(setItemsArray(detail2));
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Producto Añadido al carrito',
-      showConfirmButton: false,
-      timer: 1000
-    })
+
+    // navigate('/')
       
   }
   
