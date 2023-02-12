@@ -1,6 +1,6 @@
 .contactContainer{
     //height: 70vh;
-    width: 60%;
+    width: 30%;
     margin: 1em auto;
     border-radius: 30px;
     background-color: #ffe5acce;
@@ -23,9 +23,10 @@
  .contatcInputForm{
     display: block;
     margin: 10px auto;
+    width: 90%;
 }
 
-.contatcInputForm input, textarea{
+.contatcInputForm{
     padding: 1rem 0.25rem 1rem 0.75rem;
     font-family: sans-serif;
     font-size: 15px;
@@ -35,11 +36,12 @@
     display: flex;
     flex-direction: column;
     outline: none;
+    width: 100%;
 } 
 
 .inputBox{
     position: relative;
-    padding: 1em;
+    padding: 0.5em;
 }
 .inputBox input{
     padding: 1rem 0.25rem 1rem 0.75rem;
@@ -56,20 +58,21 @@
     position: absolute;
     left: 1em;
     top:1em;
-    padding: 1rem 0.25rem 1rem 0.75rem;
+    padding: 0.5em 0.25rem 1rem 0.75rem;
     pointer-events: none;
-    text-transform: uppercase;
     transition: 0.5s;
     font-size: 1em;
     color: #747474;
 }
 .inputBox input:valid ~ span,
-.inputBox input:focus ~ span
+.inputBox input:focus ~ span,
+.inputBox textarea:valid ~ span,
+.inputBox textarea:focus ~ span ~ span
 {
     color: white;
-    transform: translateX(14px) translateY(1px);
-    font-size: 0.6em;
-    padding: 0.2em 0.9em;
+    transform: translateX(6px) translateY(-13px);
+    font-size: 0.9em;
+    padding: 0.1em 0.9em;
     background-color: #fd6303;
     border-radius: 7px;
 }

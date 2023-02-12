@@ -21,19 +21,19 @@
 }
 
 .section {
-    /* min-width: 22rem; */
     margin-bottom: 1rem;
+    text-align: left;
+    width: 90%;
+    padding: 1em;
 }
 
 .section label {
-   margin-left: 0.5rem;
-   padding: 0 0.25rem;
+   padding: 0.25em 0.25rem;
    transition: all 0.1s ease;
-   /*
-   background-color: white;
+   background-color: #fd6303;
+   color: white;
    border-radius: 1em;
-   border-top: solid #EDA919;
-   border-left: solid #EDA919;*/
+   margin-left:1em;
 }
 
 .section input,
@@ -41,7 +41,7 @@
     width: 90%;
     padding: 0.75rem;
     border: 1px solid #EDA919;
-    border-radius: 5px;
+    border-radius: 1em;
     font-size: 1rem;
 }
 
