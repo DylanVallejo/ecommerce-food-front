@@ -5,8 +5,8 @@ function ContactUs() {
   return (
     <div className={styles.contactContainer}>
       <h2>Ready to connect whit me?</h2>
-      <div className={styles.imgfContainer}>
-        <img src={require("../resources/logofood_k_queso.png")} className={styles.contactUsImg} alt='kruger-img' />
+      {/* <div className={styles.imgfContainer}>
+        <img src={require("../resources/logofood_k_queso.png")} className={styles.contactUsImg} alt='kruger-img' /> */}
         <form className={styles.formContainer}>
           <h4 >Let's connect</h4>
           <div className={styles.contatcInputForm}>
@@ -16,7 +16,7 @@ function ContactUs() {
             </div>
             <div className={styles.inputBox}>
               <input type="text" required='requiered' />
-              <span>Last Name</span>
+              <span>last name</span>
             </div>
             <div className={styles.inputBox}>
               <input type="text" required='requiered' />
@@ -26,17 +26,18 @@ function ContactUs() {
               <input type="email" required='requiered' />
               <span>email</span>
             </div>
+            <div className={styles.inputBox}>
             <textarea
               name="story"
               rows="5"
               cols="33"
-              placeholder='Enter text here ...'>
+            >
             </textarea>
-
+            <span>tu mensaje</span>
+            </div>
             <button>Get in Touch</button>
-          </div>
+        </div>
         </form>
-      </div>
     </div>
   )
 }

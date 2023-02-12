@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState,useEffect } from "react";
-import styles from "../styles/ProductForm.module.css";
+import styles from "../styles/ProductForm.module.scss";
 import cloudLogo from "../resources/cloud-plus.svg";
 import cancel from "../resources/cancel.svg";
 import Swal from 'sweetalert2'
@@ -287,8 +287,8 @@ function ProductForm() {
             Create Product
           </button>
         </form>
-        <div>
-          <section>
+        <div className="addcategory">
+          <section className={styles.section}>
             <label htmlFor="categoryName">
               Set the category Name
             </label>
@@ -298,9 +298,10 @@ function ProductForm() {
               name="categoryName"
               value={categoryName}
               onChange={(e) => setCategoryName(e.target.value)}
-              className={styles.stock}    
+              className={styles.stock}
             />
-            
+          </section>
+          <section className={styles.section}>
             <label htmlFor="categoryDescription">
               Set the category Description
             </label>
@@ -310,7 +311,7 @@ function ProductForm() {
               name="categoryDescription"
               value={categoryDescription}
               onChange={(e) => setCategoryDescription(e.target.value)}
-              className={styles.stock}    
+              className={styles.stock}
             />
           </section>
           <button onClick={createCategory} className={styles.btn}>
