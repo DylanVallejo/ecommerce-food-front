@@ -10,9 +10,22 @@ function ContactUs() {
         <form className={styles.formContainer}>
           <h4 >Let's connect</h4>
           <div className={styles.contatcInputForm}>
-            <input type="text" placeholder="Name" />
-            <input type="text" placeholder="Last Name" />
-            <input type="email" placeholder="Email Adress" />
+            <div className={styles.inputBox}>
+              <input type="text" required='requiered' />
+              <span>first name</span>
+            </div>
+            <div className={styles.inputBox}>
+              <input type="text" required='requiered' />
+              <span>Last Name</span>
+            </div>
+            <div className={styles.inputBox}>
+              <input type="text" required='requiered' />
+              <span>email2</span>
+            </div>
+            <div className={styles.inputBox}>
+              <input type="email" required='requiered' />
+              <span>email</span>
+            </div>
             <textarea
               name="story"
               rows="5"
