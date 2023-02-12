@@ -35,6 +35,10 @@
     flex-direction: column;
 }
 
+.carritoImg{
+    height: 4em;
+}
+
 .productCar{
     margin: 5px;
     color: white;
@@ -129,3 +133,4 @@
     color: #fff;
     transform: translateY(-7px);
 }
+

@@ -44,6 +44,7 @@ function Carritoj(  ) {
         }   
         
     )
+    console.log(clonOrderItems)
     
     // const [idProduct, setIdProduct] = useState(0)
     
@@ -150,6 +151,8 @@ function Carritoj(  ) {
                         return(
                             <div key={key} className={styles.allProductsContainer}>
                                 <div>
+                                    {/* <img   className={styles.imgCarrito}>{item.image}</img> */}
+                                    <img src={item.image} className={styles.carritoImg} />
                                     <p className={styles.productCar}>{item.productName}</p> 
                                     <section className={styles.cartQuantityContainer}>
                                         <p className={styles.productQuantity}>cantidad: {item.quantity} 
