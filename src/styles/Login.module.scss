@@ -14,7 +14,7 @@
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 }
 
-.logo{
+.logo {
     max-width: 90%;
 }
 
@@ -33,10 +33,6 @@
     border-radius: 1em;
 }
 
-.password {
-    margin-top: 2rem;
-}
-
 .mail label,
 .password label {
     position: absolute;
@@ -46,19 +42,18 @@
     background-color: white;
     transition: all 0.1s ease;
     border-radius: 1em;
-   // border-top: solid #EDA919;
-   // border-left: solid #EDA919;
+    // border-top: solid #EDA919;
+    // border-left: solid #EDA919;
 }
 
 .mail,
-.password
-{
+.password {
     position: relative;
     padding: 1em;
 }
+
 .mail input,
-.password input
-{
+.password input {
     padding: 1rem 0.25rem 1rem 0.75rem;
     font-family: sans-serif;
     font-size: 1em;
@@ -68,12 +63,12 @@
     outline: none;
     width: 100%;
 }
+
 .mail span,
-.password span
-{
+.password span {
     position: absolute;
     left: 1em;
-    top:1em;
+    top: 1em;
     padding: 1rem 0.25rem 1rem 0.75rem;
     pointer-events: none;
     text-transform: uppercase;
@@ -81,11 +76,11 @@
     font-size: 1em;
     color: #747474;
 }
-.mail input:valid ~ span,
-.mail input:focus ~ span,
-.password input:valid ~ span,
-.password input:focus ~ span
-{
+
+.mail input:valid~span,
+.mail input:focus~span,
+.password input:valid~span,
+.password input:focus~span {
     color: white;
     transform: translateX(14px) translateY(1px);
     font-size: 0.6em;
@@ -93,6 +88,7 @@
     background-color: #fd6303;
     border-radius: 7px;
 }
+
 .btn {
     width: 100%;
     margin: 2rem 0 1rem 0;
@@ -105,6 +101,7 @@
     border-radius: 1em;
     cursor: pointer;
 }
+
 .btn:hover {
     width: 100%;
     margin: 2rem 0 1rem 0;
@@ -115,7 +112,7 @@
     border: 0;
     cursor: pointer;
     background-color: #33f111;
-    box-shadow: 0px 15px 20px rgba(202, 199, 32, 0.4) ;
+    box-shadow: 0px 15px 20px rgba(202, 199, 32, 0.4);
     transform: translateY(-7px);
 }
 
