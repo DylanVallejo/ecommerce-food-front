@@ -51,7 +51,8 @@
     outline: none;
     width: 100%;
 }
-.inputBox span{
+.inputBox span
+{
     position: absolute;
     left: 1em;
     top:1em;
@@ -61,7 +62,7 @@
     transition: 0.5s;
     font-size: 1em;
     color: #747474;
-    }
+}
 .inputBox input:valid ~ span,
 .inputBox input:focus ~ span
 {
