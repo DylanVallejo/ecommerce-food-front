@@ -3,7 +3,7 @@ import React, { useEffect, useState, } from 'react'
 import { useSelector, useDispatch,  } from "react-redux";
 import { getOrderStatus } from "../features/data/dataSlice";
 
-import styles from '../styles/Carrito.module.css'
+import styles from '../styles/Carrito.module.scss'
 import axios from 'axios';
 import Swal from 'sweetalert2'
 // import withReactContent from 'sweetalert2-react-content'
