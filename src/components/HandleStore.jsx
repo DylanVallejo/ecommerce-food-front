@@ -55,7 +55,7 @@ function HandleStore() {
                             <TableRow className={styles.infoTable}>
                                 <TableCell className={styles.infoProducts}  align="center">{item.productName}</TableCell>
                                 <TableCell className={styles.infoProducts} align="center"><p>{item.stock}</p> <button onClick={handleStock(item.stock)}>Agregar Stock</button></TableCell>
-                                <TableCell className={styles.infoProducts} align="center">{item.itsInOffers? <p>SI</p>:<p>NO</p>}<button onClick={setOffer(item.itsInOffers)}>poner en oferta</button></TableCell>
+                                <TableCell className={styles.infoProducts} align="center">{item.itsInOffers? <p>SI</p>:<p>NO</p>}<button onClick={setOffer(item.itsInOffers)}>Poner en oferta</button></TableCell>
                             </TableRow>
                         )
                     })}
