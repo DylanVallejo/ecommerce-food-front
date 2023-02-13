@@ -43,8 +43,8 @@ function HandleStore() {
                 <TableHead >
                     <TableRow>
                         <TableCell className={styles.storeHeaders}>PRODUCTO</TableCell>
-                        <TableCell align="right" className={styles.storeHeaders}>STOCK</TableCell>
-                        <TableCell align="right" className={styles.storeHeaders}>OFERTA</TableCell>
+                        <TableCell align="center" className={styles.storeHeaders}>STOCK</TableCell>
+                        <TableCell align="center" className={styles.storeHeaders}>OFERTA</TableCell>
                         {/* <TableCell align="right">Carbs</TableCell>
                         <TableCell align="right"></TableCell> */}
                     </TableRow>
@@ -53,9 +53,9 @@ function HandleStore() {
                     {entities.map((item,key)=>{
                         return(
                             <TableRow className={styles.infoTable}>
-                                <TableCell className={styles.infoProducts}  align="left">{item.productName}</TableCell>
-                                <TableCell className={styles.infoProducts} align="right">{item.stock} <button onClick={handleStock(item.stock)}>Agregar Stock</button></TableCell>
-                                <TableCell className={styles.infoProducts} align="right">{item.itsInOffers? <p>SI</p>:<p>NO</p>}<button onClick={setOffer(item.itsInOffers)}>poner en oferta</button></TableCell>
+                                <TableCell className={styles.infoProducts}  align="center">{item.productName}</TableCell>
+                                <TableCell className={styles.infoProducts} align="center"><p>{item.stock}</p> <button onClick={handleStock(item.stock)}>Agregar Stock</button></TableCell>
+                                <TableCell className={styles.infoProducts} align="center">{item.itsInOffers? <p>SI</p>:<p>NO</p>}<button onClick={setOffer(item.itsInOffers)}>poner en oferta</button></TableCell>
                             </TableRow>
                         )
                     })}
