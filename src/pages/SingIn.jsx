@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import styles from "../styles/Singin.module.css";
+import styles from "../styles/Singin.module.scss";
 import logo from "../resources/logofood_transparente.png";
 import axios from "axios";
 
@@ -81,12 +81,11 @@ const SingIn = () => {
           ser parte de nuestra red de krugerianos.
         </p>
         <div className={styles.mail}>
-          <label>Correo electrónico</label>
           <input
             value={email}
             onChange={emailHandler}
-            placeholder="Ingresa un email"
             type="email"
+
             required
           />
         </div>
@@ -99,7 +98,9 @@ const SingIn = () => {
             placeholder="Ingresa tu primer Nombre"
             type="text"
             required
+
           />
+          <span>e-mail</span>
         </div>
         <div className={styles.mail}>
           <label>Apellido</label>
@@ -113,10 +114,10 @@ const SingIn = () => {
         </div>
       {/* dar estilos */}
         <div className={styles.password}>
-          <label>Contraseña</label>
           <input
             value={password}
             onChange={passwordHandler}
+
             placeholder="Crea una contraseña segura."
             type="password"
             required
@@ -130,7 +131,9 @@ const SingIn = () => {
             placeholder="Confirma tu contraseña."
             type="password"
             required
+
           />
+          <span>Contraseña</span>
         </div>
         <button className={styles.btn}>{state}</button>
         {!message ? (
