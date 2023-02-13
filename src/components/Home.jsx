@@ -48,9 +48,6 @@ function Home() {
         setBarFilter(filterValue);
     };
 
-    
-    
-
     return (
         <div>
         {/* <Carrusel/> */}

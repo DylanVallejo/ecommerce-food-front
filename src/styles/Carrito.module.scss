@@ -6,13 +6,13 @@
 
 .carritoContainer{
     height: 65vh;
-    width: 60%;
+    width: 30%;
     border: 1px solid rgb(53, 52, 52);
     margin: 1em auto;
-    border-radius: 30px;
+    border-radius: 3em;
     background-color: #ffe5acce;
     position: relative;
-    overflow-x: auto;
+    overflow-y: auto;
 }
 
 .allProductsContainer{
@@ -34,13 +34,14 @@
 .cartQuantityContainer{
     display: flex;
     flex-direction: column;
+    
 }
 
 .carritoImg{
-    height: 5em;
+    height: 4em;
 }
 .carritoImg:hover{
-    scale: 1.5;
+    scale: 1.2;
 }
 
 .productCar{
@@ -69,7 +70,7 @@
     color: #000;
     background-color: #fff;
     border: none;
-    border-radius: 45px;
+    border-radius: 3em;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
     cursor: pointer;

@@ -156,10 +156,10 @@ function Carritoj() {
                                     <p className={styles.productCar}>{item.productName}</p>
                                     <section className={styles.cartQuantityContainer}>
                                         <p className={styles.productQuantity}>cantidad: {item.quantity}
-                                            <button onClick={e => setQuantity(key, e, item.quantity)} className={styles.quantityBtnsCart} >+</button>
-                                            <button onClick={e => setMinusQuantity(key, e, item.quantity)} className={styles.quantityBtnsCart}>-</button>
+                                            <button  onClick={e => setQuantity(key, e, item.quantity)} className={styles.quantityBtnsCart} ><i class="fa-solid fa-plus"></i> </button>
+                                            <button  onClick={e => setMinusQuantity(key, e, item.quantity)} className={styles.quantityBtnsCart}><i class="fa-solid fa-minus"></i></button>
                                         </p>
-                                        <button onClick={(e) => remover(item.id, e)}>Eliminar</button>
+                                        <button class="fa-solid fa-trash" onClick={(e) => remover(item.id, e)}> </button>
                                     </section>
 
                                 </div>
