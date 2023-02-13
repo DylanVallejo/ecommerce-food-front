@@ -19,10 +19,6 @@ function ContactUs() {
               <span>last name</span>
             </div>
             <div className={styles.inputBox}>
-              <input type="text" required='requiered' />
-              <span>email2</span>
-            </div>
-            <div className={styles.inputBox}>
               <input type="email" required='requiered' />
               <span>email</span>
             </div>
