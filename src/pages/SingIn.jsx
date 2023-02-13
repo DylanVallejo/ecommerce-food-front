@@ -7,8 +7,11 @@ import axios from "axios";
 const SingIn = () => {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
+  const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("")
+  const [firstName, setFirstName] = useState("")
+  const [email, setEmail] = useState("");
   const [state, setState] = useState("Ingresar");
   const [message, setMessage] = useState();
 
@@ -16,32 +19,51 @@ const SingIn = () => {
     setEmail(e.target.value);
     setMessage();
   };
+  
+  
+//   {
+//     "lastname" : "kael",
+//     "password" : "123456",
+//     "firstname": "kael",
+//     "role": "ADMIN",
+//     "email":"kael@kael.com"
+//  }
 
   const passwordHandler = (e) => {
     setPassword(e.target.value);
     setMessage();
   };
+  
+  
+  const comparePassword = (e) => {
+    setConfirmPassword(e.target.value);
+  }
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     if (email !== "" && password !== "") {
-      const login = {
-        email: email,
-        password: password,
-      };
-
+      
+      
       setState("Comprobando");
+
+      console.log(password + ' ' +confirmPassword)
       axios
-        .post("http://localhost:8082/api/v1/auth/authenticate", login)
-        .then((res) => {
-          setState("Acceso correcto. Redirigiendo...");
-          navigate("/");
-        })
-        .catch((error) => {
-          setState("Ingresar");
-          console.log(error);
-        });
+      .post("http://localhost:8082/api/v1/auth/register", {
+        "lastname": lastName,
+        "password": password,
+        "firstname": firstName,
+        "email": email,
+      })
+      .then((res) => {
+        console.log(res.data)
+        setState("Acceso correcto. Redirigiendo...");
+        navigate("/");
+      })
+      .catch((error) => {
+        setState("Ingresar");
+        console.log(error);
+      });
     } else {
       setMessage("Formulario incompleto. Intenta otra vez");
     }
@@ -65,14 +87,49 @@ const SingIn = () => {
             onChange={emailHandler}
             placeholder="Ingresa un email"
             type="email"
+            required
           />
         </div>
+      {/* dar estilos */}
+        <div className={styles.mail}>
+          <label>Nombre</label>
+          <input
+            value={firstName}
+            onChange={e=>setFirstName(e.target.value)}
+            placeholder="Ingresa tu primer Nombre"
+            type="text"
+            required
+          />
+        </div>
+        <div className={styles.mail}>
+          <label>Apellido</label>
+          <input
+            value={lastName}
+            onChange={e=>setLastName(e.target.value)}
+            placeholder="Ingresa tu apellido"
+            type="text"
+            required
+          />
+        </div>
+      {/* dar estilos */}
         <div className={styles.password}>
           <label>Contraseña</label>
           <input
             value={password}
             onChange={passwordHandler}
             placeholder="Crea una contraseña segura."
+            type="password"
+            required
+          />
+        </div>
+        <div className={styles.password}>
+          <label>Confirmar Contraseña</label>
+          <input
+            value={confirmPassword}
+            onChange={comparePassword}
+            placeholder="Confirma tu contraseña."
+            type="password"
+            required
           />
         </div>
         <button className={styles.btn}>{state}</button>
