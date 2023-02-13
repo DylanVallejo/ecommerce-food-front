@@ -12,12 +12,13 @@
     border-radius: 30px;
     background-color: #ffe5acce;
     position: relative;
+    overflow-x: auto;
 }
 
 .allProductsContainer{
     width: 90%;
     box-sizing: content-box;
-    background-color: #F24726;
+    background-color:rgb(237, 169, 25);
     margin: 1em auto;
     height: auto;
     justify-content: center;
@@ -36,7 +37,10 @@
 }
 
 .carritoImg{
-    height: 4em;
+    height: 5em;
+}
+.carritoImg:hover{
+    scale: 1.5;
 }
 
 .productCar{
@@ -74,6 +78,7 @@
     -webkit-box-shadow: -5px 15px 10px -2px rgba(0,0,0,0.31);
     -moz-box-shadow: -5px 15px 10px -2px rgba(0,0,0,0.31);
     box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
+    
 }
 .removeBtnCart:hover {
     background-color: #f13b3b;
@@ -125,6 +130,7 @@
     -webkit-box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
     -moz-box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
     box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
+    position: sticky;
 }
 
 .btnComprar:hover {
