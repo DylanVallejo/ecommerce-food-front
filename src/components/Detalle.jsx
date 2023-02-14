@@ -177,10 +177,8 @@ function Detalle() {
             <div>
               <img src={detail2.image} className={styles.detailPageImg} slide-right  alt='referencia'/>
               <button className={styles.btnDetalleMejorar}>Mejorar Combo</button>
-              
             </div>
             <div>
-
               <button className={styles.btnDetalleAgregar} onClick={e=> createComments(e)}>COMENTARIOS</button>
               <button className={styles.btnDetalleAgregar} onClick={sendToOrderArray}>Agregar al pedido</button>
               <button className={styles.btnDetalleRegresar} onClick={handleNavigate}>Regresar</button>
