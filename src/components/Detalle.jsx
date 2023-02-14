@@ -155,7 +155,7 @@ function Detalle() {
                 <li>{ detail2.category.name }</li>
               </ol>
               
-              <ol className={styles.listDetailContainer}>
+              <ol className={styles.listDetailContainerComment}>
                 {
                   commentsArray.length < 1  ? <h3 className={styles.detalleTitlesFonts}>NO EXISTEN COMENTARIOS</h3> :  <h3 className={styles.detalleTitlesFonts}>COMENTARIOS</h3>
                 }
