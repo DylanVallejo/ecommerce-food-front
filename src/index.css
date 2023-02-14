@@ -19,3 +19,8 @@ background-image: url(https://media.istockphoto.com/id/1176097155/es/vector/refr
 background-size: 1em 8em;
 background-size: 25% 25%;
 }
+.fa-solid {
+    color: #EDA919;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
