@@ -30,15 +30,9 @@ function AnimatedRoutes() {
         <Route path="/category" element={<CategoryFormPage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
-
         <Route path="/agregar" element={<ProductForm />} />
         <Route path="/store" element={<HandleStore />} />
         <Route path="/account" element={<UsersData />} />
-
-        
-        {/* UsersData */}
-        {/* <Route path="/agregar" element={<Agregarpage />} /> */}
-
       </Routes>
     </AnimatePresence>
   );

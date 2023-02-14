@@ -5,7 +5,7 @@ import "../styles/Home.css";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
 import { useSelector, useDispatch } from "react-redux";
-import { getData , getOrderStatus} from "../features/data/dataSlice";
+import { getData } from "../features/data/dataSlice";
 import { motion } from "framer-motion";
 // import { LayoutGroup } from "framer-motion";
 
@@ -29,6 +29,8 @@ function Home() {
     console.log(entities)
     
 // actualizar los datos de la order con un get 
+
+
 
     useEffect(() => {
         // dispatch(getOrderStatus())

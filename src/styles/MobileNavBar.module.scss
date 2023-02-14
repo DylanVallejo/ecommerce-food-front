@@ -1,0 +1,72 @@
+
+    
+    
+.responsiveNav , .responsiveContainer, .responsiveNavlinks, .responsiveButtonLinks{
+    display: none;
+}
+.responsiveNav>.responsiveContainer>.responsiveNavlinks>a{
+    text-decoration: none;
+    border: 1px solid red;
+}
+.responsiveNavlinks a{
+    text-decoration: none;
+    color:red
+}
+
+    
+@media screen and (max-width: 480px){
+    
+    .ulContainer{
+        // background-color: #1c1b19;
+        display: none;
+    }
+    .logoNavbar{
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .responsiveNav , .responsiveContainer, .responsiveNavlinks, .responsiveButtonLinks{
+        display: flex;
+        font-style: none;
+        list-style: none;
+    }
+    .responsiveNav{
+        // position: relative;
+        // top: 30em;
+        height: auto;
+        background-color: #FFE5AC;
+        margin: 0px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: scroll;
+    }
+    .responsiveContainer{
+        justify-content: space-evenly;
+    }
+    .responsiveButtonLinks{
+        height: 6em;
+        width: 6em;
+        margin: 3px;
+        box-sizing: border-box;
+        text-align: center;
+        justify-content: center;
+    }
+    .responsiveHeaders{
+        margin: 0;
+        padding: 10px;
+    }
+    .responsiveNav::-webkit-scrollbar {
+        height: 50px;
+    }
+    
+//     ::-webkit-scrollbar the scrollbar.
+// ::-webkit-scrollbar-button the buttons on the scrollbar (arrows pointing upwards and downwards).
+// ::-webkit-scrollbar-thumb the draggable scrolling handle.
+// ::-webkit-scrollbar-track the track (progress bar) of the scrollbar.
+// ::-webkit-scrollbar-track-piece the track (progress bar) NOT covered by the handle.
+// ::-webkit-scrollbar-corner the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
+// ::-webkit-resizer the draggable resizing handle that appears at the bottom corner of some elements.
+
+    
+}

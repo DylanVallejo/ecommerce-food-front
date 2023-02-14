@@ -79,12 +79,10 @@ function Detalle() {
       navigate("/")
       
     }else{
-      Swal.fire({
-        position: 'center',
+      Toast.fire({
         icon: 'error',
-        title: 'Para pdoer comprar debes registrarte',
-        showConfirmButton: false,
-        timer: 1000
+        title: ` Por favor registrate para poder agregar al carrito`,
+        timer:9000
       })
       navigate("/login")
     }

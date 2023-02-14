@@ -6,6 +6,9 @@ import Footer from "./components/Footer";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 import MyContext from './context/MyContext';
 import { useState } from "react";
+import Container from '@mui/material/Container';
+import MobileNavBar from "./components/MobileNavBar";
+
 
 
 function App() {
@@ -19,13 +22,17 @@ function App() {
   
   return (
     <div className="App">
-      <MyContext.Provider value={{userContext,setUserContext}}>
-        <BrowserRouter>
-          <NavBar />
-          <AnimatedRoutes />
-          <Footer />
-        </BrowserRouter>
-      </MyContext.Provider>
+      {/* // <Container maxWidth="xl"> */}
+        <MyContext.Provider value={{userContext,setUserContext}}>
+          
+          <BrowserRouter>
+            <NavBar />
+            <AnimatedRoutes />
+            <MobileNavBar/>
+            <Footer />
+          </BrowserRouter>
+        </MyContext.Provider>
+        {/* </Container> */}
     </div>
   );
 }
