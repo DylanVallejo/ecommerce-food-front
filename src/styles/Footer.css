@@ -28,3 +28,9 @@
     height: 2em;
     filter: invert(100%);
 }
+
+@media screen and (max-width: 480px){
+    .footerContainer{
+        display: none;
+    }
+}

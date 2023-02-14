@@ -38,6 +38,8 @@ function HandleStore() {
         dispatch(getData());
         console.log("useeffect")
         // dispatch(createOrder())
+    console.log(cambio)
+        
 
     }, [cambio]);
     
@@ -55,16 +57,15 @@ function HandleStore() {
         }
     })
     
-    const handleStock = (stock,id) => {
-
-        console.log(stock)
-        console.log(id)
-        console.log(newStock)
+    const handleStock = (stock,id,e) => {
+        e.preventDefault();
+        // console.log(stock)
+        // console.log(id)
+        // console.log(newStock)
         
-        // console.log(`${urlUpdate}${id}/stock/`)
         const finalUrl = `${urlUpdate}${id}/stock/`
-        console.log(finalUrl)
-        
+        // console.log(finalUrl)
+        let manejarRefresh = cambio
         
         Swal.fire({
         title: 'Agregar stock',
@@ -76,12 +77,18 @@ function HandleStore() {
         confirmButtonText: 'Agregar',
         showLoaderOnConfirm: true,
         preConfirm: (createStock) => {
-            console.log(typeof(createStock))
+            // console.log(typeof(createStock))
+            console.log("entrando al post")
             console.log(`${finalUrl}${stock+ Number(createStock)}`)
             return axios.put(`${finalUrl}${stock+Number(createStock)}`)
             .then(response => {
+                console.log("entro al post")
                 console.log(response)
-                setCambio(cambio+1)
+                console.log(cambio)
+                setCambio(manejarRefresh+1)
+                console.log(cambio)
+                
+                
                 Toast.fire({
                 icon: 'success',
                 title: `${response.data}`
@@ -104,9 +111,9 @@ function HandleStore() {
         // })
     }    
     
-    const setOffer = (oferta) => {
-        
-    }
+    // const setOffer = (oferta) => {
+    //     console.log(oferta)
+    // }
     return (
         <TableContainer className={styles.storeContainer}  sx={{ minWidth: 650 , maxWidth:900}} >
             <Table 
@@ -124,11 +131,11 @@ function HandleStore() {
                 <TableBody >
                     {entities.map((item,key)=>{
                         return(
-                            <TableRow className={styles.infoTable}>
+                            <TableRow className={styles.infoTable} key={key}>
 
                                 <TableCell className={styles.infoProducts}  align="center">{item.productName}</TableCell>
-                                <TableCell className={styles.infoProducts} align="center"><p>{item.stock}</p> <button onClick={handleStock(item.stock)}>Agregar Stock</button></TableCell>
-                                <TableCell className={styles.infoProducts} align="center">{item.itsInOffers? <p>SI</p>:<p>NO</p>}<button onClick={setOffer(item.itsInOffers)}>Poner en oferta</button></TableCell>
+                                <TableCell className={styles.infoProducts} align="center"><p>{item.stock}</p> <button onClick={e=>handleStock(item.stock,item.id,e)}>Agregar Stock</button></TableCell>
+                                <TableCell className={styles.infoProducts} align="center">{item.itsInOffers? <p>SI</p>:<p>NO</p>}<button onClick={()=>{}}>Poner en oferta</button></TableCell>
 
                             </TableRow>
                         )
