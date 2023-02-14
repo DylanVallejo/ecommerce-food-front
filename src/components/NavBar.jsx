@@ -31,7 +31,7 @@ function NavBar() {
     <>
     <header className={styles.headerContainer}>
       <ul className={styles.logoNavbarContainer}>
-        <li className={styles.navlinks}><img src={require('../resources/logofood_transparente.png')} alt="logo comida  " className={styles.logoNavbar}/></li>
+        <li className={styles.navlinks}><img src={require('../resources/logofood_k_queso.png')} alt="logo comida  " className={styles.logoNavbar}/></li>
       </ul>
       <ul className={styles.ulContainer}>
         <li className={styles.navlinks}><NavLink to="/"><button className={styles.buttonLinks}> Menu </button></NavLink></li>
