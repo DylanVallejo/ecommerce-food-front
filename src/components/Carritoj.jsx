@@ -6,7 +6,9 @@ import { setNewValuesForArray } from "../features/data/dataSlice";
 import styles from '../styles/Carrito.module.scss'
 import axios from 'axios';
 import Swal from 'sweetalert2'
-
+import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 function Carritoj() {
 
     // 1.-llamar order items
@@ -155,11 +157,12 @@ function Carritoj() {
                                     {/* <img   className={styles.imgCarrito}>{item.image}</img> */}
                                     <p className={styles.productCar}>{item.productName}</p>
                                     <section className={styles.cartQuantityContainer}>
-                                        <p className={styles.productQuantity}>cantidad: {item.quantity}
-                                            <button  onClick={e => setQuantity(key, e, item.quantity)} className={styles.quantityBtnsCart} ><i class="fa-solid fa-plus"></i> </button>
-                                            <button  onClick={e => setMinusQuantity(key, e, item.quantity)} className={styles.quantityBtnsCart}><i class="fa-solid fa-minus"></i></button>
-                                        </p>
-                                        <button class="fa-solid fa-trash" onClick={(e) => remover(item.id, e)}> </button>
+                                        <p className={styles.productQuantity}>cantidad: {item.quantity}</p>
+                                         <div>
+                                            <button  className={styles.quantityBtnsCart} onClick={e => setQuantity(key, e, item.quantity)}  ><AddShoppingCartIcon></AddShoppingCartIcon>  </button>
+                                            <button className={styles.quantityBtnsCart} onClick={e => setMinusQuantity(key, e, item.quantity)} ><RemoveShoppingCartIcon ></RemoveShoppingCartIcon ></button>
+                                            <button className={styles.quantityBtnsCart} onClick={(e) => remover(item.id, e)}><DeleteForeverIcon></DeleteForeverIcon></button>
+                                        </div>
                                     </section>
 
                                 </div>
