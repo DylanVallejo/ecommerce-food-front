@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 import MyContext from "../context/MyContext";
 import { useContext } from "react";
 // import Container from '@mui/material/Container';
-import styles from "../styles/NavBar.module.scss";
 // import styles from "../styles/Login.module.scss";
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -16,6 +15,7 @@ import Email from '@mui/icons-material/Email';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import WarehouseIcon from '@mui/icons-material/Warehouse';
+import styles from "../styles/MobileNavBar.module.scss";
 
 function MobileNavBar() {
     
@@ -27,11 +27,12 @@ return (
         {/* <ul className={styles.logoNavbarContainer}>
             <li className={styles.navlinks}><img src={require('../resources/logofood_transparente.png')} alt="logo comida  " className={styles.logoNavbar}/></li>
         </ul> */}
+                
         <ul className={styles.responsiveContainer}>
             <li className={styles.responsiveNavlinks}>
-                <NavLink className={styles.mobileA} to="/"> 
+                <NavLink className={styles.mobileA} to="/" > 
                     <button className={styles.responsiveButtonLinks}>
-                        <section >
+                        <section>
                             <HomeIcon></HomeIcon>
                             <h6 className={styles.responsiveHeaders}>Menu</h6>
                         </section>
