@@ -15,7 +15,9 @@ import Email from '@mui/icons-material/Email';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import WarehouseIcon from '@mui/icons-material/Warehouse';
+
 import styles from "../styles/MobileNavBar.module.scss";
+
 
 function MobileNavBar() {
     
@@ -33,6 +35,7 @@ return (
                 <NavLink className={styles.mobileA} to="/" > 
                     <button className={styles.responsiveButtonLinks}>
                         <section>
+
                             <HomeIcon></HomeIcon>
                             <h6 className={styles.responsiveHeaders}>Menu</h6>
                         </section>

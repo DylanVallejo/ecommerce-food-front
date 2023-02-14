@@ -1,4 +1,5 @@
 
+
 // *{
 //     margin: 0px;
 //     padding: 0px;
@@ -92,13 +93,16 @@
     //     align-items: center;
     // }
     
+
     .responsiveNav{
         // position: relative;
         // top: 30em;
         height: auto;
         background-color: #FFE5AC;
+
         // margin: 0px;/
         margin-bottom: 10px;
+
         width: 100%;
         box-sizing: border-box;
         overflow-x: scroll;
@@ -109,13 +113,13 @@
     .responsiveButtonLinks{
         height: 6em;
         width: 6em;
-        // margin: 3px;
         box-sizing: border-box;
         text-align: center;
         justify-content: center;
     }
     .responsiveHeaders{
         margin: 0;
+
         // padding: 10px;
     }
     // .responsiveNav::-webkit-scrollbar {
@@ -145,6 +149,7 @@
   
     
 // ::-webkit-scrollbar the scrollbar.
+
 // ::-webkit-scrollbar-button the buttons on the scrollbar (arrows pointing upwards and downwards).
 // ::-webkit-scrollbar-thumb the draggable scrolling handle.
 // ::-webkit-scrollbar-track the track (progress bar) of the scrollbar.
