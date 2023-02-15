@@ -155,7 +155,7 @@ function HandleStore() {
     }));
 
     return (
-        <TableContainer className={styles.storeContainer} sx={{ minWidth: 250, maxWidth: 900 }} component={Paper} >
+        <TableContainer className={styles.storeContainer} sx={{ minWidth: 250, maxWidth: 1000 }} component={Paper} >
             <Table stickyHeader aria-label="customized table"
                 className={styles.storeContainerTable}>
                 <TableHead >
