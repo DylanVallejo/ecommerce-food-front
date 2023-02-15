@@ -18,9 +18,10 @@ import { getData } from "../features/data/dataSlice";
 function HandleStore() {
     
     
-    const [newStock, setNewStock] = useState(0)
-    const [itsInOffers, setItsInOffers] = useState(false)
+    // const [newStock, setNewStock] = useState(0)
+    // const [itsInOffers, setItsInOffers] = useState(false)
     const [cambio, setCambio] = useState(0)
+    const [spreadEntities, setspreadEntities] = useState(null)
     // useState
     
     const {entities} = useSelector(state=>state.data)
@@ -38,12 +39,24 @@ function HandleStore() {
         dispatch(getData());
         console.log("useeffect")
         // dispatch(createOrder())
-    console.log(cambio)
+        console.log(cambio)
+        // setspreadEntities(structuredClone(entities))
+        // const sorted = structuredClone(spreadEntities)
+        // sorted.sort((x, y) => x.id - y.id)
+        // console.log("sorted")
+        
+        // console.log(spreadEntities)
+        // console.log(sorted)
+        
         
 
     }, [cambio]);
     
+    // function sortById(){
+      
+    // }
     
+    // sortById();
     
     const Toast = Swal.mixin({
         toast: true,

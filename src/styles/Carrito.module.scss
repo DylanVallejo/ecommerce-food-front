@@ -7,7 +7,7 @@
 .carritoContainer{
     height: 65vh;
     width: 60%;
-    min-width: 400px;
+    min-width: 350px;
     //border: 1px solid rgb(53, 52, 52);
     margin: 1em auto;
     border-radius: 3em;
@@ -156,6 +156,39 @@ color: #fff;
     transform: translateY(-7px);
 }
 
+.btnNavegarMenu{
+    position: absolute;
+    bottom: 6%;
+    left: 60%;
+    // margin: 10px;
+    height: 4em;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bolder;
+    color: #000;
+    background-color: rgb(220, 210, 14);
+    border: none;
+    border-radius: 3em;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid black;
+    -webkit-box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
+    -moz-box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
+    box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
+    // position: sticky;
+}
+
+.btnNavegarMenu:hover {
+    background-color: #f13b3b;
+    box-shadow: 0px 15px 20px rgba(202, 199, 32, 0.4) ;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+
 .quantityBtnsCart svg
 {
     color: #f13b3b;
@@ -167,13 +200,52 @@ color: #fff;
     color: #ffff;
     font-size: 2em;
 }
-
-
 .carritoVacio{
-    height: 15em;
-    width: 15em;
-    box-sizing: border-box;
-    border: 1px solid black;
-    margin: auto;
+    margin: 1px auto;
     
+    // position: relative;
+        padding: 0.5em;
+    height: 22em;
+    width: 19em;
+    box-sizing: border-box;
+    // border: 1px solid black;
+    margin: auto;
+    border-radius: 25px;
+    // color: white;
+ 
+    background-image: url(../resources/carrito_vacio_fondo.jpeg);
+    -moz-background-size: 100% 100%; /*Firefox 3.6*/
+    -o-background-size: 100% 100%; /*opera*/
+    -webkit-background-size: 100% 100%; /*Safari*/
+    background-size: 100% 100%; /*estandar css3*/
+}
+
+
+
+.carritoVacioHeader{
+    background-color: rgba(255, 255, 227, 0.507) ;
+    border-radius: 25px;
+}
+
+@media screen and (max-width: 480px){
+    .carritoContainer{
+        width: 300px;
+        height: 500px;
+        // height: auto;
+        // border: 1px solid red;
+    }
+    
+    .carritoVacio{
+        position: relative;
+        padding: 0.5em;
+        height: 22em;
+        width: 19em;
+        box-sizing: border-box;
+        // border: 1px solid black;
+        margin: auto;
+        border-radius: 25px;
+        
+        
+    }
+
 }

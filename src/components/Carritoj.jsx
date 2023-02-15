@@ -156,43 +156,53 @@ function Carritoj() {
 
     }
 
+    function handleNavigation() {
+        navigate('/');
+    }
+
+        
+
+
     return (
         <div className={styles.carritoContainer}>
 
             <h2>Carrito</h2>
-            <form onSubmit={e => enviarTodo(e, clonOrderItems, arrayJ, total)}>
-                {
-                    clonOrderItems.length !== 0 ?  clonOrderItems?.map((item, key) => {
-                        return (
-                            <div key={key} className={styles.allProductsContainer}>
-                                <img src={item.image} className={styles.carritoImg} />
-                                <div>
-                                    {/* <img   className={styles.imgCarrito}>{item.image}</img> */}
-                                    <p className={styles.productCar}>{item.productName}</p>
-                                    <section className={styles.cartQuantityContainer}>
-                                        <p className={styles.productQuantity}>cantidad: {item.quantity}</p>
-                                        <div>
-                                            <button  className={styles.quantityBtnsCart} onClick={e => setQuantity(key, e, item.quantity)}  ><AddShoppingCartIcon></AddShoppingCartIcon>  </button>
-                                            <button className={styles.quantityBtnsCart} onClick={e => setMinusQuantity(key, e, item.quantity)} ><RemoveShoppingCartIcon ></RemoveShoppingCartIcon ></button>
-                                            <button className={styles.quantityBtnsCart} onClick={(e) => remover(item.id, e)}><DeleteForeverIcon></DeleteForeverIcon></button>
-                                        </div>
-                                    </section>
+            
+            {
+                clonOrderItems.length !== 0 ? 
+                <form onSubmit={e => enviarTodo(e, clonOrderItems, arrayJ, total)}>
+                    {
+                        clonOrderItems?.map((item, key) => {
+                            return (
+                                <div key={key} className={styles.allProductsContainer}>
+                                    <img src={item.image} className={styles.carritoImg} />
+                                    <div>
+                                        {/* <img   className={styles.imgCarrito}>{item.image}</img> */}
+                                        <p className={styles.productCar}>{item.productName}</p>
+                                        <section className={styles.cartQuantityContainer}>
+                                            <p className={styles.productQuantity}>cantidad: {item.quantity}</p>
+                                            <div>
+                                                <button  className={styles.quantityBtnsCart} onClick={e => setQuantity(key, e, item.quantity)}  ><AddShoppingCartIcon></AddShoppingCartIcon>  </button>
+                                                <button className={styles.quantityBtnsCart} onClick={e => setMinusQuantity(key, e, item.quantity)} ><RemoveShoppingCartIcon ></RemoveShoppingCartIcon ></button>
+                                                <button className={styles.quantityBtnsCart} onClick={(e) => remover(item.id, e)}><DeleteForeverIcon></DeleteForeverIcon></button>
+                                            </div>
+                                        </section>
 
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    }):
-                    <div className={styles.carritoVacio}>
-                        <h4>Aun no has agreagado productos a tu carrito </h4>
-                        
-                    </div>
-                }
-                
+                            )
+                        })
+                    }
+                    <button type='submit' className={styles.btnComprar}>Comprar</button> 
+                </form>
+                :
+                <div className={styles.carritoVacio} >
+                    <h4 className={styles.carritoVacioHeader}>Carrito vacío. </h4>
+                    <button  className={styles.btnNavegarMenu} onClick={ handleNavigation}>Mirar Menu</button> 
+                </div>
+            }
             
-                { clonOrderItems.length > 0 ? <button type='submit' className={styles.btnComprar}>Comprar</button> : <button type='submit' className={styles.btnComprar} onClick={ navigate('/')}>Mirar Menu</button> }
             
-            </form>
-
         </div>
     )
 }

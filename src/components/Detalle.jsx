@@ -74,7 +74,9 @@ function Detalle() {
       dispatch(setItemsArray(detail2));
       Toast.fire({
         icon: 'success',
-        title: ` ${detail2.productName } Añadida al carrito`
+        title: ` ${detail2.productName } Añadida al carrito`,
+        position: 'bottom-right',
+        timer: '2000'
       })
       navigate("/")
       
