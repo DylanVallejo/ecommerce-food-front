@@ -8,6 +8,7 @@ const initialState = {
     loading: false,
     order: [ ],
     orderItems: [ ],
+    generatedOrder: null,
 }
 
 export const getData = createAsyncThunk(
@@ -44,6 +45,9 @@ export const dataSlice = createSlice({
             console.log(payload);
             state.orderItems = payload
             
+        },
+        setGeneratedOrder:(state, {payload}) => {
+            state.generatedOrder = payload 
         }
         
     },
@@ -62,7 +66,7 @@ export const dataSlice = createSlice({
 })
 
 // exportando los reducers
-export const { getOrderStatus, setItemsArray,setNewValuesForArray} = dataSlice.actions
+export const { getOrderStatus, setItemsArray,setNewValuesForArray,setGeneratedOrder} = dataSlice.actions
 
 //debo exportar el reducer de dataSlice
 export default dataSlice.reducer

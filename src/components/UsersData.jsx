@@ -5,6 +5,8 @@ import styles from '../styles/UsersData.module.scss'
 import MyContext from "../context/MyContext";
 import { useContext } from "react";
 import { useNavigate } from 'react-router-dom';
+import SingIn from '../pages/SingIn';
+import LogIn from '../pages/LogIn';
 function UsersData() {
     
     const context = useContext(MyContext)
@@ -110,7 +112,7 @@ function UsersData() {
                                     Password
                                     
                                 </label>
-                                    <Field  name="password" type="text" className={styles.inputUserData} />
+                                    <Field  name="password" type="password" className={styles.inputUserData} />
                                     <ErrorMessage name="password" />
                             
                             </section>
@@ -119,7 +121,7 @@ function UsersData() {
                                 <label className={styles.labelUserData}>
                                     Confirm Password
                                 </label>
-                                    <Field  name="confirmPassWord" type="text" className={styles.inputUserData} />
+                                    <Field  name="confirmPassWord" type="password" className={styles.inputUserData} />
                                     <ErrorMessage name="confirmPassWord" />
                             </section>
                             
@@ -165,10 +167,9 @@ function UsersData() {
             </div>
             
             :  
-            <div>
-                <h4>Registrate para configurar tu cuenta</h4>
-                <button onClick={handleNavigation} >Registrarse</button>
-            </div>
+            
+            <LogIn/>
+            
         }
         </>
         
@@ -176,3 +177,9 @@ function UsersData() {
 }
 
 export default UsersData
+
+
+// <div>
+{/* <h4>Registrate para configurar tu cuenta</h4>
+<button onClick={handleNavigation} >Registrarse</button>
+</div> */}

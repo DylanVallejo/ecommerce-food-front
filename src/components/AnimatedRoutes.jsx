@@ -14,6 +14,7 @@ import UsersData from "./UsersData";
 // import Carrito from "./Carrito";
 import Carritoj from "./Carritoj";
 import HandleStore from "./HandleStore";
+import FinishBuy from "./FinishBuy";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -33,6 +34,8 @@ function AnimatedRoutes() {
         <Route path="/agregar" element={<ProductForm />} />
         <Route path="/store" element={<HandleStore />} />
         <Route path="/account" element={<UsersData />} />
+        <Route path="/finish" element={<FinishBuy />} />
+        
       </Routes>
     </AnimatePresence>
   );
