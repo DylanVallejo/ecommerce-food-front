@@ -17,6 +17,7 @@ import TablePagination from '@mui/material/TablePagination';
 import { styled, ThemeProvider } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { orange, amber } from '@mui/material/colors';
+import { style } from '@mui/system';
 
 
 function HandleStore() {
@@ -142,18 +143,15 @@ function HandleStore() {
         [`&.${tableCellClasses.body}`]: {
             fontSize: 12,
             border: 0,
-
         },
+
     }));
 
     const StyledTableRow = styled(TableRow)(({ theme }) => ({
         '&:nth-of-type(2n)': {
-            backgroundColor: amber[50],
-           
-        },
+            backgroundColor: amber[50], },
         '&:nth-of-type(2n+1)': {
-            backgroundColor: amber[100],
-        },
+            backgroundColor: amber[100],},
     }));
 
     return (
@@ -196,6 +194,7 @@ function HandleStore() {
                 page={page}
                 onPageChange={handleChangePage}
                 onRowsPerPageChange={handleChangeRowsPerPage}
+                className={styles.tablePagination}
             />
         </TableContainer >
     )
