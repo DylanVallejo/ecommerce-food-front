@@ -6,7 +6,7 @@ import axios from 'axios'
 
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
@@ -14,12 +14,14 @@ import styles from '../styles/HandleStore.module.scss'
 import Swal from 'sweetalert2'
 import { getData } from "../features/data/dataSlice";
 import TablePagination from '@mui/material/TablePagination';
-
+import { styled, ThemeProvider } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import { orange, amber } from '@mui/material/colors';
 
 
 function HandleStore() {
-  
-    
+
+
     // const [newStock, setNewStock] = useState(0)
     // const [itsInOffers, setItsInOffers] = useState(false)
 
@@ -118,53 +120,76 @@ function HandleStore() {
     //     console.log(oferta)
     // }
 
-//paginador de tabla//
+    //paginador de tabla//
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
-  
-    const handleChangePage = (event, newPage) => {
-      setPage(newPage);
-    };
-  
-    const handleChangeRowsPerPage = (event) => {
-      setRowsPerPage(+event.target.value);
-      setPage(0);
-    };
-//theme
 
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+    };
+
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(+event.target.value);
+        setPage(0);
+    };
+    //theme
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+        [`&.${tableCellClasses.head}`]: {
+            backgroundColor: orange[700],
+            color: theme.palette.common.white,
+            fontSize: 15,
+        },
+        [`&.${tableCellClasses.body}`]: {
+            fontSize: 12,
+            border: 0,
+
+        },
+    }));
+
+    const StyledTableRow = styled(TableRow)(({ theme }) => ({
+        '&:nth-of-type(2n)': {
+            backgroundColor: amber[50],
+           
+        },
+        '&:nth-of-type(2n+1)': {
+            backgroundColor: amber[100],
+        },
+    }));
 
     return (
-        <TableContainer className={styles.storeContainer} sx={{ minWidth: 650, maxWidth: 900 }} >
-            <Table stickyHeader aria-label="sticky table"
-                // sx={{ minWidth: 650 }}  
+        <TableContainer className={styles.storeContainer} sx={{ minWidth: 250, maxWidth: 900 }} component={Paper} >
+            <Table stickyHeader aria-label="customized table"
                 className={styles.storeContainerTable}>
                 <TableHead >
                     <TableRow>
-                        <TableCell className={styles.storeHeaders}>PRODUCTO</TableCell>
-                        <TableCell align="center" className={styles.storeHeaders}>STOCK</TableCell>
-                        <TableCell align="center" className={styles.storeHeaders}>OFERTA</TableCell>
-                        {/* <TableCell align="right">Carbs</TableCell>
-                        <TableCell align="right"></TableCell> */}
+                        <StyledTableCell align="center" className={styles.storeHeaders}>PRODUCTO</StyledTableCell>
+                        <StyledTableCell align="center" className={styles.storeHeaders}>STOCK</StyledTableCell>
+                        <StyledTableCell align="center" className={styles.storeHeaders}>OFERTA</StyledTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody >
                     {entities.slice
-                    (page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((item, key) => {
-                        return (
-                            <TableRow className={styles.infoTable} key={key}>
+                        (page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((item, key) => {
+                            return (
+                                <StyledTableRow className={styles.infoTable} key={key}>
 
-                                <TableCell className={styles.infoProducts} align="center">{item.productName}</TableCell>
-                                <TableCell className={styles.infoProducts} align="center"><p>{item.stock}</p> <button onClick={e => handleStock(item.stock, item.id, e)}>Agregar Stock</button></TableCell>
-                                <TableCell className={styles.infoProducts} align="center">{item.itsInOffers ? <p>SI</p> : <p>NO</p>}<button onClick={() => { }}>Poner en oferta</button></TableCell>
-
-                            </TableRow>
-                        )
-                    })}
+                                    <StyledTableCell className={styles.infoProducts} size='small' align="center" >{item.productName}</StyledTableCell>
+                                    <StyledTableCell className={styles.infoProducts} size='small' align="center">
+                                        <StyledTableCell className={styles.infoProducts} size='small' align="center"  >  <p>{item.stock}</p> </StyledTableCell>
+                                        <StyledTableCell className={styles.infoProducts} size='small' align="center" > <button onClick={e => handleStock(item.stock, item.id, e)}>Agregar Stock</button> </StyledTableCell>
+                                    </StyledTableCell>
+                                    <StyledTableCell className={styles.infoProducts} size='small' align="center">
+                                        <StyledTableCell className={styles.infoProducts} size='small' align="center">{item.itsInOffers ? <p>SI</p> : <p>NO</p>}</StyledTableCell>
+                                        <StyledTableCell className={styles.infoProducts} size='small' align="center"><button onClick={() => { }}>Poner en oferta</button> </StyledTableCell>
+                                    </StyledTableCell>
+                                </StyledTableRow>
+                            )
+                        })}
                 </TableBody>
 
             </Table>
             <TablePagination
-                rowsPerPageOptions={[10, 25, 100]}
+                rowsPerPageOptions={[10, 20, 50]}
                 component="div"
                 count={entities.length}
                 rowsPerPage={rowsPerPage}
