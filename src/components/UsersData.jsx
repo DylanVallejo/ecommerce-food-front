@@ -2,10 +2,14 @@
 import { Form, ErrorMessage, Field, Formik } from 'formik';
 import axios from 'axios';
 import styles from '../styles/UsersData.module.scss'
+import MyContext from "../context/MyContext";
+import { useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 function UsersData() {
     
-    
-    
+    const context = useContext(MyContext)
+    // console.log(context.userContext.role)
+    const navigate  = useNavigate();
     const validate = values => {
         const errors = {};
         if(values.password.length < 5) {
@@ -32,126 +36,142 @@ function UsersData() {
     //     adress: String
     // }
     
+    const handleNavigation = () => {
+        navigate("/singin")
+    }
+    
     
     
     return (
-        <div className={styles.containerUserForm}>
-            <Formik 
-                initialValues={{
-                    firstname:"",
-                    img:"",
-                    lastname: "",
-                    email:"",
-                    password:"",
-                    confirmPassWord: "",
-                    status: true,
-                    about: "",
-                    objective: "",
-                    history:"",
-                    contact: ""
-                    // contact:{
-                    //     adress:"",
-                    //     payphone: 0,
-                    //     email: ""
-                    // }
-                    // role: "USER"
-                }}
-            onSubmit={handleSubmit}
-            validate={validate}
+        <>
+        { context.userContext.role ?
             
-            >
-                <Form className={styles.formContainerUserInfo}>
-                    <div className={styles.imageSection}>
-                        <section className={styles.sectionUserData}> 
-                            
-                            <label className={styles.labelUserData}>
-                                Image
-                                {/* <Field  name="img" type="text" className={styles.inputUserData} /> */}
-                            </label>
-                        </section>
-                    </div>
-                    <div className={styles.dataSection}>
-                        <section className={styles.sectionUserData}> 
-                        
-                            <label className={styles.labelUserData}>
-                                First Name
-                            </label>
-                            <Field  name="firstname" type="text" className={styles.inputUserData} />
-                        </section>
-                        
-                        <section className={styles.sectionUserData}>
-                            <label  className={styles.labelUserData}>
-                                Last Name
-                            </label>
-                                <Field  name="lastname" type="text" className={styles.inputUserData} />
-                        </section>
-                            
-                        <section className={styles.sectionUserData}>
-                            
-                            <label className={styles.labelUserData}>
-                                Email
-                            </label>
-                                <Field  name="email" type="text" className={styles.inputUserData} />
-                        </section>
+            <div className={styles.containerUserForm}>
+                <Formik 
+                    initialValues={{
+                        firstname:"",
+                        img:"",
+                        lastname: "",
+                        email:"",
+                        password:"",
+                        confirmPassWord: "",
+                        status: true,
+                        // about: "",
+                        // objective: "",
+                        // history:"",
+                        // contact: ""
+                        // contact:{
+                        //     adress:"",
+                        //     payphone: 0,
+                        //     email: ""
+                        // }
+                        // role: "USER"
+                    }}
+                onSubmit={handleSubmit}
+                validate={validate}
+                
+                >
+                    <Form className={styles.formContainerUserInfo}>
+                        <div className={styles.imageSection}>
+                            <section className={styles.sectionUserData}> 
                                 
-                        <section className={styles.sectionUserData}>
-                            <label className={styles.labelUserData}>
-                                Password
+                                <label className={styles.labelUserData}>
+                                    Image
+                                    {/* <Field  name="img" type="text" className={styles.inputUserData} /> */}
+                                </label>
+                            </section>
+                        </div>
+                        <div className={styles.dataSection}>
+                            <section className={styles.sectionUserData}> 
+                            
+                                <label className={styles.labelUserData}>
+                                    First Name
+                                </label>
+                                <Field  name="firstname" type="text" className={styles.inputUserData} />
+                            </section>
+                            
+                            <section className={styles.sectionUserData}>
+                                <label  className={styles.labelUserData}>
+                                    Last Name
+                                </label>
+                                    <Field  name="lastname" type="text" className={styles.inputUserData} />
+                            </section>
                                 
-                            </label>
-                                <Field  name="password" type="text" className={styles.inputUserData} />
-                                <ErrorMessage name="password" />
-                        
-                        </section>
-                            
-                        <section className={styles.sectionUserData}>
-                            <label className={styles.labelUserData}>
-                                Confirm Password
-                            </label>
-                                <Field  name="confirmPassWord" type="text" className={styles.inputUserData} />
-                                <ErrorMessage name="confirmPassWord" />
-                        </section>
-                        
-                        <section className={styles.sectionUserData}>
-                            
-                            <label className={styles.labelUserData}>
-                                About your Enterprise
-                            </label>
-                                <Field  name="about" type="text" className={styles.inputUserData} />
-                            
-                        </section>
-                            
-                            
-                        <section className={styles.sectionUserData}>
-                            <label className={styles.labelUserData}>
-                                What is the objective of your Enterprise
+                            <section className={styles.sectionUserData}>
                                 
-                            </label>
-                                <Field  name="objective" type="text" className={styles.inputUserData} />
+                                <label className={styles.labelUserData}>
+                                    Email
+                                </label>
+                                    <Field  name="email" type="text" className={styles.inputUserData} />
+                            </section>
+                                    
+                            <section className={styles.sectionUserData}>
+                                <label className={styles.labelUserData}>
+                                    Password
+                                    
+                                </label>
+                                    <Field  name="password" type="text" className={styles.inputUserData} />
+                                    <ErrorMessage name="password" />
                             
-                        </section>
+                            </section>
+                                
+                            <section className={styles.sectionUserData}>
+                                <label className={styles.labelUserData}>
+                                    Confirm Password
+                                </label>
+                                    <Field  name="confirmPassWord" type="text" className={styles.inputUserData} />
+                                    <ErrorMessage name="confirmPassWord" />
+                            </section>
                             
-                        
-                        <section className={styles.sectionUserData}>
-                            <label className={styles.labelUserData}>
-                                History of your Enterprise
+                            {/* <section className={styles.sectionUserData}>
+                                
+                                <label className={styles.labelUserData}>
+                                    About your Enterprise
+                                </label>
+                                    <Field  name="about" type="text" className={styles.inputUserData} />
+                                
+                            </section>
+                                
+                                
+                            <section className={styles.sectionUserData}>
+                                <label className={styles.labelUserData}>
+                                    What is the objective of your Enterprise
+                                    
+                                </label>
+                                    <Field  name="objective" type="text" className={styles.inputUserData} />
+                                
+                            </section>
+                                
                             
-                            </label>
-                                <Field  name="history" type="text" className={styles.inputUserData} />
-                        </section>
-                        
-                        <section className={styles.sectionUserData}>
-                            <label className={styles.labelUserData}>
-                                Contact information
-                            </label>
-                                <Field  name="contact" type="text" className={styles.inputUserData} />
-                        </section>
-                    </div>
-                    {/* <Field  name="status" type="checkbox" {...getFieldProps('status')}/> */}
-                    <button type='submit' className={styles.updateValues} >Actualizar Datos</button>
-                </Form> 
-            </Formik>
-        </div>
+                            <section className={styles.sectionUserData}>
+                                <label className={styles.labelUserData}>
+                                    History of your Enterprise
+                                
+                                </label>
+                                    <Field  name="history" type="text" className={styles.inputUserData} />
+                            </section>
+                            
+                            <section className={styles.sectionUserData}>
+                                <label className={styles.labelUserData}>
+                                    Contact information
+                                </label>
+                                    <Field  name="contact" type="text" className={styles.inputUserData} />
+                            </section> */}
+                        </div>
+                        {/* <Field  name="status" type="checkbox" {...getFieldProps('status')}/> */}
+                        <button type='submit' className={styles.updateValues} >Actualizar Datos</button>
+                    </Form> 
+                </Formik>
+            </div>
+            
+            :  
+            <div>
+                <h4>Registrate para configurar tu cuenta</h4>
+                <button onClick={handleNavigation} >Registrarse</button>
+            </div>
+        }
+        </>
+        
     )
 }
 
