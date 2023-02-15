@@ -7,12 +7,12 @@
     grid-template-rows: 0.1fr 1fr;
     grid-column-gap: px;
     grid-row-gap: 2px;
-    height: 80vh;
-    width: 60em;
+    //height: 90vh;
+    width: 90%;
     justify-content: center;
     align-items: center;
-    margin: 4.2em auto;
-    border-radius: 25px;
+    margin: 4em auto;
+    border-radius: 2em;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
     rgba(0, 0, 0, 0.12) 0px -12px 30px,
     rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -52,8 +52,8 @@
 }
 
 .detailPageImg{
-    width: 30em;
-    height: 18em;
+    width: 80%;
+    height: 50%;
 }
 
 .detailPriceContainer{
@@ -64,10 +64,7 @@
 }
 
 .btnDetalleAgregar{
-    /* position: absolute;
-    bottom: 10px;
-    left: 10; */
-    
+  
     margin: 10px;
     height: 4em;
     font-size: 11px;
@@ -128,9 +125,9 @@
 }
 
 .btnDetalleMejorar{
-    position: absolute;
-    top: 20em;
-    left: 31em;
+    position: relative;
+    top: -15vh;
+    right: -7vw;
     margin: 10px;
     height: 4em;
     font-size: 11px;
@@ -163,29 +160,23 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-/* .slide-right {
-	-webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
+/* @media only screen and (max-width: 600px) and (min-width: 400px) */
+// @media  only screen and (max-width : 320px ) and (min-width: 480px) {
 
- @-webkit-keyframes slide-right {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
+    @media screen and (max-width: 480px){
+        .detailPageImg{
+            width: 90%;
+            height: 60%;
+        }
+        .detailPageImg:hover{
+            width: 90%;
+            height: 60%;
+            transform: scale(1.5);
+        }
+
+        .btnDetalleMejorar{
+            position: relative;
+            top: 0em;
+            left: 0em;
+        }
     }
-    100% {
-      -webkit-transform: translateX(-20px);
-              transform: translateX(-20px);
-    }
-  }
-  @keyframes slide-right {
-    0% {
-      -webkit-transform: translateX(40);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(-20px);
-              transform: translateX(-20px);
-    }
-  }
-   */
