@@ -69,7 +69,7 @@
 .inputBox input:valid ~ span,
 .inputBox input:focus ~ span,
 .inputBox textarea:valid ~ span,
-.inputBox textarea:focus ~ span ~ span
+.inputBox textarea:focus ~ span
 {
     color: white;
     transform: translateX(6px) translateY(-13px);
