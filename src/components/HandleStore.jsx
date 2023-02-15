@@ -122,7 +122,7 @@ function HandleStore() {
 
     //paginador de tabla//
     const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const [rowsPerPage, setRowsPerPage] = useState(5);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -174,9 +174,9 @@ function HandleStore() {
                                 <StyledTableRow className={styles.infoTable} key={key}>
 
                                     <StyledTableCell className={styles.infoProducts} size='small' align="center" >{item.productName}</StyledTableCell>
-                                    <StyledTableCell className={styles.infoProducts} size='small' align="center">
-                                        <StyledTableCell className={styles.infoProducts} size='small' align="center"  >  <p>{item.stock}</p> </StyledTableCell>
-                                        <StyledTableCell className={styles.infoProducts} size='small' align="center" > <button onClick={e => handleStock(item.stock, item.id, e)}>Agregar Stock</button> </StyledTableCell>
+                                    <StyledTableCell className={styles.infoProducts} size='small' align='center'>
+                                        <StyledTableCell className={styles.infoProducts} size='small' align='center'>  <p>{item.stock}</p> </StyledTableCell>
+                                        <StyledTableCell className={styles.infoProducts} size='small' align='center'> <button onClick={e => handleStock(item.stock, item.id, e)}>Agregar Stock</button> </StyledTableCell>
                                     </StyledTableCell>
                                     <StyledTableCell className={styles.infoProducts} size='small' align="center">
                                         <StyledTableCell className={styles.infoProducts} size='small' align="center">{item.itsInOffers ? <p>SI</p> : <p>NO</p>}</StyledTableCell>
@@ -189,7 +189,7 @@ function HandleStore() {
 
             </Table>
             <TablePagination
-                rowsPerPageOptions={[10, 20, 50]}
+                rowsPerPageOptions={[5, 10, 20]}
                 component="div"
                 count={entities.length}
                 rowsPerPage={rowsPerPage}
