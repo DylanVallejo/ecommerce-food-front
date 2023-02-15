@@ -18,11 +18,13 @@ import TablePagination from '@mui/material/TablePagination';
 
 
 function HandleStore() {
+  
+    
+    // const [newStock, setNewStock] = useState(0)
+    // const [itsInOffers, setItsInOffers] = useState(false)
 
-
-    const [newStock, setNewStock] = useState(0)
-    const [itsInOffers, setItsInOffers] = useState(false)
     const [cambio, setCambio] = useState(0)
+    const [spreadEntities, setspreadEntities] = useState(null)
     // useState
 
     const { entities } = useSelector(state => state.data)
@@ -41,9 +43,8 @@ function HandleStore() {
         console.log("useeffect")
         // dispatch(createOrder())
         console.log(cambio)
-
-
     }, [cambio]);
+
 
 
 

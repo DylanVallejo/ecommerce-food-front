@@ -81,59 +81,62 @@ const SingIn = () => {
           ser parte de nuestra red de krugerianos.
         </p>
         <div className={styles.mail}>
+          <span>e-mail</span>
           <input
             value={email}
             onChange={emailHandler}
             type="email"
-
             required
           />
         </div>
+        
+        
       {/* dar estilos */}
         <div className={styles.mail}>
-          <label>Nombre</label>
+          <span>Nombre</span>
           <input
             value={firstName}
             onChange={e=>setFirstName(e.target.value)}
-            placeholder="Ingresa tu primer Nombre"
+            // placeholder="Ingresa tu primer Nombre"
             type="text"
             required
 
           />
-          <span>e-mail</span>
         </div>
         <div className={styles.mail}>
-          <label>Apellido</label>
+          <span>Apellido</span>
           <input
             value={lastName}
             onChange={e=>setLastName(e.target.value)}
-            placeholder="Ingresa tu apellido"
+            // placeholder="Ingresa tu apellido"
             type="text"
             required
           />
         </div>
       {/* dar estilos */}
+      
         <div className={styles.password}>
+          <span>Contraseña.</span>
+          
           <input
             value={password}
             onChange={passwordHandler}
-
-            placeholder="Crea una contraseña segura."
+            // placeholder="Crea una contraseña segura."
             type="password"
             required
           />
         </div>
         <div className={styles.password}>
-          <label>Confirmar Contraseña</label>
+          <span>Confirmar Contraseña</span>
           <input
             value={confirmPassword}
             onChange={comparePassword}
-            placeholder="Confirma tu contraseña."
+            // placeholder="Confirma tu contraseña."
             type="password"
             required
 
           />
-          <span>Contraseña</span>
+          {/* <span>Contraseña</span> */}
         </div>
         <button className={styles.btn}>{state}</button>
         {!message ? (
