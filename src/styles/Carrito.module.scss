@@ -15,11 +15,19 @@
     position: relative;
     overflow-y: auto;
 }
-
+.carritoContainer h2{
+    font-family: "Kaushan Script", cursive;
+    font-size: 2em;
+    color: #f13b3b;
+}
 .allProductsContainer{
     width: 90%;
     box-sizing: content-box;
-    background-color:none;
+    background: rgb(246,237,144);
+    background: -moz-linear-gradient(0deg, rgba(246,237,144,1) 7%, rgba(231,173,47,1) 55%);
+    background: -webkit-linear-gradient(0deg, rgba(246,237,144,1) 7%, rgba(231,173,47,1) 55%);
+    background: linear-gradient(0deg, rgba(246,237,144,1) 7%, rgba(231,173,47,1) 55%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f6ed90",endColorstr="#e7ad2f",GradientType=1);
     margin: 1em auto;
     height: auto;
     justify-content: center;
@@ -28,10 +36,9 @@
     border-radius: 5px;
     display: flex;
     position: relative;
-   // border: 1px solid rgb(199, 137, 4);
     flex-direction: row;
     flex-wrap: wrap;
-    
+    border-radius: 1em;
 }
 
 .cartQuantityContainer{
@@ -41,7 +48,8 @@
 }
 
 .carritoImg{
-    height: 4em;
+    height: 5em;
+    margin-right: 2em;
 }
 .carritoImg:hover{
     scale: 1.2;
@@ -60,6 +68,7 @@
     font-family: "Lobster", cursive;
     font-size: 1.5em;
 }
+
 
 .removeBtnCart{
     position: absolute;
