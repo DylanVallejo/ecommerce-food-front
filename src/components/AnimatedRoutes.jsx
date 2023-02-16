@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import AboutUsPage from "../pages/AboutUsPage";
@@ -15,9 +15,19 @@ import UsersData from "./UsersData";
 import Carritoj from "./Carritoj";
 import HandleStore from "./HandleStore";
 import FinishBuy from "./FinishBuy";
-
+import ReactGA from 'react-ga';
 function AnimatedRoutes() {
+  
+  const TRACKING_ID = "UA-257356066-1"; // OUR_TRACKING_ID
+
+  ReactGA.initialize(TRACKING_ID);
+  
   const location = useLocation();
+  
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+  
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>

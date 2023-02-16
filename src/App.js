@@ -9,10 +9,16 @@ import { useState } from "react";
 import Container from '@mui/material/Container';
 import MobileNavBar from "./components/MobileNavBar";
 
+import ReactGA from 'react-ga';
+
+
 
 
 function App() {
   
+  const TRACKING_ID = "UA-257356066-1"; // OUR_TRACKING_ID
+  ReactGA.initialize(TRACKING_ID);
+    
   const [userContext, setUserContext] = useState({
     token:"",
     role:""

@@ -2,6 +2,7 @@
 import React from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import { setPaymentStatus } from "../features/data/dataSlice";
+import useAnalyticsEventTracker from './useAnalyticsEventTracker';
 
 import axios from 'axios';
 import Swal from 'sweetalert2'  
@@ -12,6 +13,9 @@ function FinishBuy() {
     
     const { generatedOrder } = useSelector(state => state.data)
     const paymentStatus = `http://localhost:8082/api/payment`
+    
+    const gaEventTracker = useAnalyticsEventTracker('Finalizar compra');
+    
     
     const dispatch = useDispatch();
     
@@ -42,6 +46,8 @@ function FinishBuy() {
         }).catch((error)=>{
             console.log(error)
         })
+        gaEventTracker('Compra finalizada')
+        
     }
     
     return (

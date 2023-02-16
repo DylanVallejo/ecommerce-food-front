@@ -10,11 +10,16 @@ import styles from "../styles/Detalle.module.scss";
 // import withReactContent from 'sweetalert2-react-content'
 import MyContext from '../context/MyContext';
 
+import useAnalyticsEventTracker from './useAnalyticsEventTracker';
+
 
 
 function Detalle() {
   
   const context = useContext(MyContext);
+  
+  
+  const gaEventTracker = useAnalyticsEventTracker('Detalles agregar');
       
   const [detail2, setDetail2] = useState(null);
   const [commentsArray, setCommentsArrays] = useState([]);
@@ -88,6 +93,8 @@ function Detalle() {
       })
       navigate("/login")
     }
+    
+    gaEventTracker('agreagar producto')
     
 
     // navigate('/')
