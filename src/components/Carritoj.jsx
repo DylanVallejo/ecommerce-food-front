@@ -1,4 +1,4 @@
-import { useState, } from 'react'
+import { useEffect, useState, } from 'react'
 
 import { useSelector, useDispatch } from "react-redux";
 import { setGeneratedOrder,setNewValuesForArray } from "../features/data/dataSlice";
@@ -26,7 +26,7 @@ function Carritoj() {
     const [clonOrderItems, setClonOrderItems] = useState(orderItems);
 
     //3.- mostar el precio de los productos 
-    const [subtotal, setSubtotal] = useState(0);
+    const [totalAmount, setTotalAmount] = useState(0);
 
     //4.- mostrar el total de la compra
     // const [total, setTotal] = useState(0);
@@ -99,16 +99,32 @@ function Carritoj() {
         
     // }
     // console.log(calcTotal( ))
+    useEffect(() => {
+        calcTotal(clonOrderItems)
+    }, [clonOrderItems,calcTotal])
     
-
-    const enviarTodo = (e, clonOrderItems,) => {
-        e.preventDefault();
-        
+    
+    function calcTotal (clonOrderItems) {
         let total = 0
         for(let i = 0; i<clonOrderItems.length; i++){
             total += clonOrderItems[i].price * clonOrderItems[i].quantity
             // console.log(total)
         }
+        setTotalAmount(total);
+        console.log(`${total} imprimiendo total desde funcio calc ` )
+    }
+    
+
+    const enviarTodo = (e, clonOrderItems,totalAmount) => {
+        e.preventDefault();
+
+        
+        // let total = 0
+        // for(let i = 0; i<clonOrderItems.length; i++){
+        //     total += clonOrderItems[i].price * clonOrderItems[i].quantity
+        //     // console.log(total)
+        // }
+        // setTotalAmount(total)
         // console.log(total)
     
         let sendObject = {
@@ -123,8 +139,9 @@ function Carritoj() {
             "items":
                 clonOrderItems
             ,
-            "totalAmount": total
+            "totalAmount": totalAmount
         }
+        console.log(sendObject)
         if(clonOrderItems.length>0){
             console.log('esto se envia')
             console.log(sendObject)
@@ -194,29 +211,32 @@ function Carritoj() {
             
             {
                 clonOrderItems.length !== 0 ? 
-                <form onSubmit={e => enviarTodo(e, clonOrderItems, arrayJ,)}>
+                <form onSubmit={e => enviarTodo(e, clonOrderItems,totalAmount)}>
                     {
                         clonOrderItems?.map((item, key) => {
                             return (
-                                <div key={key} className={styles.allProductsContainer}>
-                                    <img src={item.image} className={styles.carritoImg} />
-                                    <div>
-                                        {/* <img   className={styles.imgCarrito}>{item.image}</img> */}
-                                        <p className={styles.productCar}>{item.productName}</p>
-                                        <section className={styles.cartQuantityContainer}>
-                                            <p className={styles.productQuantity}>cantidad: {item.quantity}</p>
-                                            <div>
-                                                <button  className={styles.quantityBtnsCart} onClick={e => setQuantity(key, e, item.quantity)}  ><AddShoppingCartIcon></AddShoppingCartIcon>  </button>
-                                                <button className={styles.quantityBtnsCart} onClick={e => setMinusQuantity(key, e, item.quantity)} ><RemoveShoppingCartIcon ></RemoveShoppingCartIcon ></button>
-                                                <button className={styles.quantityBtnsCart} onClick={(e) => remover(item.id, e)}><DeleteForeverIcon></DeleteForeverIcon></button>
-                                            </div>
-                                        </section>
+                                <>
+                                    <div key={key} className={styles.allProductsContainer}>
+                                        <img src={item.image} className={styles.carritoImg} />
+                                        <div>
+                                            {/* <img   className={styles.imgCarrito}>{item.image}</img> */}
+                                            <p className={styles.productCar}>{item.productName}</p>
+                                            <section className={styles.cartQuantityContainer}>
+                                                <p className={styles.productQuantity}>cantidad: {item.quantity}<span> Subtotal: {item.quantity*item.price}</span></p> 
+                                                <div>
+                                                    <button  className={styles.quantityBtnsCart} onClick={e => setQuantity(key, e, item.quantity)}  ><AddShoppingCartIcon></AddShoppingCartIcon>  </button>
+                                                    <button className={styles.quantityBtnsCart} onClick={e => setMinusQuantity(key, e, item.quantity)} ><RemoveShoppingCartIcon ></RemoveShoppingCartIcon ></button>
+                                                    <button className={styles.quantityBtnsCart} onClick={(e) => remover(item.id, e)}><DeleteForeverIcon></DeleteForeverIcon></button>
+                                                </div>
+                                            </section>
 
+                                        </div>
                                     </div>
-                                </div>
+                                </>
                             )
                         })
                     }
+                    <p>Monto total: {totalAmount}</p>
                     <button type='submit' className={styles.btnComprar}>Comprar</button> 
                 </form>
                 :
@@ -225,8 +245,7 @@ function Carritoj() {
                     <button  className={styles.btnNavegarMenu} onClick={ handleNavigation}>Mirar Menu</button> 
                 </div>
             }
-            
-            
+
         </div>
     )
 }

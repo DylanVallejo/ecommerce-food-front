@@ -134,11 +134,24 @@
     .responsiveNav{
         // position: relative;
         // top: 30em;
+        // height: auto;
+        // background-color: #FFE5AC;
+        // margin: 0px;
+        // width: 100%;
+        // box-sizing: border-box;
+        // overflow-x: scroll;
+        
+        
+        
+        position: absolute;
+        bottom: 1px;
+        left: 10px;
+        right: 10px;
         height: auto;
         background-color: #FFE5AC;
-        margin: 0px;
-        width: 100%;
-        box-sizing: border-box;
+        margin-bottom: 10px;
+        width: auto;
+        box-sizing: initial;
         overflow-x: scroll;
     }
     .responsiveContainer{
