@@ -12,11 +12,11 @@ import Swal from 'sweetalert2'
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-<<<<<<< HEAD
+
 import OrderState from './OrderState';
-=======
+
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
->>>>>>> 2939b6628b814224c3fbbb9436414ce6dd7f1b2e
+
 
 function Carritoj() {
 
@@ -217,8 +217,6 @@ function Carritoj() {
                     <OrderState/>
                 
                 :
-<<<<<<< HEAD
-            
                 <div className={styles.carritoContainer}>
 
                     <h2>Carrito</h2>
@@ -264,14 +262,6 @@ function Carritoj() {
         }
     </>
 
-=======
-                <div className={styles.carritoVacio} >
-                    <h4 className={styles.carritoVacioHeader}>Carrito vacío. </h4>
-                    <button  className={styles.btnNavegarMenu} onClick={ handleNavigation}>Mirar Menu</button> 
-                </div>
-            }
-        </div>
->>>>>>> 2939b6628b814224c3fbbb9436414ce6dd7f1b2e
     )
 }
 
