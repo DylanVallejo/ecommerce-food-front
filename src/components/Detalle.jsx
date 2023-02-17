@@ -73,18 +73,35 @@ function Detalle() {
   console.log(context)
 
   const sendToOrderArray =  async () => {
-    // c
+
     if(context.userContext.role === "USER" || context.userContext.role === "ADMIN"  ){
       
-      dispatch(setItemsArray(detail2));
-      Toast.fire({
-        icon: 'success',
-        title: ` ${detail2.productName } Añadida al carrito`,
-        position: 'bottom-right',
-        timer: '2000'
-      })
-      navigate("/")
-      
+      if( detail2.itsInOffers && detail2.discount){
+
+        let updated = structuredClone(detail2)
+        let price = detail2.price;
+        let setDiscount = detail2.discount / 100;
+        price = price - price * setDiscount;
+        updated.price = price 
+        dispatch(setItemsArray(updated));
+        Toast.fire({
+          icon: 'success',
+          title: ` ${updated.productName } Añadida al carrito`,
+          position: 'bottom-right',
+          timer: '2000'
+        })
+        navigate("/")
+      }else{
+        dispatch(setItemsArray(detail2));
+        Toast.fire({
+          icon: 'success',
+          title: ` ${detail2.productName } Añadida al carrito`,
+          position: 'bottom-right',
+          timer: '2000'
+        })
+        navigate("/")
+      }
+          
     }else{
       Toast.fire({
         icon: 'error',
@@ -142,6 +159,20 @@ function Detalle() {
 
   }
   
+  // const calcularDES = () => {
+  //   if( detail2.itsInOffers && detail2.discount){
+    
+  //     let updated = structuredClone(detail2)
+  //     let price = detail2.price;
+  //     let setDiscount = detail2.discount / 100;
+  //     price = price - price * setDiscount;
+  //     updated.price = price 
+  //     console.log(updated)
+  //   } else {
+  //     console.log('no esta en decuento')
+  //   }
+  // }
+  
   return (
     <>
       {
@@ -188,6 +219,7 @@ function Detalle() {
               <button className={styles.btnDetalleMejorar}>Mejorar Combo</button>
             </div>
             <div>
+              {/* <button onClick={calcularDES}>Calcular descuento</button> */}
               <button className={styles.btnDetalleAgregar} onClick={e=> createComments(e)}>COMENTARIOS</button>
               <button className={styles.btnDetalleAgregar} onClick={sendToOrderArray}>Agregar al pedido</button>
               <button className={styles.btnDetalleRegresar} onClick={handleNavigate}>Regresar</button>
