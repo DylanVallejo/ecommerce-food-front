@@ -47,11 +47,11 @@ function Ofertas() {
   return (
     <div className={styles.globalOfersContainer}>
       <div className={styles.ofertasContainer}>
-        
         {
           !loading  && itemsInOffers.map((item,key)=>{
             return(
               <div className={styles.imgOfertasContainer} key={key}>
+
                 <button className={styles.etiquetaOfertas} >{item.discount}%</button>
                 <img src={item.image} alt="...." className={styles.imgPageOfertas}></img>
                 <h3 className={styles.titleOfertas}>{item.productName}</h3>
@@ -67,6 +67,7 @@ function Ofertas() {
           })
         }
       </div>
+
       <button onClick={e=>handleNavigationHome(e)} className={styles.btnOfertasRegresar} >Regresar</button>
     </div>
   )
