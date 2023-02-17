@@ -98,9 +98,9 @@ const LogIn = (props) => {
   return (
     <main className={styles.main}>
       <form className={styles.card} onSubmit={submitHandler}>
-        <div className={styles.logo}>
+        {/* <div className={styles.logo}>
           <img src={logo} alt="store logo" />
-        </div>
+        </div> */}
         <h1>Bienvenido</h1>
         <p>Inicia sesión para continuar con tus compras</p>
         <div className={styles.mail}>
