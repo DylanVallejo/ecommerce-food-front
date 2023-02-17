@@ -1,7 +1,5 @@
 
 import { NavLink } from "react-router-dom";
-// import '../styles/NavBar.css'
-// import PopUp from "./PopUp";
 import MyContext from "../context/MyContext";
 import { useContext } from "react";
 // import Container from '@mui/material/Container';
