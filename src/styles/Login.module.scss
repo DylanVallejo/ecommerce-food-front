@@ -9,8 +9,9 @@
     background-color: #ffe5acc4;
     max-width: 30%;
     max-height: 43rem;
-    border-radius: 12px;
+    border-radius: 25px;
     padding: 1rem 3rem 1rem 3rem;
+    // border: 1px solid black;
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 }
 
@@ -118,4 +119,27 @@
 
 .btn :active {
     background-color: #ffb619;
+}
+
+
+
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 480px){
+    .main {
+        min-height: 70vh;
+    }
+    
+    .card {
+        margin: 5.1em auto;
+        max-width: 60%;
+        
+    }
+
 }

@@ -173,12 +173,12 @@ function HandleStore() {
 
                                     <StyledTableCell className={styles.infoProducts} size='small' align="center" >{item.productName}</StyledTableCell>
                                     <StyledTableCell className={styles.infoProducts} size='small' align='center'>
-                                        <StyledTableCell className={styles.infoProducts} size='small' align='center'>  <p>{item.stock}</p> </StyledTableCell>
                                         <StyledTableCell className={styles.infoProducts} size='small' align='center'> <button onClick={e => handleStock(item.stock, item.id, e)}>Agregar Stock</button> </StyledTableCell>
+                                        <StyledTableCell className={styles.infoProducts} size='small' align='center'>  <p>{item.stock}</p> </StyledTableCell>
                                     </StyledTableCell>
                                     <StyledTableCell className={styles.infoProducts} size='small' align="center">
-                                        <StyledTableCell className={styles.infoProducts} size='small' align="center">{item.itsInOffers ? <p>SI</p> : <p>NO</p>}</StyledTableCell>
                                         <StyledTableCell className={styles.infoProducts} size='small' align="center"><button onClick={() => { }}>Poner en oferta</button> </StyledTableCell>
+                                        <StyledTableCell className={styles.infoProducts} size='small' align="center">{item.itsInOffers ? <p>SI</p> : <p>NO</p>}</StyledTableCell>
                                     </StyledTableCell>
                                 </StyledTableRow>
                             )

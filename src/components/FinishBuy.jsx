@@ -4,6 +4,7 @@ import { useSelector,useDispatch } from 'react-redux'
 import { setPaymentStatus, setGeneratedOrder} from "../features/data/dataSlice";
 import { useNavigate } from 'react-router-dom';
 import useAnalyticsEventTracker from './useAnalyticsEventTracker';
+import styles from "../styles/FinishBuy.module.scss"
 
 import axios from 'axios';
 import Swal from 'sweetalert2'  
@@ -87,18 +88,22 @@ function FinishBuy() {
     }
     
     return (
-        <div>
-            <h4>finalizar compra</h4>
-            <div>
-                <h3> ID de la compra {generatedOrder?.id}</h3>
+        <div className={styles.finishContainer}>
+            <h4 className={styles.finishTitle}>finalizar compra</h4>
+            <div className={styles.finishBuyInfo}>
+                <h3 className={styles.buyFinishID}>ID de la compra: {generatedOrder?.id}</h3>
                 {
                     generatedOrder?.items.map((item, key) => {
                         return(
                             <div key={key}>
                                 <ol>
-                                    <li>    
-                                        <p>{item.productName} <span>Subtotal: {item.subtotal}</span></p>
-                                    </li>
+                                    <p className={styles.finishNames}>
+                                        {item.productName}
+                                        <span className={styles.finsihPrices}> ${item.price}</span><br/>
+                                        <span className={styles.finishSubtotal}>
+                                            Subtotal: {item.subtotal}
+                                        </span>
+                                    </p>
                                 </ol>
                             </div>
                         )
@@ -106,9 +111,9 @@ function FinishBuy() {
                 }
                 <h3>{generatedOrder?.totalAmount}</h3>
             </div>
-            <button onClick={e=>handleCancel(e,generatedOrder.id)}>Cancelar Compra</button>
+            <button onClick={e=>handleCancel(e,generatedOrder.id)} className={styles.cancelarFinishBtn}>Cancelar Compra</button>
             
-            <button onClick={e=>handleFinish(e,generatedOrder.id)}>Finalizar Compra</button>
+            <button onClick={e=>handleFinish(e,generatedOrder.id)} className={styles.finalizarFinishBtn}>Finalizar Compra</button>
         </div>
     )
 }
