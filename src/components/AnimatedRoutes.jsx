@@ -17,6 +17,7 @@ import HandleStore from "./HandleStore";
 import FinishBuy from "./FinishBuy";
 import ReactGA from 'react-ga';
 import OrderState from "./OrderState";
+import VisionMisionPage from "../pages/VisionMisionPage";
 function AnimatedRoutes() {
   
   const TRACKING_ID = "UA-257356066-1"; // OUR_TRACKING_ID
@@ -47,6 +48,7 @@ function AnimatedRoutes() {
         <Route path="/account" element={<UsersData />} />
         <Route path="/finish" element={<FinishBuy />} />
         <Route path="/status" element={<OrderState />} />
+        <Route path="/nosotros" element={<VisionMisionPage />} />
       </Routes>
     </AnimatePresence>
   );

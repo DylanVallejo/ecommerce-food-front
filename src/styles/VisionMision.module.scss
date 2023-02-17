@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.nosotrosContainer {
+    width: 80%;
+    background-image: url(http://localhost:3000/static/media/fondo_nosotros.a66f924bff1c73a1dd93.jpg);
+    padding: 2em;
+    height: 90vh;
+    background-size: cover;
+    margin: 4em auto;
+}
+.nosotrosInfo {
+    font-family: 'Kaushan Script', cursive;
+    width: 50%;
+    background-color: transparent;
+    margin: 15%;
+}
+
+.nosotrosInfo div{
+    background-color: transparent;
+    color: #f11111;;
+}
