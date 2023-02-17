@@ -5,6 +5,7 @@ import logo from "../resources/logofood_transparente.png";
 import axios from "axios";
 import MyContext from '../context/MyContext';
 import jwt_decode from "jwt-decode";
+import Swal from 'sweetalert2'  
 
 
 
@@ -18,6 +19,18 @@ const LogIn = (props) => {
   const [password, setPassword] = useState("");
   const [state, setState] = useState("Ingresar");
   const [message, setMessage] = useState();
+  
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+})
 
 
   // const [userRoleContext, setUserRoleContext] = useState({
@@ -62,11 +75,20 @@ const LogIn = (props) => {
           })
           // console.log(userRoleContext)
           navigate("/");
+          Toast.fire({
+            icon: 'succes',
+            title:  `Login exitoso`,
+            timer: 2000
+          })
 
         })
         .catch((error) => {
           setState("Ingresar");
           console.log(error);
+          Toast.fire({
+            icon: 'error',
+            title:  `Usuario o contraseña incorrecto`
+          })
         });
     } else {
       setMessage("Formulario incompleto. Intenta otra vez");

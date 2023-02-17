@@ -16,6 +16,7 @@ import Carritoj from "./Carritoj";
 import HandleStore from "./HandleStore";
 import FinishBuy from "./FinishBuy";
 import ReactGA from 'react-ga';
+import OrderState from "./OrderState";
 function AnimatedRoutes() {
   
   const TRACKING_ID = "UA-257356066-1"; // OUR_TRACKING_ID
@@ -45,7 +46,7 @@ function AnimatedRoutes() {
         <Route path="/store" element={<HandleStore />} />
         <Route path="/account" element={<UsersData />} />
         <Route path="/finish" element={<FinishBuy />} />
-        
+        <Route path="/status" element={<OrderState />} />
       </Routes>
     </AnimatePresence>
   );

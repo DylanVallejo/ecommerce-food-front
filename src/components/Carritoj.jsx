@@ -12,12 +12,13 @@ import Swal from 'sweetalert2'
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import OrderState from './OrderState';
 
 function Carritoj() {
 
     // 1.-llamar order items
 
-    const { orderItems } = useSelector((state) => state.data);
+    const { orderItems, generatedOrder} = useSelector((state) => state.data);
     const dispatch = useDispatch();
 
     const orderUrl = `http://localhost:8082/api/order`;
@@ -204,49 +205,60 @@ function Carritoj() {
 
 
     return (
-        <div className={styles.carritoContainer}>
-
-            <h2>Carrito</h2>
-            {/* <button onClick={calcTotal}>calcular</button> */}
-            
+        <>        
             {
-                clonOrderItems.length !== 0 ? 
-                <form onSubmit={e => enviarTodo(e, clonOrderItems,totalAmount)}>
-                    {
-                        clonOrderItems?.map((item, key) => {
-                            return (
-                                <>
-                                    <div key={key} className={styles.allProductsContainer}>
-                                        <img src={item.image} className={styles.carritoImg} />
-                                        <div>
-                                            {/* <img   className={styles.imgCarrito}>{item.image}</img> */}
-                                            <p className={styles.productCar}>{item.productName}</p>
-                                            <section className={styles.cartQuantityContainer}>
-                                                <p className={styles.productQuantity}>cantidad: {item.quantity}<span> Subtotal: {item.quantity*item.price}</span></p> 
-                                                <div>
-                                                    <button  className={styles.quantityBtnsCart} onClick={e => setQuantity(key, e, item.quantity)}  ><AddShoppingCartIcon></AddShoppingCartIcon>  </button>
-                                                    <button className={styles.quantityBtnsCart} onClick={e => setMinusQuantity(key, e, item.quantity)} ><RemoveShoppingCartIcon ></RemoveShoppingCartIcon ></button>
-                                                    <button className={styles.quantityBtnsCart} onClick={(e) => remover(item.id, e)}><DeleteForeverIcon></DeleteForeverIcon></button>
-                                                </div>
-                                            </section>
-
-                                        </div>
-                                    </div>
-                                </>
-                            )
-                        })
-                    }
-                    <p>Monto total: {totalAmount}</p>
-                    <button type='submit' className={styles.btnComprar}>Comprar</button> 
-                </form>
+                
+                generatedOrder !== null && clonOrderItems.length > 0 ?
+                
+                    <OrderState/>
+                
                 :
-                <div className={styles.carritoVacio} >
-                    <h4 className={styles.carritoVacioHeader}>Carrito vacío. </h4>
-                    <button  className={styles.btnNavegarMenu} onClick={ handleNavigation}>Mirar Menu</button> 
-                </div>
-            }
+            
+                <div className={styles.carritoContainer}>
 
-        </div>
+                    <h2>Carrito</h2>
+                    {/* <button onClick={calcTotal}>calcular</button> */}
+                    
+                    {
+                        clonOrderItems.length !== 0 ? 
+                        <form onSubmit={e => enviarTodo(e, clonOrderItems,totalAmount)}>
+                            {
+                                clonOrderItems?.map((item, key) => {
+                                    return (
+                                        <>
+                                            <div key={key} className={styles.allProductsContainer}>
+                                                <img src={item.image} className={styles.carritoImg} />
+                                                <div>
+                                                    {/* <img   className={styles.imgCarrito}>{item.image}</img> */}
+                                                    <p className={styles.productCar}>{item.productName}</p>
+                                                    <section className={styles.cartQuantityContainer}>
+                                                        <p className={styles.productQuantity}>cantidad: {item.quantity}<span> Subtotal: {item.quantity*item.price}</span></p> 
+                                                        <div>
+                                                            <button  className={styles.quantityBtnsCart} onClick={e => setQuantity(key, e, item.quantity)}  ><AddShoppingCartIcon></AddShoppingCartIcon>  </button>
+                                                            <button className={styles.quantityBtnsCart} onClick={e => setMinusQuantity(key, e, item.quantity)} ><RemoveShoppingCartIcon ></RemoveShoppingCartIcon ></button>
+                                                            <button className={styles.quantityBtnsCart} onClick={(e) => remover(item.id, e)}><DeleteForeverIcon></DeleteForeverIcon></button>
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </>
+                                    )
+                                })
+                            }
+                            <p>Monto total: {totalAmount}</p>
+                            <button type='submit' className={styles.btnComprar}>Comprar</button> 
+                        </form>
+                        :
+                        <div className={styles.carritoVacio} >
+                            <h4 className={styles.carritoVacioHeader}>Carrito vacío. </h4>
+                            <button  className={styles.btnNavegarMenu} onClick={ handleNavigation}>Mirar Menu</button> 
+                        </div>
+                    }
+                </div>
+            
+        }
+    </>
+
     )
 }
 

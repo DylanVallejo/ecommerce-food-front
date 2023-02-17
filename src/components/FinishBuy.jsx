@@ -1,7 +1,8 @@
 // import { Container } from '@mui/material';
 import React from 'react'
 import { useSelector,useDispatch } from 'react-redux'
-import { setPaymentStatus } from "../features/data/dataSlice";
+import { setPaymentStatus, setGeneratedOrder} from "../features/data/dataSlice";
+import { useNavigate } from 'react-router-dom';
 import useAnalyticsEventTracker from './useAnalyticsEventTracker';
 
 import axios from 'axios';
@@ -12,11 +13,16 @@ import Swal from 'sweetalert2'
 function FinishBuy() {
     
     const { generatedOrder } = useSelector(state => state.data)
-    const paymentStatus = `http://localhost:8082/api/payment`
     
+    
+    const paymentStatus = `http://localhost:8082/api/payment`
+    const orderStatusUrl = `http://localhost:8082/api/order/order-state/`
+    
+    
+    //metricas de google 
     const gaEventTracker = useAnalyticsEventTracker('Finalizar compra');
     
-    
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     
     const Toast = Swal.mixin({
@@ -43,10 +49,40 @@ function FinishBuy() {
                 icon: 'success',
                 title:  `Compra finalizada`
             })
+            navigate('/cartj')
         }).catch((error)=>{
             console.log(error)
+            Toast.fire({
+                icon: 'error',
+                title:  `No se pudo finalizar la compra`
+            })
         })
         gaEventTracker('Compra finalizada')
+        //alertar de que el envio ya esta en camino 
+        
+    }
+    
+    const handleCancel = ( e, orderId) => {
+        e.preventDefault();
+        console.log(generatedOrder)
+        axios.put(`${orderStatusUrl}${orderId}`,{
+            "orderState": {
+                "id":2
+            }
+        }).then(res=>{
+            console.log(res)
+            dispatch(setGeneratedOrder(res.data))
+            Toast.fire({
+                icon: 'error',
+                title:  `Compra Cancelada`
+            })
+        }).catch(error =>{
+            console.log(error)
+            Toast.fire({
+                icon: 'error',
+                title:  `Hubo un error al cancelar la orden`
+            })
+        })
         
     }
     
@@ -70,6 +106,8 @@ function FinishBuy() {
                 }
                 <h3>{generatedOrder?.totalAmount}</h3>
             </div>
+            <button onClick={e=>handleCancel(e,generatedOrder.id)}>Cancelar Compra</button>
+            
             <button onClick={e=>handleFinish(e,generatedOrder.id)}>Finalizar Compra</button>
         </div>
     )
