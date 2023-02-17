@@ -76,7 +76,7 @@ const LogIn = (props) => {
           // console.log(userRoleContext)
           navigate("/");
           Toast.fire({
-            icon: 'succes',
+            icon: 'success',
             title:  `Login exitoso`,
             timer: 2000
           })

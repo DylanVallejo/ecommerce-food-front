@@ -5,15 +5,17 @@
 
 
 .carritoContainer{
-    height: 65vh;
+    height: 69vh;
     width: 60%;
     min-width: 350px;
     //border: 1px solid rgb(53, 52, 52);
-    margin: 1em auto;
+    margin: 1.2em auto;
     border-radius: 3em;
     background-color: #ffe5acce;
     position: relative;
     overflow-y: auto;
+    padding: 1em;
+    box-sizing: border-box;
 }
 .carritoContainer h2{
     font-family: "Kaushan Script", cursive;
@@ -167,7 +169,7 @@ color: #fff;
 
 .btnNavegarMenu{
     position: absolute;
-    bottom: 6%;
+    bottom: 12%;
     left: 60%;
     // margin: 10px;
     height: 4em;
@@ -215,8 +217,8 @@ color: #fff;
     
     // position: relative;
         padding: 0.5em;
-    height: 22em;
-    width: 19em;
+    height: 18em;
+    width: 16em;
     box-sizing: border-box;
     // border: 1px solid black;
     margin: auto;

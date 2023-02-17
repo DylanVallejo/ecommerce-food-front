@@ -45,7 +45,7 @@
 .cancelarFinishBtn{
     position: absolute;
     bottom: 1em;
-    left: 1%;
+    left: 20%;
     margin: 10px;
     height: 4em;
     font-size: 11px;
@@ -99,7 +99,7 @@
 .finalizarFinishBtn{
     position: absolute;
     bottom: 1em;
-    right: 1%;
+    right: 20%;
     margin: 10px;
     height: 4em;
     font-size: 11px;
@@ -126,4 +126,16 @@
     box-shadow: 20px 40px 42px rgba(239, 239, 209, 0.4) ;
     color: #fff;
     transform: translateY(-2px);
+}
+
+
+@media screen and (max-width: 480px){
+    .finalizarFinishBtn {
+        bottom: 1em;
+        right: 1%;
+    }
+    .cancelarFinishBtn{
+        bottom: 1em;
+        left: 1%;
+    }
 }
