@@ -41,14 +41,14 @@ function AnimatedRoutes() {
         <Route path="/cartj" element={<Carritoj  />} />
         <Route path="/ofertas" element={<OfertasPage />} />
         <Route path="/category" element={<CategoryFormPage />} />
-        <Route path="/about" element={<AboutUsPage />} />
+        <Route path="/about" element={<VisionMisionPage /> } />
         <Route path="/contact" element={<ContactUsPage />} />
         <Route path="/agregar" element={<ProductForm />} />
         <Route path="/store" element={<HandleStore />} />
         <Route path="/account" element={<UsersData />} />
         <Route path="/finish" element={<FinishBuy />} />
         <Route path="/status" element={<OrderState />} />
-        <Route path="/nosotros" element={<VisionMisionPage />} />
+        <Route path="/nosotros" element={<AboutUsPage />} />
       </Routes>
     </AnimatePresence>
   );

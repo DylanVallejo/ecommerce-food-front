@@ -68,7 +68,6 @@
   border-radius: 2em;
   display: grid;
   align-content: flex-end;
-
   transform-style: preserve-3d;
   transform: perspective(1000px) translateX(calc(100% * var(--offset)))
     rotateY(calc(-50deg * var(--dir)));
@@ -77,7 +76,6 @@
 .slideAboutContentInner {
   transform-style: preserve-3d;
   transform: translateZ(9rem);
- 
   transition: opacity 0.3s linear;
   text-shadow: 0 0.1rem 1rem rgb(0, 0, 0);
   opacity: 0;
@@ -86,7 +84,6 @@
   .slideAboutSubtitle,
   .slideAboutTitle, a {
     font-family: 'Aclonica', sans-serif;
-   
     //font-family: 'Press Start 2P', cursive;
     color: rgb(255, 255, 255);
     font-size: 1.5rem;
@@ -116,7 +113,7 @@
 
   .slideAboutContentInner {
     opacity: 3;
-   }
+  }
 
   .slideAboutContent {
     --x: calc(var(--px) - 0.5);
@@ -129,5 +126,38 @@
       transform: perspective(1000px) rotateY(calc(var(--x) * 45deg))
         rotateX(calc(var(--y) * -45deg));
     }
+  }
+}
+
+
+
+
+
+
+@media screen and (max-width: 480px){
+    
+  .aboutusContainer{
+    height: 42em;
+    box-sizing: border-box;
+  }
+  .slideAboutContentInner{
+    height: 50em; 
+  }
+  .slideAbout{
+    height: 20em; 
+
+  }
+  .slideAboutContent{
+    height: 20em;
+    width: 15em;
+  }
+  .slidesAbout > button:first-child {
+    margin-top: 6em;
+    margin-left: -3em;
+  }
+  
+  .slidesAbout > :last-child{
+    margin-top: 6em;
+    margin-right: -3em;
   }
 }

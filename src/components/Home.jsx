@@ -156,9 +156,9 @@ function Home() {
                                     <div className={styles.mapImgContainer}>
                                         <img
                                             src={item.image}
-                                            width="80%"
-                                            height="170em"
-                                            margin="5px"
+                                            // width="80%"
+                                            // height="170em"
+                                            // margin="5px"
                                             className={styles.mapImg}
                                             alt="ref-home"
                                         />

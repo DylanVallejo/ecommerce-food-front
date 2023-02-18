@@ -1,21 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+// *{
+//     // border: 1px solid red;
+// }
 .nosotrosContainer {
-    width: 80%;
-    background-image: url(http://localhost:3000/static/media/fondo_nosotros.a66f924bff1c73a1dd93.jpg);
-    padding: 2em;
-    height: 90vh;
+    position: relative;
+    height: 68vh;
+    width: 60vh;
+    background-image: url(../resources/fondo_nosotros.jpg);
+    // padding: 2em;
+    // background-size: cover;
+    margin: 1em auto;
+    box-sizing: border-box;
+    border-radius: 25px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
-    margin: 4em auto;
+    // color: white;
 }
 .nosotrosInfo {
     font-family: 'Kaushan Script', cursive;
-    width: 50%;
+    // width: 50%;
     background-color: transparent;
     margin: 15%;
+    position: absolute;
+    left: 1em;
 }
 
 .nosotrosInfo div{
     background-color: transparent;
-    color: #f11111;;
+    color: white;
+}
+
+@media screen and (max-width: 480px){
+    
+    .nosotrosContainer{
+        height: 73vh;
+        width: auto;
+        // background-size: cover;
+        background-size: auto 73vh, auto, 200px;  
+        
+    }
+    .nosotrosInfo{
+        left: 1em;
+        top: 2em;
+        overflow-y: hidden;
+        
+    }
+    
 }

@@ -34,6 +34,7 @@ function NavBar() {
         <li className={styles.navlinks}><NavLink to="/ofertas"><button className={styles.buttonLinks}>Ofertas</button></NavLink></li>
         <li className={styles.navlinks}><NavLink to="/about" ><button className={styles.buttonLinks}>About us </button></NavLink></li>
         <li className={styles.navlinks}><NavLink to="/contact" ><button className={styles.buttonLinks}>Contact Us </button></NavLink></li>
+        <li className={styles.navlinks}><NavLink to="/nosotros" ><button className={styles.buttonLinks}>Equipo</button></NavLink></li>
         
         {/* {
           generatedOrder !== null  ?
@@ -53,10 +54,10 @@ function NavBar() {
         { context.userContext.role === "ADMIN" &&
           <li className={styles.navlinks}><NavLink to="/agregar" ><button className={styles.buttonLinks}>Add Product</button></NavLink></li>
         }
-        {
+        {/* {
           context.userContext.role === "ADMIN" &&
           <li className={styles.navlinks}><NavLink to="/stats" ><button className={styles.buttonLinks}>Stats</button></NavLink></li>
-        }
+        } */}
         {
           context.userContext.role === "ADMIN" &&
           <li className={styles.navlinks}><NavLink to="/store" ><button className={styles.buttonLinks}>Handle Store</button></NavLink></li>

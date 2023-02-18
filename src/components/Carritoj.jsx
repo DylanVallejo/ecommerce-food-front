@@ -248,7 +248,7 @@ function Carritoj() {
                                     )
                                 })
                             }
-                            <p>Monto total: {totalAmount}</p>
+                            <p className={styles.Montototal}>Monto total: {totalAmount}</p>
                             <button type='submit' className={styles.btnComprar}>Comprar</button> 
                         </form>
                         :

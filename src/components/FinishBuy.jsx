@@ -95,11 +95,11 @@ function FinishBuy() {
                 {
                     generatedOrder?.items.map((item, key) => {
                         return(
-                            <div key={key}>
-                                <ol>
+                            <div key={key} className={styles.mapFinalInfo}>
+                                <ol className={styles.orderList}>
                                     <p className={styles.finishNames}>
                                         {item.productName}
-                                        <span className={styles.finsihPrices}> ${item.price}</span><br/>
+                                        <span className={styles.finsihPrices}>: USD {item.price}</span><br/>
                                         <span className={styles.finishSubtotal}>
                                             Subtotal: {item.subtotal}
                                         </span>
@@ -109,7 +109,7 @@ function FinishBuy() {
                         )
                     })
                 }
-                <h3>{generatedOrder?.totalAmount}</h3>
+                <h3 className={styles.finalTotal}>Total:{generatedOrder?.totalAmount}</h3>
             </div>
             <button onClick={e=>handleCancel(e,generatedOrder.id)} className={styles.cancelarFinishBtn}>Cancelar Compra</button>
             

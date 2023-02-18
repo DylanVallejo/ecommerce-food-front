@@ -206,3 +206,48 @@
     color: #fff;
     transform: translateY(-7px);
 }
+
+.mapImg{ 
+    width: 10em;
+    height: 9em;
+    margin: 5px;
+}
+
+@media only screen and (max-width: 1000px){
+    .listButtonFilterBar{
+        width: 8em;
+    }
+    .listButtonFilterBar:hover {
+        width: 8.2em;
+
+    
+    }
+    .filterNavigationBarContainer{
+        margin: 0px;
+        padding: 0px;
+    }
+    .cardsContainer{
+        height: 40em;
+        width: auto;
+        
+        // width: auto;
+        // background-color: #fb6101;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        // border: 1px solid black;
+        margin: 1em auto;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .mapContainer{
+        width: 400px;
+        display: flex;
+        flex-direction: row;
+        // margin: 0px ;
+        // padding: 0px;
+        box-sizing: border-box;
+    }
+    .mapImgContainer{
+        width: 10em;
+    }
+}
