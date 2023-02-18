@@ -13,6 +13,7 @@ import Email from '@mui/icons-material/Email';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import WarehouseIcon from '@mui/icons-material/Warehouse';
+import HomeWorkIcon from '@mui/icons-material/HomeWork';
 
 import styles from "../styles/MobileNavBar.module.scss";
 
@@ -54,7 +55,7 @@ return (
             <NavLink to="/about" >
                 <button className={styles.responsiveButtonLinks}> 
                     <section >
-                        <GroupIcon></GroupIcon> 
+                        <HomeWorkIcon></HomeWorkIcon> 
                         <h6 className={styles.responsiveHeaders}>About us</h6> 
                     </section>
                 </button>
@@ -70,6 +71,18 @@ return (
                     </button>
                 </NavLink>
             </li>
+            
+            <li className={styles.responsiveNavlinks}>
+                <NavLink className={styles.mobileA} to="/nosotros" >
+                    <section>
+                        <button className={styles.responsiveButtonLinks}>
+                            <GroupIcon></GroupIcon> 
+                            <h6 className={styles.responsiveHeaders}>Equipo</h6>
+                        </button>
+                    </section>
+                </NavLink>
+            </li>
+            
             {/* <li className="navlinks"><NavLink to="/cartj" ><button className="buttonLinks">cartj </button></NavLink></li> */}
             
             { context.userContext.role === "ADMIN" &&
@@ -84,7 +97,7 @@ return (
                 </NavLink>
             </li>
             }
-            {
+            {/* {
             context.userContext.role === "ADMIN" &&
             <li className={styles.responsiveNavlinks}>
                 <NavLink className={styles.mobileA} to="/stats" >
@@ -96,7 +109,7 @@ return (
                     </button>
                 </NavLink>
             </li>
-            }
+            } */}
             {
             context.userContext.role === "ADMIN" &&
             <li className={styles.responsiveNavlinks}>

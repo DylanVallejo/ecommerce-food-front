@@ -12,6 +12,8 @@
     background-color: #ffe5acce;
     position: relative;
     overflow-y: auto;
+    padding: 2em;
+    box-sizing: border-box;
 }
 
 .finishTitle{
@@ -21,18 +23,28 @@
     font-size: 2em;
     color: #f13b3b;
 }
-// .finishBuyInfo{
-//     padding-left: 4em;
-// }
-// .finishNames{
-//     text-align: start;
-// }
-// .finsihPrices{
-//     text-align: end;
-// }
-// .finishSubtotal{
-//     text-align: end;
-// }
+.finishBuyInfo{
+    font-family: 'Lobster', cursive;
+
+}
+.finishNames{
+    font-family: "Kaushan Script", cursive;
+
+
+}
+.finsihPrices{
+    font-family: 'Lobster', cursive;
+
+}
+.finishSubtotal{
+    font-family: 'Lobster', cursive;
+    // font-family: 'Lobster', cursive;
+
+}
+.finalTotal{
+    font-family: 'Lobster', cursive;
+    
+}
 
 .buyFinishID{
     text-align: center;
@@ -40,6 +52,20 @@
 
 .finishSubtotal{
     text-align: start;
+}
+
+.mapFinalInfo{
+    // border: 1px solid black;
+    margin: 0.2em;
+    width: auto;
+    border-radius: 25px;
+    box-shadow: -1px 9px 28px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 9px 28px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 9px 28px -3px rgba(0,0,0,0.75);
+}
+.orderList{
+    padding: 0px;
+    margin: 0px;
 }
 
 .cancelarFinishBtn{
