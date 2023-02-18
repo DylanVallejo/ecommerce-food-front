@@ -1,0 +1,161 @@
+
+
+// *{
+//     margin: 0px;
+//     padding: 0px;
+// }
+.responsiveNav {
+    display: none;
+    padding: 0px;
+    // margin: 0px;
+    // margin-bottom: 5px;
+    height: auto;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px 10px 10px 10px;
+    // border: 1px solid red;
+
+}
+.responsiveContainer{
+    display: flex;
+    padding: 0px;
+    // flex-direction: row;
+    // align-items: left;
+    // gap: 2px;
+    // justify-content: center;
+    list-style: none;
+    // margin: 0px;
+    // margin-left: 0px;
+    // background-color: aqua;
+}
+
+.responsiveNavlinks{
+    margin: auto;
+}
+.responsiveButtonLinks{
+    margin: 0px;
+    border: none;
+    background: none;
+    height: 10em;
+    // border: 1px solid red;   
+}
+.responsiveButtonLinks:hover{
+    border-right: 0.5px solid grey ;
+    border-left: 0.5px solid grey ;
+    box-sizing: border-box;
+}
+.responsiveNavlinks svg{
+    font-size: 3em;
+    // background-color: aqua;
+    // color: #EDA919;
+}
+.responsiveNavlinks svg:hover{
+    font-size: 3em;
+    // background: rgb(255, 60, 0); 
+    
+    color:rgb(255, 60, 0) ;
+    
+    
+    
+    // color: rgb(255, 60, 0);
+    
+    
+    // background-color: aqua;
+    // color: #EDA919;
+}
+.responsiveNavlinks h6{
+    font-size: 1em;
+    // background-color: aqua;
+    // color: #EDA919;
+}
+// .mobileA>.responsiveButtonLinks>section>svg{
+//     // height: 10em;
+//     // background-color: aqua;
+// }
+
+@media screen and (max-width: 480px){
+    
+    .responsiveNav {
+        display: flex;
+        // margin: 0px;
+    }
+    .ulContainer{
+        // display: none;
+        border-right: 0.5px solid grey;
+    }
+    .responsiveNavlinks{
+        margin: 0px;
+    }
+    // .logoNavbar{
+    //     margin: auto;
+    //     justify-content: center;
+    //     align-items: center;
+    // }
+    
+
+    .responsiveNav{
+        // position: relative;
+        // top: 30em;
+        height: auto;
+        background-color: #FFE5AC;
+
+        // margin: 0px;/
+        margin-bottom: 10px;
+
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: scroll;
+    }
+    .responsiveContainer{
+        justify-content: space-evenly;
+    }
+    .responsiveButtonLinks{
+        height: 6em;
+        width: 6em;
+        box-sizing: border-box;
+        text-align: center;
+        justify-content: center;
+    }
+    .responsiveHeaders{
+        margin: 0;
+
+        // padding: 10px;
+    }
+    // .responsiveNav::-webkit-scrollbar {
+    //     height: 10px;
+    //     // background-color: #f2e4c6;
+    //     // border: 1px solid black;
+    //     // border-radius: 0px 0px 25px 0px ;
+    // // border-radius: 0px 0px 10px 10px;
+        
+    // }
+    // .responsiveNav::-webkit-scrollbar-thumb{
+    //     background: #EDA919; 
+    //     border-radius: 10px;
+    // }
+    // .responsiveNav::-webkit-scrollbar-thumb:hover{
+    //     background: rgb(255, 60, 0); 
+    //     // border-radius: 10px;
+    // }
+    // .responsiveNav::-webkit-resizer{
+    //     width: 20px;
+    // }
+    // .responsiveNav::-webkit-scrollbar-track:hover{
+    //     background:  #EDA919;
+    
+    // }
+    
+  
+    
+// ::-webkit-scrollbar the scrollbar.
+
+// ::-webkit-scrollbar-button the buttons on the scrollbar (arrows pointing upwards and downwards).
+// ::-webkit-scrollbar-thumb the draggable scrolling handle.
+// ::-webkit-scrollbar-track the track (progress bar) of the scrollbar.
+// ::-webkit-scrollbar-track-piece the track (progress bar) NOT covered by the handle.
+// ::-webkit-scrollbar-corner the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
+// ::-webkit-resizer the draggable resizing handle that appears at the bottom corner of some elements.
+
+    
+}

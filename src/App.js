@@ -1,30 +1,44 @@
+import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import AnimatedRoutes from "./components/AnimatedRoutes";
+import MyContext from './context/MyContext';
+import { useState } from "react";
+import Container from '@mui/material/Container';
+import MobileNavBar from "./components/MobileNavBar";
 
-import './App.css';
-import {Route,Routes,BrowserRouter} from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import OfertasPage from './pages/OfertasPage';
-import AboutUsPage from './pages/AboutUsPage';
-import ContactUsPage from './pages/ContactUsPage';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
+import ReactGA from 'react-ga';
+
+
+
 
 function App() {
+  
+  const TRACKING_ID = "UA-257356066-1"; // OUR_TRACKING_ID
+  ReactGA.initialize(TRACKING_ID);
+    
+  const [userContext, setUserContext] = useState({
+    token:"",
+    role:""
+    
+  })  
+  // value={{token,role}}
+  
   return (
     <div className="App">
-      <BrowserRouter>
-      
-        <NavBar/>
-            <Routes>
-              <Route   path="/" element={<HomePage/>} />
-              <Route   path="/ofertas" element={<OfertasPage/>} />
-              <Route   path="/about" element={<AboutUsPage/>} />
-              <Route   path="/contact" element={<ContactUsPage/>} />
-              
-              {/* <Route path="/agregar" element={<Agregarpage />} /> */}
-            </Routes>
-        <Footer/>
-      </BrowserRouter>
-      
+      {/* // <Container maxWidth="xl"> */}
+        <MyContext.Provider value={{userContext,setUserContext}}>
+          
+          <BrowserRouter>
+            <NavBar />
+            <AnimatedRoutes />
+            <MobileNavBar/>
+            <Footer />
+          </BrowserRouter>
+        </MyContext.Provider>
+        {/* </Container> */}
     </div>
   );
 }

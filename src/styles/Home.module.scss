@@ -1,0 +1,253 @@
+.filterNavigationContainer {
+    
+    display: flex;
+    background-color: rgba(203, 87, 87, 0.239);
+    justify-content: space-between;
+    justify-items: content-box;
+    border: 3px solid black;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.filterNavigationBarContainer {
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.filterNavigationBarContainer li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.filterNavigationBarContainer img {
+    width: 4em;
+}
+
+.listButtonFilterBar {
+    margin: 20px;
+    width: 8em;
+    border: 2px solid black;
+    background-color: #EDA919;
+    font-family: 'Kaushan Script', cursive;
+    box-sizing: content-box;
+    height: 3em;
+    box-shadow: -3px 3px rgb(255, 60, 0);
+    border-radius: 5px;
+
+    -webkit-transition: width 0.4s ease-out;
+    -moz-transition: width 0.4s ease-out;
+    -o-transition: width 0.4s ease-out;
+    transition: width 0.4s ease-out;
+}
+
+.listButtonFilterBar:hover {
+    margin: 20px;
+    width: 11em;
+    background-color: rgb(255, 60, 0);
+    cursor: pointer;
+    box-shadow: -5px 5px #EDA919;
+    color: white;
+
+    -webkit-transition: background-color 0.6s ease-out;
+    -moz-transition: background-color 0.6s ease-out;
+    -o-transition: background-color 0.6s ease-out;
+    transition: background-color 0.6s ease-out;
+
+    -webkit-transition: box-shadow 0.6s ease-out;
+    -moz-transition: box-shadow 0.6s ease-out;
+    -o-transition: box-shadow 0.6s ease-out;
+    transition: box-shadow 0.6s ease-out;
+
+    -webkit-transition: width 0.4s ease-out;
+    -moz-transition: width 0.4s ease-out;
+    -o-transition: width 0.4s ease-out;
+    transition: width 0.4s ease-out;
+
+}
+.searchByTextBar{
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    height: 3em;
+    color: black;
+    outline:none;
+    border-radius: 10px;
+}
+.searchByTextBar:focus{
+    
+    background-color: #edaa19bf;
+    color: white;
+    -webkit-transition: background-color 0.6s ease-out;
+    -moz-transition: background-color 0.6s ease-out;
+    -o-transition: background-color 0.6s ease-out;
+    transition: background-color 0.6s ease-out;
+
+}
+
+
+.cardsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    margin: 10px auto;
+}
+
+.mapContainer {
+    display: flex;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-sizing: content-box;
+    background-color: rgb(244, 255, 252);
+    flex-flow: column;
+    width: 17em;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.mapContainer:hover {
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    transform: scale(1.02);
+    transition: 0.2s;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.homeImg {
+    height: 250px;
+}
+
+.homeTitle {
+    font-family: 'Kaushan Script', cursive;
+    margin: 0.6em auto -1.2em auto;
+    padding: 1em;
+    align-items: center;
+}
+
+.mapImgContainer {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 11em;
+    width: 17em;
+    position: relative;
+    max-width: 312px;
+    background-color: rgb(244, 255, 252);
+    border-radius: 1em 1em 0em 0em;
+
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    /* padding: 2.5em 1em 0 1em; */
+
+}
+
+.mapInfoContainer {
+    /* margin: auto; */
+    background-color: rgb(244, 255, 252);
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px
+}
+
+.mapInfoContainer>p {
+    margin: 0px;
+    margin-left: 0.5em;
+    font-family: 'Lobster', cursive;
+
+}
+
+.mapInfoContainer>p:nth-child(2) {
+    text-align: center;
+    margin-right: 0.2em;
+    font-size: 1.3em;
+}
+
+.btnDetailsHome {
+    position: absolute;
+    bottom: .7em;
+    left: 15em;
+    height: 4em;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bolder;
+    color: #000;
+    background-color: #EABB58D4;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid black;
+    -webkit-box-shadow: -10px 15px 10px -2px rgba(0, 0, 0, 0.31);
+    -moz-box-shadow: -10px 15px 10px -2px rgba(0, 0, 0, 0.31);
+    box-shadow: -10px 15px 10px -2px rgba(0, 0, 0, 0.31);
+}
+
+.btnDetailsHome:hover {
+
+    background-color: #fb6101;
+    box-shadow: 0px 15px 20px rgba(202, 199, 32, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.mapImg{ 
+    width: 10em;
+    height: 9em;
+    margin: 5px;
+}
+
+@media only screen and (max-width: 1000px){
+    .listButtonFilterBar{
+        width: 8em;
+    }
+    .listButtonFilterBar:hover {
+        width: 8.2em;
+
+    
+    }
+    .filterNavigationBarContainer{
+        margin: 0px;
+        padding: 0px;
+    }
+    .cardsContainer{
+        height: 40em;
+        width: auto;
+        
+        // width: auto;
+        // background-color: #fb6101;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        // border: 1px solid black;
+        margin: 1em auto;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .mapContainer{
+        width: 400px;
+        display: flex;
+        flex-direction: row;
+        // margin: 0px ;
+        // padding: 0px;
+        box-sizing: border-box;
+    }
+    .mapImgContainer{
+        width: 10em;
+    }
+}

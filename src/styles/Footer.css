@@ -1,0 +1,36 @@
+.footerContainer{
+    background-color: #FFE5AC;
+    text-decoration: none;
+    height: 4em;
+    margin: auto ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+    -webkit-box-shadow: 1px 13px 34px 10px rgba(0,0,0,0.28);
+    -moz-box-shadow: 1px 13px 34px 10px rgba(0,0,0,0.28);
+    box-shadow: 1px 13px 34px 10px rgba(0,0,0,0.28);
+}
+.ulFooter{
+    display: flex;
+    margin:  auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.liFooter{
+    text-decoration: none;
+    list-style: none;
+    margin: 10px;
+}
+.githubLogo{
+    height: 2em;
+    filter: invert(100%);
+}
+
+@media screen and (max-width: 480px){
+    .footerContainer{
+        display: none;
+    }
+}

@@ -1,0 +1,134 @@
+.containerUserForm{
+   
+    width: 95%;
+    //border: 1px solid rgb(53, 52, 52);
+    margin: 1em auto;
+    border-radius: 30px;
+    background-color: #ffe5acce;
+    position: relative;
+    display: flex;
+    padding: 1em;
+}
+.formContainerUserInfo{
+    margin: auto;
+}
+
+.dataSection{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    padding: 1em;
+}
+.sectionUserData{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0.5em;
+}
+
+.sectionUserData:nth-child(0){
+    height: 7em;
+    width: 7em;
+    background-color: aquamarine;
+    position: relative;
+    top: 1em;
+    left: -20em;
+    display: block;
+}
+
+
+.inputUserData{
+    width: 100%;
+    padding: 0.75rem;
+    padding: 1rem 0.25rem 1rem 0.75rem;
+    border: 0.5px solid;
+    border: 1px solid #EDA919;
+    border-radius: 1em;
+    font-size: 1rem;   
+}
+
+.updateValues{
+    padding: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bolder;
+    color: #ffff;    
+    background-color: #EDA919;
+    border: none;
+    border-radius: 1em;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    -webkit-box-shadow: -5px 15px 10px -2px rgba(0,0,0,0.31);
+    -moz-box-shadow: -5px 15px 10px -2px rgba(0,0,0,0.31);
+    box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
+}
+
+.updateValues:hover{
+    padding: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bolder;
+    color: #ffff;    
+    border: none;
+    cursor: pointer;
+    background-color: #33f111;
+    box-shadow: 0px 15px 20px rgba(202, 199, 32, 0.4) ;
+    transform: translateY(-7px);
+    border-radius: 1em;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    outline: none;
+    -webkit-box-shadow: -5px 15px 10px -2px rgba(0,0,0,0.31);
+    -moz-box-shadow: -5px 15px 10px -2px rgba(0,0,0,0.31);
+    box-shadow: -10px 15px 10px -2px rgba(0,0,0,0.31);
+}
+
+.sectionUserData label{
+    margin-left: 0.5rem;
+    padding: 0 0.25rem;
+    background-color: white;
+    transition: all 0.1s ease;
+    border-radius: 1em;
+    //border-top: solid #EDA919;
+    //border-left: solid #EDA919;
+    max-width: 60%;
+    position: absolute;
+    margin-top: -8px;
+    display: flex;
+}
+
+/* 
+.container{
+    height: 60vh;
+    width: 16em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.formContainerUserInfo{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    gap: 2rem;
+    padding: 1rem;
+}
+.sectionUserData{
+    width:300px;
+    border: 1px solid black;
+    box-sizing: content-box;
+    background-color: aqua;
+}
+.labelUserData{
+    display: flex;
+    margin-right: 10px;
+}
+.inputUserData{
+    width: 100%;
+    box-sizing: border-box;
+} */

@@ -1,0 +1,150 @@
+.headerContainer{
+    background-color: #FFE5AC;
+    text-decoration: none;
+    height: 100px;
+    margin: auto ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 15px 15px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    box-shadow: rgba(1, 1, 1, 0.30) 2px 3px 8px;
+    margin-bottom: 1em;
+    justify-content: space-evenly;
+    
+}
+.logoNavbarContainer{
+    align-items: left;
+}
+.logoNavbar{
+    height: 7em;
+    margin: auto;
+    filter: drop-shadow(0 2mm 1mm rgb(4, 4, 4));
+}
+.ulContainer{
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    margin: auto;
+    
+}
+.navlinks{
+    text-decoration: none;
+    list-style: none;
+
+}
+
+.buttonLinks{
+    border-radius: 5px;
+    margin: 10px;
+    font-size: auto;
+    box-sizing: content-box;
+    width: 6em;
+    background-color: #EDA919;
+    box-shadow: -3px 3px  rgb(255, 60, 0);
+    height: 3em;
+    -webkit-transition: background-color 0.6s ease-out;
+    -moz-transition: background-color 0.6s ease-out;
+    -o-transition: background-color 0.6s ease-out;
+    transition: background-color 0.6s ease-out;
+    
+    -webkit-transition: box-shadow 0.6s ease-in;
+    -moz-transition: box-shadow 0.6s ease-in;
+    -o-transition: box-shadow 0.6s ease-in;
+    transition: box-shadow 0.6s ease-in;
+
+}
+
+.buttonLinks:hover{
+    
+    background-color: rgb(255, 60, 0);;
+    box-shadow: -3px 3px  #EDA919;
+    
+    color: white;
+
+    -webkit-transition: background-color 0.6s ease-out;
+    -moz-transition: background-color 0.6s ease-out;
+    -o-transition: background-color 0.6s ease-out;
+    transition: background-color 0.6s ease-out;
+    
+    -webkit-transition: box-shadow 0.6s ease-out;
+    -moz-transition: box-shadow 0.6s ease-out;
+    -o-transition: box-shadow 0.6s ease-out;
+    transition: box-shadow 0.6s ease-out;
+    cursor: pointer;
+    
+}
+.navlinks svg{
+    font-size: 3em;
+    color: #EDA919;
+    margin: auto;
+    
+}
+.navlinks svg:nth-child(1){
+    margin-right: 30px;
+}
+
+.responsiveNav , .responsiveContainer, .responsiveNavlinks, .responsiveButtonLinks{
+    display: none;
+}
+
+@media screen and (max-width: 480px){
+    .ulContainer{
+        display: none;
+    }
+    .logoNavbar{
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logoNavbarContainer{
+        padding: 0px;
+        margin: 0px;
+    }
+
+    
+    .responsiveNav , .responsiveContainer, .responsiveNavlinks, .responsiveButtonLinks{
+        display: flex;
+        font-style: none;
+        list-style: none;
+    }
+    .responsiveNav{
+        position: absolute;
+        bottom: 1px;
+        left: 10px;
+        right: 10px;
+        height: auto;
+        background-color: #FFE5AC;
+        margin-bottom: 10px;
+        width: auto;
+        box-sizing: initial;
+        overflow-x: scroll;
+    }
+    .responsiveContainer{
+        justify-content: space-evenly;
+    }
+    .responsiveButtonLinks{
+        height: 6em;
+        width: 6em;
+        margin: 3px;
+        box-sizing: border-box;
+        text-align: center;
+        justify-content: center;
+    }
+    .responsiveHeaders{
+        margin: 0;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .buttonLinks{
+        margin: 0.2em;
+    }
+    .ulContainer{
+        margin: 0px;
+        padding: 0px;
+    }
+}

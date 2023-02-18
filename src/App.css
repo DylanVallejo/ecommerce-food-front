@@ -1,3 +1,25 @@
+/* *{
+  margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+} */
+
+
 .App {
-  text-align: center;
+	text-align: center;
+	
+	/* background-size: 100% 100% ; */
+	background-repeat:round;
+	
+	background-image: url(https://media.istockphoto.com/id/1176097155/es/vector/refrigerios-de-comida-rápida-postres-patrón-de-línea-sin-costuras.jpg?s=612x612&w=0&k=20&c=4ANmxq8sxpt7LBzIRMyOQda2Xx97AU7o1A2zbv6PSMo=);
+	background-size: 25px 50px;
+	background-size: 25% 25%;
+	/* background-image:; */
+	/* background-size:cover ; */
+	/* background-image: url("./resources/fondo.jpeg");
+	/* background-color: rgb(195, 187, 178); */
+	/* width: 1080px; */
 }
