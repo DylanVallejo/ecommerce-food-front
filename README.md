@@ -1,5 +1,5 @@
 # 💻 kruger-FullStack-Project
-  https://ecommerce-food-front-of9d2vkbi-dylanvallejo.vercel.app
+ 
 ## _Here you can watch our progress creating the final project for Kruger Star working on team using Java(Spring boot) as BackEnd and using ReactJs for the frontEnd._
 
 
@@ -15,6 +15,16 @@ Order the most delicius food in kruger food
   <img src="https://img.shields.io/badge/MADEWITH-React-1572B6?style=for-the-badge&logo=React" height="30">
   <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
 </p>
+
+
+1. [Lenguajes y Herramientos](#lenguajes-y-herramientas)
+2. [Run it Local](#run-it-local)
+3. [Technologies](#lenguajes-y-herramientas)
+4. [Installation](#run-it-local)
+5. [Walkthrough](#walktrought)
+6. [Deploy](#deploy)
+7. [Collaboration](#contribuitors)
+10. [License](#license)
 
 
 ## Lenguajes y Herramientas
@@ -79,6 +89,30 @@ Vscode te redirigirá automáticamente al navegador y abrirá una pestaña nueva
 
 ![image](https://user-images.githubusercontent.com/99937413/219829964-b3a552a7-29e2-48da-a7b9-0d696e6b601a.png)
 
+## Deploy 
+  https://ecommerce-food-front-of9d2vkbi-dylanvallejo.vercel.app
+## Contribuitors
+
+👤 **Alexander Cangas**
+
+- GitHub: [Alexander Cangas](https://github.com/xander06)
+- LinkedIn: [Alexander Cangas](https://www.linkedin.com/in/alexander-cangás-00a2967b/)
+
+👤 **Dylan Vallejo**
+
+- GitHub: [Dylan Vallejo](https://github.com/DylanVallejo)
+- LinkedIn: [Dylan Vallejo](https://www.linkedin.com/in/dylan-vallejo)
+
+
+👤 **Edwin Pinchao**
+
+- GitHub: [Edwin Pinchao](https://github.com/Edwin9226)
+- LinkedIn: [Edwin Pinchao](https://www.linkedin.com/in/edwin-pinchao-mueses-951130175/)
+
+👤 **Edwin Cacuango**
+
+- Github: [@EdwinCacuango](https://github.com/EdwinCacuango)
+- LinkedIn: [Edwin Cacuango Cahuenas](https://www.linkedin.com/mwlite/in/edwin-cacuango-cahuenas)
 
 ## License
 
