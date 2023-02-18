@@ -1,5 +1,5 @@
 # 💻 kruger-FullStack-Project
-  https://ecommerce-food-front-of9d2vkbi-dylanvallejo.vercel.app
+ https://ecommerce-food-front-of9d2vkbi-dylanvallejo.vercel.app/store
 ## _Here you can watch our progress creating the final project for Kruger Star working on team using Java(Spring boot) as BackEnd and using ReactJs for the frontEnd._
 
 
