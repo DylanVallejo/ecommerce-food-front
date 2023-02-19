@@ -30,6 +30,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     border-radius: 1em;
+    
+    box-sizing: content-box;
+    background: rgb(246,237,144);
+    background: -moz-linear-gradient(0deg, rgba(246,237,144,1) 7%, rgba(231,173,47,1) 55%);
+    background: -webkit-linear-gradient(0deg, rgba(246,237,144,1) 7%, rgba(231,173,47,1) 55%);
+    background: linear-gradient(0deg, rgba(246,237,144,1) 7%, rgba(231,173,47,1) 55%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f6ed90",endColorstr="#e7ad2f",GradientType=1);
+    margin: 1em auto;
 }
 
 .cartQuantityContainer{

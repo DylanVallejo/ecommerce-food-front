@@ -1,5 +1,4 @@
 .containerUserForm{
-   
     width: 95%;
     //border: 1px solid rgb(53, 52, 52);
     margin: 1em auto;
@@ -132,3 +131,11 @@
     width: 100%;
     box-sizing: border-box;
 } */
+
+
+@media screen and (max-width: 480px){
+    .containerUserForm{
+        height: 35em ;
+        margin: 3em auto;
+    }
+}
